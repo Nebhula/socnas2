@@ -1,3 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOCNAS - Asociación de Pájaros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #162e4a;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 80px;
+            width: auto;
+            border-radius: 8px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        nav a span {
+            font-size: 0.8rem;
+            margin-top: 4px;
+            opacity: 0.9;
+        }
+        
+        nav a:hover {
+            color: #ffcb69;
+            transform: translateY(-3px);
+        }
+
+        /* Ajuste de tamaño de iconos en móviles */
+        @media (max-width: 768px) {
+            nav a {
+                font-size: 1.3rem;
+            }
+            nav a i {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 1.2rem;
+            }
+            nav a i {
+                font-size: 1.8rem;
+            }
+            nav ul {
+                gap: 20px;
+            }
+        }
+        
+        .hero {
+            text-align: center;
+            color: white;
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 100%;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjM6aFdnpsNbiKx8ssLPkvyIfseua6UWIOsw4WpZuyd2B5TmyGCxxmqjJx6SwTy-i3y3DUA4e6DJuqVxvybVQdQpa2JXT-ramMIS38KtacahF_rq_ZHyG1Da7n0GTylBvvDCWtBI74qjE_H99L-Z3EaZ26Jgh4qNx9jCNCcrkeRDdvzGrXnE2_4K5-PVMk/s1600/Copia%20de%20.%20%281080%20x%201080%20px%29%20%281%29.gif') center/cover no-repeat;
+            filter: brightness(0.9) contrast(1.1);
+            z-index: -1;
+        }
+        
+        .hero-text {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            font-size: 1.1rem;
+            width: 100%;
+        }
+        
+        .features {
+            padding: 3rem 0;
+            width: 100%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #162e4a;
+            font-size: 2.2rem;
+            width: 100%;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .feature-card {
+            background: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            border-right: 1px solid #eee;
+        }
+        
+        .feature-card:last-child {
+            border-right: none;
+        }
+        
+        .feature-card:first-child {
+            background-color: #e6f0ff;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .image-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #f0f7ee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border: 3px solid #162e4a;
+        }
+        
+        .image-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .placeholder-icon {
+            font-size: 3rem;
+            color: #162e4a;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #162e4a;
+        }
+        
+        .feature-desc {
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            font-size: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #1e3a5f;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background-color: #152942;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background-color: #162e4a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            width: 100%;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal-content h2 {
+            color: #162e4a;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .modal-content p {
+            color: #555;
+            margin-bottom: 18px;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        .modal-list {
+            text-align: left;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        
+        .modal-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .modal-list i {
+            color: #25D366;
+            font-size: 1.1rem;
+            min-width: 20px;
+        }
+        
+        .modal-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: opacity 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .modal-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: #aaa;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            color: #000;
+        }
+
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .feature-card:nth-child(2) {
+                border-right: none;
+            }
+            
+            .feature-card:nth-child(4) {
+                border-right: 1px solid #eee;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo img {
+                height: 70px;
+            }
+            
+            nav ul {
+                gap: 20px;
+            }
+            
+            nav a {
+                font-size: 1.3rem;
+            }
+            
+            nav a i {
+                font-size: 1.6rem;
+            }
+            
+            .hero {
+                height: 60vh;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-card {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .feature-card:last-child {
+                border-bottom: none;
+            }
+            
+            .features {
+                padding: 2rem 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                height: 60px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            nav a {
+                font-size: 1.1rem;
+            }
+            
+            nav a i {
+                font-size: 1.5rem;
+            }
+            
+            nav a span {
+                font-size: 0.7rem;
+            }
+            
+            .hero-text {
+                font-size: 1rem;
+                padding: 10px;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .image-circle {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .hero {
+                height: 50vh;
+            }
+            
+            .feature-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ENCABEZADO CON LOGO A LA IZQUIERDA Y MENÚ AL LADO -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEienInQd_dFdfLwGw__ncypnuGGEqa5yD3JoKAsQF-Lsoh7R_gMF8X0pxUBQFT5F1j2DvGZsdrGrZnZTNvrwTLPw_J-F9l6TJhzVtGFDdm9D1atTm2HmmT8iDFqiYzO43uWJ6n8BhEgCcFTvTnjP2tji_vqCYYpAQnfsxncR4x6SPuWYtL_xpdNhvlDs6E/s1600/nebhula%20%2835%29.png" alt="SOCNAS - Asociación de Pájaros">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="abrirModal('whatsapp')"><i class="fas fa-bell"></i><span>Canal</span></a></li>
+                    <li><a href="https://wa.me/34677163664" target="_blank"><i class="fab fa-whatsapp"></i><span>Contacto</span></a></li>
+                    <li><a href="https://www.google.com/maps/place/tu-empresa" target="_blank"><i class="fas fa-star"></i><span>Reseña</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-text">
+            Asociación dedicada a la protección, estudio y conservación de las aves y sus hábitats naturales
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="coe-foa-container">
   
   
@@ -5302,3 +5783,6 @@ En las próximas 24-48 horas hábiles revisaremos su pedido...`;
             });
         });
       </script>/
+
+    </body>
+    </html>
