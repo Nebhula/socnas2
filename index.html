@@ -6,18 +6,28 @@
     <title>SOCNAS - Asociación de Pájaros</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ESTILOS ESPECÍFICOS PARA EL ENCABEZADO Y SLIDER */
-        .socnas-header {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
             background-color: #162e4a;
             color: white;
             padding: 15px 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             width: 100%;
-            position: relative;
-            z-index: 100; /* Z-index moderado para no interferir */
         }
         
-        .socnas-header-content {
+        .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -26,18 +36,18 @@
             margin: 0 auto;
         }
         
-        .socnas-logo {
+        .logo {
             display: flex;
             align-items: center;
         }
         
-        .socnas-logo img {
+        .logo img {
             height: 80px;
             width: auto;
             border-radius: 8px;
         }
         
-        .socnas-nav ul {
+        nav ul {
             display: flex;
             list-style: none;
             gap: 25px;
@@ -45,7 +55,7 @@
             padding: 0;
         }
         
-        .socnas-nav a {
+        nav a {
             color: white;
             text-decoration: none;
             font-size: 1.4rem;
@@ -53,121 +63,208 @@
             flex-direction: column;
             align-items: center;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         
-        .socnas-nav a span {
+        nav a span {
             font-size: 0.8rem;
             margin-top: 4px;
             opacity: 0.9;
         }
         
-        .socnas-nav a:hover {
+        nav a:hover {
             color: #ffcb69;
             transform: translateY(-3px);
         }
+
+        /* Ajuste en móviles */
+        @media (max-width: 768px) {
+            nav a {
+                font-size: 1.3rem;
+            }
+            nav a i {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 1.2rem;
+            }
+            nav a i {
+                font-size: 1.8rem;
+            }
+            nav ul {
+                gap: 20px;
+            }
+        }
         
-        .socnas-hero {
+        .hero {
             text-align: center;
             color: white;
             position: relative;
             height: 70vh;
             overflow: hidden;
+            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjM6aFdnpsNbiKx8ssLPkvyIfseua6UWIOsw4WpZuyd2B5TmyGCxxmqjJx6SwTy-i3y3DUA4e6DJuqVxvybVQdQpa2JXT-ramMIS38KtacahF_rq_ZHyG1Da7n0GTylBvvDCWtBI74qjE_H99L-Z3EaZ26Jgh4qNx9jCNCcrkeRDdvzGrXnE2_4K5-PVMk/s1600/Copia%20de%20.%20%281080%20x%201080%20px%29%20%281%29.gif') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             width: 100%;
         }
         
-        .socnas-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjM6aFdnpsNbiKx8ssLPkvyIfseua6UWIOsw4WpZuyd2B5TmyGCxxmqjJx6SwTy-i3y3DUA4e6DJuqVxvybVQdQpa2JXT-ramMIS38KtacahF_rq_ZHyG1Da7n0GTylBvvDCWtBI74qjE_H99L-Z3EaZ26Jgh4qNx9jCNCcrkeRDdvzGrXnE2_4K5-PVMk/s1600/Copia%20de%20.%20%281080%20x%201080%20px%29%20%281%29.gif') center/cover no-repeat;
-            filter: brightness(0.9) contrast(1.1);
-            z-index: 1; /* Z-index bajo para el fondo */
-        }
-        
-        .socnas-hero-text {
+        .hero-text {
             padding: 15px;
             background: rgba(0, 0, 0, 0.4);
             color: white;
             font-size: 1.1rem;
             width: 100%;
-            position: relative;
-            z-index: 2; /* Z-index para el texto */
         }
 
-        /* Ajustes responsivos */
+        /* MODAL DE WHATSAPP - NO INTERFIERE CON OTROS MODALES */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(2px);
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .modal-content h2 {
+            color: #162e4a;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .modal-content p {
+            color: #555;
+            margin-bottom: 18px;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        .modal-list {
+            text-align: left;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        
+        .modal-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .modal-list i {
+            color: #25D366;
+            font-size: 1.1rem;
+        }
+        
+        .modal-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .modal-btn:hover {
+            background: #1da856;
+            transform: translateY(-2px);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: #aaa;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: #000;
+        }
+
         @media (max-width: 768px) {
-            .socnas-header-content {
+            .header-content {
                 flex-direction: column;
                 gap: 15px;
             }
-            
-            .socnas-logo img {
+            .logo img {
                 height: 70px;
             }
-            
-            .socnas-nav ul {
+            nav ul {
                 gap: 20px;
             }
-            
-            .socnas-nav a {
-                font-size: 1.3rem;
-            }
-            
-            .socnas-nav a i {
-                font-size: 1.6rem;
-            }
-            
-            .socnas-hero {
+            .hero {
                 height: 60vh;
             }
         }
 
         @media (max-width: 480px) {
-            .socnas-logo img {
+            .logo img {
                 height: 60px;
             }
-            
-            .socnas-nav ul {
+            nav ul {
                 gap: 15px;
             }
-            
-            .socnas-nav a {
+            nav a {
                 font-size: 1.1rem;
             }
-            
-            .socnas-nav a i {
+            nav a i {
                 font-size: 1.5rem;
             }
-            
-            .socnas-nav a span {
+            nav a span {
                 font-size: 0.7rem;
             }
-            
-            .socnas-hero-text {
+            .hero-text {
                 font-size: 1rem;
                 padding: 10px;
             }
-            
-            .socnas-hero {
+            .hero {
                 height: 50vh;
             }
         }
     </style>
 </head>
 <body>
-    <!-- ENCABEZADO CON LOGO A LA IZQUIERDA Y MENÚ AL LADO -->
-    <header class="socnas-header">
-        <div class="socnas-header-content">
-            <div class="socnas-logo">
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEienInQd_dFdfLwGw__ncypnuGGEqa5yD3JoKAsQF-Lsoh7R_gMF8X0pxUBQFT5F1j2DvGZsdrGrZnZTNvrwTLPw_J-F9l6TJhzVtGFDdm9D1atTm2HmmT8iDFqiYzO43uWJ6n8BhEgCcFTvTnjP2tji_vqCYYpAQnfsxncR4x6SPuWYtL_xpdNhvlDs6E/s1600/nebhula%20%2835%29.png" alt="SOCNAS - Asociación de Pájaros">
             </div>
-            <nav class="socnas-nav">
+            <nav>
                 <ul>
                     <li><a href="#" onclick="abrirModal('whatsapp')"><i class="fas fa-bell"></i><span>Canal</span></a></li>
                     <li><a href="https://wa.me/34677163664" target="_blank"><i class="fab fa-whatsapp"></i><span>Contacto</span></a></li>
@@ -177,31 +274,58 @@
         </div>
     </header>
     
-    <section class="socnas-hero">
-        <div class="socnas-hero-text">
+    <!-- SLIDER CON GIF -->
+    <section class="hero">
+        <div class="hero-text">
             Asociación dedicada a la protección, estudio y conservación de las aves y sus hábitats naturales
         </div>
     </section>
 
-    <script>
-        // Precargar la imagen para mejor rendimiento
-        document.addEventListener('DOMContentLoaded', function() {
-            const img = new Image();
-            img.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjM6aFdnpsNbiKx8ssLPkvyIfseua6UWIOsw4WpZuyd2B5TmyGCxxmqjJx6SwTy-i3y3DUA4e6DJuqVxvybVQdQpa2JXT-ramMIS38KtacahF_rq_ZHyG1Da7n0GTylBvvDCWtBI74qjE_H99L-Z3EaZ26Jgh4qNx9jCNCcrkeRDdvzGrXnE2_4K5-PVMk/s1600/Copia%20de%20.%20%281080%20x%201080%20px%29%20%281%29.gif";
-        });
+    <!-- MODAL DE WHATSAPP -->
+    <div id="whatsappModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="cerrarModal('whatsappModal')">&times;</span>
+            <h2><i class="fas fa-bell"></i> Únete a nuestro canal de WhatsApp</h2>
+            <p>Recibe notificaciones directas sobre:</p>
+            <ul class="modal-list">
+                <li><i class="fas fa-calendar-alt"></i> Nuevas salidas al campo</li>
+                <li><i class="fas fa-bullhorn"></i> Convocatorias de eventos</li>
+                <li><i class="fas fa-dove"></i> Novedades sobre aves raras avistadas</li>
+                <li><i class="fas fa-gift"></i> Descuentos en material ornitológico</li>
+                <li><i class="fas fa-book"></i> Talleres y cursos gratuitos</li>
+            </ul>
+            <p>¡No te pierdas nada importante!</p>
+            <a href="https://wa.me/34677163664?text=Hola,%20quiero%20unirme%20al%20canal%20de%20SOCNAS" target="_blank" class="modal-btn">Unirse ahora</a>
+        </div>
+    </div>
 
-        // Función para abrir modales - versión compatible
+    <script>
+        // Funciones de modal – aisladas y seguras
         function abrirModal(id) {
-            // Esta función debería ser compatible con tus modales existentes
             const modal = document.getElementById(id);
             if (modal) {
                 modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-                
-                // Asegurar que el modal tenga el z-index más alto
-                modal.style.zIndex = '10000';
+                document.body.style.overflow = 'hidden'; // Evita scroll
             }
         }
+        
+        function cerrarModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Reactiva scroll
+            }
+        }
+
+        // Cerrar con ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('whatsappModal');
+                if (modal && modal.style.display === 'flex') {
+                    cerrarModal('whatsappModal');
+                }
+            }
+        });
     </script>
 
 
