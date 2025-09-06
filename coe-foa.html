@@ -1239,19 +1239,20 @@ html, body {
   margin-bottom: 12px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   .cards-container {
-    flex-direction: column;
-    gap: 10px;
+    display: block; /* hace que los elementos se apilen */
+    padding: 0;
+    margin: 0; /* sin margen lateral */
   }
   .card {
-    flex: 1 1 100%;
-    max-width: 100%;
-    margin: 0; /* sin margen lateral */
-    /* quitamos width: 100vw; */
-    border-radius: 0; /* opcional para que llegue al borde */
+    width: 95%; /* casi todo el ancho de pantalla */
+    max-width: none;
+    margin: 10px auto; /* centra horizontalmente */
+    border-radius: 12px; /* opcional */
   }
 }
+
 
 </style>
   
