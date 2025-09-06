@@ -1239,7 +1239,6 @@ html, body {
   margin-bottom: 12px;
 }
 
-/* MÓVIL: ocupar TODO el ancho de pantalla */
 @media (max-width: 1200px) {
   .cards-container {
     flex-direction: column;
@@ -1249,10 +1248,11 @@ html, body {
     flex: 1 1 100%;
     max-width: 100%;
     margin: 0; /* sin margen lateral */
-    width: 100vw; /* asegura ocupar todo el ancho */
+    /* quitamos width: 100vw; */
     border-radius: 0; /* opcional para que llegue al borde */
   }
 }
+
 </style>
   
   
