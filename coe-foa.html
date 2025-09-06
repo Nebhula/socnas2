@@ -1160,22 +1160,25 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 <style>
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* más ancho mínimo */
   gap: 20px;
   justify-items: center;
   margin: 20px 0;
+  padding: 0 10px; /* margen lateral mínimo */
 }
 
 .card {
   border-radius: 12px;
-  padding: 20px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
-  background-color: rgba(13, 79, 42, 0.08); /* verde pastel extremadamente suave usando transparencia */
+  background-color: #daf0dc; /* verde pastel visible */
+  width: 100%; /* asegurar que ocupe todo el espacio posible en el grid */
+  max-width: 350px; /* limitar ligeramente en PC */
 }
 
 .card:hover {
@@ -1204,7 +1207,7 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 .card button {
   width: 100%;
   background-color: #0d4f2a; /* botón verde sólido */
-  color: #ffffff; /* texto blanco */
+  color: #ffffff; /* texto e iconos blancos */
   border: none;
   border-radius: 8px;
   font-weight: bold;
@@ -1218,21 +1221,22 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 }
 
 .card button i {
-  color: #ffffff; /* icono del botón en blanco */
+  color: #ffffff; /* icono botón en blanco */
 }
 
-/* Responsive móvil: ocupar más ancho y reducir márgenes */
-@media (max-width: 600px) {
+/* Responsive móvil */
+@media (max-width: 768px) {
   .cards-container {
     grid-template-columns: 1fr;
-    gap: 12px; /* menos separación entre cards */
-    margin: 10px; /* menos margen en los lados */
+    gap: 15px;
+    padding: 0 15px;
   }
   .card {
-    width: 95%; /* más ancho en móvil */
-    padding: 18px;
+    width: 100%; /* ocupa todo el ancho disponible */
+    max-width: none; /* quitar límite para móvil */
   }
 }
+
 
 </style>
   
