@@ -1157,98 +1157,130 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   
   
   
-<!-- CSS DEFINITIVO -->
 <style>
-/* Reset global */
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        /* Reset global más completo */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* Contenedor principal */
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 0;
-  width: 100%;
-}
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+        }
 
-/* Cards */
-.card {
-  background-color: #daf0dc; /* verde pastel */
-  border-radius: 12px;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-  flex: 1 1 280px; /* flexible, mínimo 280px */
-  max-width: 350px; /* PC */
-  box-sizing: border-box;
-}
+        /* Contenedor principal */
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 10px;
+            width: 100%;
+        }
 
-/* Botones */
-.card button {
-  width: 100%;
-  background-color: #0d4f2a;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 20px;
-}
+        /* Cards */
+        .card {
+            background-color: #daf0dc;
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            flex: 1 1 280px;
+            max-width: 350px;
+        }
 
-.card button i {
-  color: #ffffff;
-}
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
 
-/* Iconos contenedor */
-.card-top i {
-  font-size: 2.5rem;
-  color: #0d4f2a;
-  margin-bottom: 12px;
-}
+        /* Botones */
+        .card button {
+            width: 100%;
+            background-color: #0d4f2a;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 20px;
+            margin-top: auto;
+            transition: background-color 0.2s;
+        }
 
-/* Texto contenedor */
-.card-title {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 6px;
-}
+        .card button:hover {
+            background-color: #0a3a20;
+        }
 
-.card-desc {
-  font-size: 0.95rem;
-  color: #333;
-  margin-bottom: 12px;
-}
+        .card button i {
+            color: #ffffff;
+        }
 
-/* MÓVIL: cards ocupan casi todo el ancho y centradas */
-@media (max-width: 800px) {
-  .cards-container {
-    display: block; /* apilar cards verticalmente */
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-  .card {
-    width: 100%; /* casi todo el ancho de pantalla */
-    max-width: 100%;
-    margin: 0px auto; /* centra horizontalmente */
-  }
-}
-</style>
+        /* Iconos contenedor */
+        .card-top i {
+            font-size: 2.5rem;
+            color: #0d4f2a;
+            margin-bottom: 12px;
+        }
+
+        /* Texto contenedor */
+        .card-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        /* MÓVIL: cards ocupan todo el ancho sin márgenes laterales */
+        @media (max-width: 768px) {
+            .cards-container {
+                gap: 15px;
+                padding: 0; /* Eliminamos el padding del contenedor */
+            }
+            
+            .card {
+                width: 100%; /* Ocupa el 100% del ancho disponible */
+                max-width: 100%; /* Elimina cualquier limitación de ancho máximo */
+                border-radius: 0; /* Opcional: si quieres que ocupen todo sin bordes redondeados */
+                margin: 0; /* Aseguramos que no hay márgenes */
+            }
+            
+            /* Opción alternativa: si prefieres mantener los bordes redondeados y un pequeño margen */
+            /*
+            .card {
+                width: calc(100% - 20px);
+                max-width: 100%;
+                margin: 0 10px;
+                border-radius: 12px;
+            }
+            */
+        }
+
+        /* Tablets y dispositivos medianos */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .card {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+    </style>
   
   
   
@@ -1277,65 +1309,64 @@ html, body {
 
 
 <!-- CONTENEDORES COMPLETOS CON BOTONES -->
-<div class="cards-container">
+    <div class="cards-container">
 
-  <div class="card card-socio">
-    <div class="card-top">
-      <i class="fas fa-user-plus"></i>
-      <div class="card-title">Hazte Socio</div>
-      <div class="card-desc">Únete y disfruta de todos los beneficios exclusivos.</div>
+        <div class="card card-socio">
+            <div class="card-top">
+                <i class="fas fa-user-plus"></i>
+                <div class="card-title">Hazte Socio</div>
+                <div class="card-desc">Únete y disfruta de todos los beneficios exclusivos.</div>
+            </div>
+            <button id="openSocioModal">
+                <i class="fas fa-arrow-right"></i> HAZTE SOCIO
+            </button>
+        </div>
+
+        <div class="card card-convocatorias">
+            <div class="card-top">
+                <i class="fas fa-bullhorn"></i>
+                <div class="card-title">Convocatorias</div>
+                <div class="card-desc">Consulta las últimas convocatorias disponibles.</div>
+            </div>
+            <button id="openConvocatoriasModal">
+                <i class="fas fa-calendar-check"></i> CONVOCATORIAS
+            </button>
+        </div>
+
+        <div class="card card-calibres">
+            <div class="card-top">
+                <i class="fas fa-dot-circle"></i>
+                <div class="card-title">Tabla Calibres</div>
+                <div class="card-desc">Accede a la tabla de calibres actualizada.</div>
+            </div>
+            <button id="calibreroAbrirBtn">
+                <i class="fas fa-table"></i> TABLA CALIBRES
+            </button>
+        </div>
+
+        <div class="card card-concursos">
+            <div class="card-top">
+                <i class="fa-solid fa-trophy"></i>
+                <div class="card-title">Concursos y Eventos</div>
+                <div class="card-desc">No te pierdas nuestros próximos concursos y eventos.</div>
+            </div>
+            <button id="btn-abrir-calendario">
+                <i class="fas fa-calendar"></i> CONCURSOS Y EVENTOS
+            </button>
+        </div>
+
+        <div class="card card-anillas">
+            <div class="card-top">
+                <i class="fas fa-ring"></i>
+                <div class="card-title">Solicitud Anillas</div>
+                <div class="card-desc">Realiza tu solicitud de anillas fácilmente.</div>
+            </div>
+            <button id="abrirModalForm">
+                <i class="fas fa-file-signature"></i> SOLICITUD ANILLAS
+            </button>
+        </div>
+
     </div>
-    <button id="openSocioModal">
-      <i class="fas fa-arrow-right"></i> HAZTE SOCIO
-    </button>
-  </div>
-
-  <div class="card card-convocatorias">
-    <div class="card-top">
-      <i class="fas fa-bullhorn"></i>
-      <div class="card-title">Convocatorias</div>
-      <div class="card-desc">Consulta las últimas convocatorias disponibles.</div>
-    </div>
-    <button id="openConvocatoriasModal">
-      <i class="fas fa-calendar-check"></i> CONVOCATORIAS
-    </button>
-  </div>
-
-  <div class="card card-calibres">
-    <div class="card-top">
-      <i class="fas fa-dot-circle"></i>
-      <div class="card-title">Tabla Calibres</div>
-      <div class="card-desc">Accede a la tabla de calibres actualizada.</div>
-    </div>
-    <button id="calibreroAbrirBtn">
-      <i class="fas fa-table"></i> TABLA CALIBRES
-    </button>
-  </div>
-
-  <div class="card card-concursos">
-    <div class="card-top">
-      <i class="fa-solid fa-trophy"></i>
-      <div class="card-title">Concursos y Eventos</div>
-      <div class="card-desc">No te pierdas nuestros próximos concursos y eventos.</div>
-    </div>
-    <button id="btn-abrir-calendario">
-      <i class="fas fa-calendar"></i> CONCURSOS Y EVENTOS
-    </button>
-  </div>
-
-  <div class="card card-anillas">
-    <div class="card-top">
-      <i class="fas fa-ring"></i>
-      <div class="card-title">Solicitud Anillas</div>
-      <div class="card-desc">Realiza tu solicitud de anillas fácilmente.</div>
-    </div>
-    <button id="abrirModalForm">
-      <i class="fas fa-file-signature"></i> SOLICITUD ANILLAS
-    </button>
-  </div>
-
-</div>
-
 
       
     
