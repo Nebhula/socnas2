@@ -1160,11 +1160,11 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 <style>
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* más ancho mínimo */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   justify-items: center;
   margin: 20px 0;
-  padding: 0 10px; /* margen lateral mínimo */
+  padding: 0 10px;
 }
 
 .card {
@@ -1177,8 +1177,8 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
   background-color: #daf0dc; /* verde pastel visible */
-  width: 100%; /* asegurar que ocupe todo el espacio posible en el grid */
-  max-width: 350px; /* limitar ligeramente en PC */
+  width: 100%;
+  max-width: 350px;
 }
 
 .card:hover {
@@ -1232,12 +1232,10 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
     padding: 0 15px;
   }
   .card {
-    width: 100%; /* ocupa todo el ancho disponible */
-    max-width: none; /* quitar límite para móvil */
+    width: 100%;
+    max-width: none;
   }
 }
-
-
 </style>
   
   
@@ -1268,6 +1266,7 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 
 
 
+<!-- CONTENEDORES COMPLETOS CON BOTONES -->
 <div class="cards-container">
 
   <div class="card card-socio">
@@ -1276,7 +1275,7 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
       <div class="card-title">Hazte Socio</div>
       <div class="card-desc">Únete y disfruta de todos los beneficios exclusivos.</div>
     </div>
-    <button id="openSocioModal" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #0d4f2a; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <button id="openSocioModal">
       <i class="fas fa-arrow-right"></i> HAZTE SOCIO
     </button>
   </div>
@@ -1287,7 +1286,7 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
       <div class="card-title">Convocatorias</div>
       <div class="card-desc">Consulta las últimas convocatorias disponibles.</div>
     </div>
-    <button id="openConvocatoriasModal" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #0d4f2a; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <button id="openConvocatoriasModal">
       <i class="fas fa-calendar-check"></i> CONVOCATORIAS
     </button>
   </div>
@@ -1298,7 +1297,7 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
       <div class="card-title">Tabla Calibres</div>
       <div class="card-desc">Accede a la tabla de calibres actualizada.</div>
     </div>
-    <button id="calibreroAbrirBtn" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #0d4f2a; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <button id="calibreroAbrirBtn">
       <i class="fas fa-table"></i> TABLA CALIBRES
     </button>
   </div>
@@ -1306,11 +1305,11 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   <div class="card card-concursos">
     <div class="card-top">
       <i class="fa-solid fa-trophy"></i>
-      <div class="card-title">Concursos y exposc.</div>
-      <div class="card-desc">No te pierdas nuestros próximos concursos.</div>
+      <div class="card-title">Concursos y Eventos</div>
+      <div class="card-desc">No te pierdas nuestros próximos concursos y eventos.</div>
     </div>
-    <button id="btn-abrir-calendario" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #0d4f2a; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
-      <i class="fas fa-calendar"></i> CONCURSOS/EXPO.
+    <button id="btn-abrir-calendario">
+      <i class="fas fa-calendar"></i> CONCURSOS Y EVENTOS
     </button>
   </div>
 
@@ -1320,13 +1319,12 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
       <div class="card-title">Solicitud Anillas</div>
       <div class="card-desc">Realiza tu solicitud de anillas fácilmente.</div>
     </div>
-    <button id="abrirModalForm" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #0d4f2a; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <button id="abrirModalForm">
       <i class="fas fa-file-signature"></i> SOLICITUD ANILLAS
     </button>
   </div>
 
 </div>
-
 
 
       
