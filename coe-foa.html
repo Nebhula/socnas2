@@ -1157,7 +1157,7 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   
   
   
-<!-- CSS COMPLETO DEFINITIVO -->
+<!-- CSS DEFINITIVO -->
 <style>
 /* Reset global */
 html, body {
@@ -1172,9 +1172,9 @@ html, body {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  width: 100vw; /* ocupa todo el ancho real */
+  width: 100%;
 }
 
 /* Cards */
@@ -1191,11 +1191,6 @@ html, body {
   flex: 1 1 280px; /* flexible, mínimo 280px */
   max-width: 350px; /* PC */
   box-sizing: border-box;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 /* Botones */
@@ -1239,24 +1234,21 @@ html, body {
   margin-bottom: 12px;
 }
 
-@media (max-width: 800px) {
+/* MÓVIL: cards ocupan casi todo el ancho y centradas */
+@media (max-width: 1200px) {
   .cards-container {
-    display: block; /* hace que los elementos se apilen */
+    display: block; /* apilar cards verticalmente */
+    width: 100%;
     padding: 0;
-    margin: 0; /* sin margen lateral */
+    margin: 0;
   }
   .card {
     width: 95%; /* casi todo el ancho de pantalla */
-    max-width: none;
+    max-width: 95%;
     margin: 10px auto; /* centra horizontalmente */
-    border-radius: 12px; /* opcional */
   }
 }
-
-
 </style>
-  
-  
   
   
   
@@ -1343,7 +1335,6 @@ html, body {
   </div>
 
 </div>
-
 
 
       
