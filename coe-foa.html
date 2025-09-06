@@ -1165,10 +1165,69 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   
   
   
+  <style>
   
-  
-  
-  
+  .cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.card {
+  background: #f0f0ff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card-icon i {
+  font-size: 2.5rem;
+  color: #5555ff;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* Botones dentro de las cards: dejamos tal cual el botón, solo centrado */
+.card button {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 90%;
+  }
+}
+
+  </style>
   
   
   
@@ -1185,6 +1244,59 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
     <h1><span style="color: black;"></span></h1>
     <p><span style="color: black;"><b><b>CONFEDERACIÓN ORNITOLÓGICA ESPAÑOLA</b></b></span></p>
     <p><span style="color: black;"><b><b>FEDERARSE EN FOA - COE</b></b></span></p>
+
+
+
+
+
+
+
+<div class="cards-container">
+
+  <div class="card">
+    <div class="card-icon"><i class="fas fa-user-plus"></i></div>
+    <div class="card-title">Hazte Socio</div>
+    <div class="card-desc">Únete y disfruta de todos los beneficios exclusivos.</div>
+    <button id="openSocioModal">HAZTE SOCIO</button>
+  </div>
+
+  <div class="card">
+    <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+    <div class="card-title">Convocatorias</div>
+    <div class="card-desc">Consulta las últimas convocatorias disponibles.</div>
+    <button id="openConvocatoriasModal">CONVOCATORIAS</button>
+  </div>
+
+  <div class="card">
+    <div class="card-icon"><i class="fas fa-dot-circle"></i></div>
+    <div class="card-title">Tabla Calibres</div>
+    <div class="card-desc">Accede a la tabla de calibres actualizada.</div>
+    <button id="calibreroAbrirBtn">TABLA CALIBRES</button>
+  </div>
+
+  <div class="card">
+    <div class="card-icon"><i class="fa-solid fa-trophy"></i></div>
+    <div class="card-title">Concursos y Eventos</div>
+    <div class="card-desc">No te pierdas nuestros próximos concursos y eventos.</div>
+    <button id="btn-abrir-calendario">CONCURSOS Y EVENTOS</button>
+  </div>
+
+  <div class="card">
+    <div class="card-icon"><i class="fas fa-ring"></i></div>
+    <div class="card-title">Solicitud Anillas</div>
+    <div class="card-desc">Realiza tu solicitud de anillas fácilmente.</div>
+    <button id="abrirModalForm">SOLICITUD ANILLAS</button>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+      
     
     <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 20px 0;">
   
