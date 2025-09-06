@@ -1175,6 +1175,7 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #e8f4ea; /* verde pastel extremadamente suave */
 }
 
 .card:hover {
@@ -1184,10 +1185,10 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 
 .card-top i {
   font-size: 2.5rem;
+  color: #0d4f2a; /* icono contenedor verde oscuro */
   margin-bottom: 12px;
 }
 
-/* Mantener contraste para iconos sobre fondo pastel */
 .card-title {
   font-weight: bold;
   font-size: 1.2rem;
@@ -1202,21 +1203,23 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 
 .card button {
   width: 100%;
+  background-color: #0d4f2a; /* botón verde sólido */
+  color: #ffffff; /* texto blanco */
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
 }
 
-/* Fondos pastel suaves derivados del color #0d4f2a */
-.card-socio { background: #e6f3ea; }        /* pastel verde suave */
-.card-convocatorias { background: #eaf5ed; } 
-.card-calibres { background: #edf6f0; }
-.card-concursos { background: #f0f8f4; }
-.card-anillas { background: #e6f3ea; }      
-
-/* Iconos colores */
-.card-socio i { color: #0d4f2a; }
-.card-convocatorias i { color: #0d4f2a; }
-.card-calibres i { color: #0d4f2a; }
-.card-concursos i { color: #0d4f2a; }
-.card-anillas i { color: #0d4f2a; }
+.card button i {
+  color: #ffffff; /* icono del botón en blanco */
+}
 
 /* Responsive móvil */
 @media (max-width: 600px) {
@@ -1227,9 +1230,7 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
     width: 90%;
   }
 }
-.card button i {
-  color: #ffffff; /* iconos blancos para todos los botones */
-}
+
 
 </style>
   
