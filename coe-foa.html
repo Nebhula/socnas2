@@ -1159,15 +1159,16 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   
 <style>
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* ancho mínimo 280px */
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  justify-items: center;
+  justify-content: center;
   margin: 20px 0;
   padding: 0 10px;
 }
 
 .card {
+  background-color: #daf0dc; /* verde pastel visible */
   border-radius: 12px;
   padding: 25px;
   display: flex;
@@ -1176,9 +1177,8 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
-  background-color: #daf0dc; /* verde pastel visible */
-  width: 100%;
-  max-width: none; /* eliminar límite para ocupar todo el ancho disponible */
+  flex: 1 1 280px; /* que sea flexible y mínimo 280px */
+  max-width: 350px; /* para PC que no sea demasiado grande */
 }
 
 .card:hover {
@@ -1188,7 +1188,7 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 
 .card-top i {
   font-size: 2.5rem;
-  color: #0d4f2a; /* icono contenedor verde oscuro */
+  color: #0d4f2a; /* icono contenedor */
   margin-bottom: 12px;
 }
 
@@ -1206,8 +1206,8 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 
 .card button {
   width: 100%;
-  background-color: #0d4f2a; /* botón verde sólido */
-  color: #ffffff; /* texto e iconos blancos */
+  background-color: #0d4f2a;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   font-weight: bold;
@@ -1221,20 +1221,17 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 }
 
 .card button i {
-  color: #ffffff; /* icono botón en blanco */
+  color: #ffffff;
 }
 
-/* Responsive móvil: ocupar casi todo el ancho de la pantalla */
+/* Móvil: que ocupe casi todo el ancho */
 @media (max-width: 768px) {
-  .cards-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 0 5px; /* margen lateral mínimo */
-  }
   .card {
-    width: 95%; /* casi todo el ancho */
+    flex: 1 1 95%; /* ocupa casi todo el ancho del contenedor */
+    max-width: 95%;
   }
 }
+
 </style>
   
   
@@ -1265,7 +1262,6 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 
 
 
-<!-- CONTENEDORES COMPLETOS CON BOTONES -->
 <div class="cards-container">
 
   <div class="card card-socio">
