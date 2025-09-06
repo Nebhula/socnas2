@@ -1158,8 +1158,44 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   
   
   
-  
-  
+  <style>
+  /* Efectos base para todos los botones */
+div[style*="display: flex"] button {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover bonito */
+div[style*="display: flex"] button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* 💻 En pantallas grandes: estilo tipo tarjetas */
+@media (min-width: 768px) {
+  div[style*="display: flex"] {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px !important;
+    max-width: 1000px;
+    margin: 40px auto !important;
+  }
+
+  div[style*="display: flex"] button {
+    height: 160px;
+    flex-direction: column;   /* Ícono arriba, texto debajo */
+    gap: 12px;
+    font-size: 1.2rem;
+    border-radius: 16px;
+    background: #fff;         /* fondo blanco tipo card */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  }
+
+  div[style*="display: flex"] button i {
+    font-size: 2rem;
+    color: #333;
+  }
+}
+</style>
   
   
   
