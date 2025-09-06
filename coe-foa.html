@@ -1201,12 +1201,9 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   margin-bottom: 12px;
 }
 
-/* Botones dentro de las cards: dejamos tal cual */
 .card button {
   width: 100%;
 }
-
-/* En móvil se ajusta automáticamente gracias al grid */
 
 </style>
   
@@ -1262,11 +1259,40 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
     </button>
   </div>
 
-  <!-- Repite para los demás botones -->
+  <div class="card">
+    <div class="card-top">
+      <i class="fas fa-dot-circle"></i>
+      <div class="card-title">Tabla Calibres</div>
+      <div class="card-desc">Accede a la tabla de calibres actualizada.</div>
+    </div>
+    <button id="calibreroAbrirBtn" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #d0d0f0; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <i class="fas fa-dot-circle"></i> TABLA CALIBRES
+    </button>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <i class="fa-solid fa-trophy"></i>
+      <div class="card-title">Concursos y Eventos</div>
+      <div class="card-desc">No te pierdas nuestros próximos concursos y eventos.</div>
+    </div>
+    <button id="btn-abrir-calendario" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #d0d0f0; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <i class="fa-solid fa-trophy"></i> CONCURSOS Y EVENTOS
+    </button>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <i class="fas fa-ring"></i>
+      <div class="card-title">Solicitud Anillas</div>
+      <div class="card-desc">Realiza tu solicitud de anillas fácilmente.</div>
+    </div>
+    <button id="abrirModalForm" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #d0d0f0; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <i class="fas fa-ring"></i> SOLICITUD ANILLAS
+    </button>
+  </div>
 
 </div>
-
-
 
 
 
