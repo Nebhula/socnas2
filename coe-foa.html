@@ -1187,6 +1187,7 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   margin-bottom: 12px;
 }
 
+/* Mantener contraste para iconos sobre fondo pastel */
 .card-title {
   font-weight: bold;
   font-size: 1.2rem;
@@ -1203,19 +1204,19 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   width: 100%;
 }
 
-/* Colores pastel según cada botón */
-.card-socio { background: #d0d0f0; }        /* azul pastel */
-.card-convocatorias { background: #f8d0d0; } /* rojo pastel */
-.card-calibres { background: #e0e0e0; }      /* gris suave */
-.card-concursos { background: #fff0d0; }     /* amarillo pastel */
-.card-anillas { background: #d0f0d0; }       /* verde pastel */
+/* Fondos pastel suaves derivados del color #0d4f2a */
+.card-socio { background: #e6f3ea; }        /* pastel verde suave */
+.card-convocatorias { background: #eaf5ed; } 
+.card-calibres { background: #edf6f0; }
+.card-concursos { background: #f0f8f4; }
+.card-anillas { background: #e6f3ea; }      
 
 /* Iconos colores */
-.card-socio i { color: #5555ff; }
-.card-convocatorias i { color: #ff5555; }
-.card-calibres i { color: #888888; }
-.card-concursos i { color: #ffaa00; }
-.card-anillas i { color: #33aa33; }
+.card-socio i { color: #0d4f2a; }
+.card-convocatorias i { color: #0d4f2a; }
+.card-calibres i { color: #0d4f2a; }
+.card-concursos i { color: #0d4f2a; }
+.card-anillas i { color: #0d4f2a; }
 
 /* Responsive móvil */
 @media (max-width: 600px) {
@@ -1227,15 +1228,6 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
   }
 }
 
-.card-desc {
-  font-size: 0.95rem;
-  color: #333;
-  margin-bottom: 12px;
-}
-
-.card button {
-  width: 100%;
-}
 
 </style>
   
@@ -1275,8 +1267,8 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
       <div class="card-title">Hazte Socio</div>
       <div class="card-desc">Únete y disfruta de todos los beneficios exclusivos.</div>
     </div>
-    <button id="openSocioModal" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #d0d0f0; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
-      <i class="fas fa-user-plus"></i> HAZTE SOCIO
+    <button id="openSocioModal" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #0d4f2a; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <i class="fas fa-arrow-right"></i> HAZTE SOCIO
     </button>
   </div>
 
@@ -1286,8 +1278,8 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
       <div class="card-title">Convocatorias</div>
       <div class="card-desc">Consulta las últimas convocatorias disponibles.</div>
     </div>
-    <button id="openConvocatoriasModal" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #d0d0f0; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
-      <i class="fas fa-bullhorn"></i> CONVOCATORIAS
+    <button id="openConvocatoriasModal" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #0d4f2a; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <i class="fas fa-calendar-check"></i> CONVOCATORIAS
     </button>
   </div>
 
@@ -1297,8 +1289,8 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
       <div class="card-title">Tabla Calibres</div>
       <div class="card-desc">Accede a la tabla de calibres actualizada.</div>
     </div>
-    <button id="calibreroAbrirBtn" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #d0d0f0; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
-      <i class="fas fa-dot-circle"></i> TABLA CALIBRES
+    <button id="calibreroAbrirBtn" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #0d4f2a; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <i class="fas fa-table"></i> TABLA CALIBRES
     </button>
   </div>
 
@@ -1308,8 +1300,8 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
       <div class="card-title">Concursos y Eventos</div>
       <div class="card-desc">No te pierdas nuestros próximos concursos y eventos.</div>
     </div>
-    <button id="btn-abrir-calendario" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #d0d0f0; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
-      <i class="fa-solid fa-trophy"></i> CONCURSOS Y EVENTOS
+    <button id="btn-abrir-calendario" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #0d4f2a; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <i class="fas fa-calendar"></i> CONCURSOS Y EVENTOS
     </button>
   </div>
 
@@ -1319,8 +1311,8 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
       <div class="card-title">Solicitud Anillas</div>
       <div class="card-desc">Realiza tu solicitud de anillas fácilmente.</div>
     </div>
-    <button id="abrirModalForm" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #d0d0f0; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
-      <i class="fas fa-ring"></i> SOLICITUD ANILLAS
+    <button id="abrirModalForm" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #0d4f2a; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <i class="fas fa-file-signature"></i> SOLICITUD ANILLAS
     </button>
   </div>
 
