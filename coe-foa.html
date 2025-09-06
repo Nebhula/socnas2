@@ -1170,6 +1170,9 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
             background: linear-gradient(135deg, #f5f9f0 0%, #e6f5e6 100%);
             padding: 15px;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         /* CONTENEDOR PRINCIPAL */
@@ -1183,7 +1186,7 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
             width: 100%;
         }
         
-        /* CARDS - FONDOS VERDES ASEGURADOS CON !IMPORTANT */
+        /* CARDS - FONDOS VERDES ASEGURADOS */
         .card {
             background-color: #daf0dc !important;
             border-radius: 16px;
@@ -1204,33 +1207,46 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
             box-shadow: 0 12px 20px rgba(0,0,0,0.15);
         }
         
-        /* PARTE SUPERIOR DE LA CARD */
+        /* PARTE SUPERIOR DE LA CARD - CENTRADO MEJORADO */
         .card-top {
             margin-bottom: 20px;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centrado horizontal */
+            justify-content: center; /* Centrado vertical */
         }
         
-        /* ICONOS */
-        .card-top i {
-            font-size: 2.8rem;
-            color: #0d4f2a;
-            margin-bottom: 15px;
-            background: rgba(255, 255, 255, 0.3);
-            padding: 15px;
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
+        /* CONTENEDOR DE ICONO - CENTRADO PERFECTO */
+        .icon-container {
             display: flex;
             align-items: center;
             justify-content: center;
+            background: rgba(255, 255, 255, 0.3);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
         }
         
-        /* TEXTO */
+        /* ICONOS - CENTRADO ASEGURADO */
+        .card-top i {
+            font-size: 2.8rem;
+            color: #0d4f2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0; /* Eliminamos cualquier margen que desplace el icono */
+            padding: 0; /* Eliminamos cualquier padding */
+        }
+        
+        /* TEXTO - CENTRADO */
         .card-title {
             font-weight: 700;
             font-size: 1.4rem;
             margin-bottom: 10px;
             color: #0d4f2a;
+            width: 100%;
         }
         
         .card-desc {
@@ -1238,9 +1254,10 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
             color: #3a3a3a;
             line-height: 1.5;
             margin-bottom: 15px;
+            width: 100%;
         }
         
-        /* BOTONES - ESTILOS MEJORADOS */
+        /* BOTONES */
         .card button {
             width: 100%;
             background-color: #0d4f2a;
@@ -1288,10 +1305,13 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
                 padding: 20px;
             }
             
-            .card-top i {
-                font-size: 2.5rem;
+            .icon-container {
                 width: 70px;
                 height: 70px;
+            }
+            
+            .card-top i {
+                font-size: 2.5rem;
             }
             
             .card-title {
@@ -1351,7 +1371,9 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 <div class="cards-container">
         <div class="card card-socio">
             <div class="card-top">
-                <i class="fas fa-user-plus"></i>
+                <div class="icon-container">
+                    <i class="fas fa-user-plus"></i>
+                </div>
                 <div class="card-title">Hazte Socio</div>
                 <div class="card-desc">Únete y disfruta de todos los beneficios exclusivos.</div>
             </div>
@@ -1362,7 +1384,9 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 
         <div class="card card-convocatorias">
             <div class="card-top">
-                <i class="fas fa-bullhorn"></i>
+                <div class="icon-container">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
                 <div class="card-title">Convocatorias</div>
                 <div class="card-desc">Consulta las últimas convocatorias disponibles.</div>
             </div>
@@ -1373,7 +1397,9 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 
         <div class="card card-calibres">
             <div class="card-top">
-                <i class="fas fa-dot-circle"></i>
+                <div class="icon-container">
+                    <i class="fas fa-dot-circle"></i>
+                </div>
                 <div class="card-title">Tabla Calibres</div>
                 <div class="card-desc">Accede a la tabla de calibres actualizada.</div>
             </div>
@@ -1384,7 +1410,9 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 
         <div class="card card-concursos">
             <div class="card-top">
-                <i class="fa-solid fa-trophy"></i>
+                <div class="icon-container">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
                 <div class="card-title">Concursos y Eventos</div>
                 <div class="card-desc">No te pierdas nuestros próximos concursos y eventos.</div>
             </div>
@@ -1395,7 +1423,9 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
 
         <div class="card card-anillas">
             <div class="card-top">
-                <i class="fas fa-ring"></i>
+                <div class="icon-container">
+                    <i class="fas fa-ring"></i>
+                </div>
                 <div class="card-title">Solicitud Anillas</div>
                 <div class="card-desc">Realiza tu solicitud de anillas fácilmente.</div>
             </div>
@@ -1404,6 +1434,7 @@ Sociedad Ornitológica de Criadores Nacionales. Para todo género de aves y orni
             </button>
         </div>
     </div>
+
 
       
     
