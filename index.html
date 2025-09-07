@@ -7,23 +7,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
 
-
-
-
-
 <style>
-        /* Estilos específicos para el header y slider - con prefijo para evitar conflictos */
-        .socnas-header {
-            background-color: #0d4f2a;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #162e4a;
             color: white;
             padding: 15px 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             width: 100%;
-            position: relative;
-            z-index: 1000;
         }
         
-        .socnas-header-content {
+        .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -32,18 +38,18 @@
             margin: 0 auto;
         }
         
-        .socnas-logo {
+        .logo {
             display: flex;
             align-items: center;
         }
         
-        .socnas-logo img {
+        .logo img {
             height: 80px;
             width: auto;
             border-radius: 8px;
         }
         
-        .socnas-nav ul {
+        nav ul {
             display: flex;
             list-style: none;
             gap: 25px;
@@ -51,7 +57,7 @@
             padding: 0;
         }
         
-        .socnas-nav a {
+        nav a {
             color: white;
             text-decoration: none;
             font-size: 1.4rem;
@@ -61,51 +67,173 @@
             transition: all 0.3s ease;
         }
         
-        .socnas-nav a span {
+        nav a span {
             font-size: 0.8rem;
             margin-top: 4px;
             opacity: 0.9;
         }
         
-        .socnas-nav a:hover {
+        nav a:hover {
             color: #ffcb69;
             transform: translateY(-3px);
         }
 
-        .socnas-hero {
+        /* Ajuste de tamaño de iconos en móviles */
+        @media (max-width: 768px) {
+            nav a {
+                font-size: 1.3rem;
+            }
+            nav a i {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 1.2rem;
+            }
+            nav a i {
+                font-size: 1.8rem;
+            }
+            nav ul {
+                gap: 20px;
+            }
+        }
+        
+        .hero {
             text-align: center;
             color: white;
             position: relative;
             height: 70vh;
             overflow: hidden;
+            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuHyyGYm4rUg-e32VP0k4yIiyYRLxWdnemXnql_OcGS7ja3YHHn9OpVY4J1mCZWEnn-tp14HLi65TSeIvrqSlYx-MfDQByfommwVR-giw5zuukkNfi7UTz7tmk0LrEX7BtARW7pfGADnFNmuH83SbcunM1VAlYItoytby7VY1P90mJWKJdw8Zmr1utFWE/s1600/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%281%29.gif') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             width: 100%;
         }
         
-        .socnas-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUKaTSpmZZxCUgUXeSUVUVsg4fGqL6H1qNODLrgKQVS-WVXGeaQDK1x2zvIQTao4KI-60i8VzIIyLx39uUHI3GXFfAocQaFMxY_LNjgiYwjQ2A4wrDFKumJ742h8F_ZjIXTL4FYy3x8c7-KlfoyFmowmKjOqp3G8Tt8y88oBkyVw5gl1lLR2UhegIH2uY/s1600/Copia%20de%20.%20%281080%20x%201080%20px%29%20%281%29.gif') center/cover no-repeat;
-            filter: brightness(0.9) contrast(1.1);
-            z-index: -1;
-        }
-        
-        .socnas-hero-text {
+        .hero-text {
             padding: 15px;
             background: rgba(0, 0, 0, 0.4);
             color: white;
             font-size: 1.1rem;
             width: 100%;
         }
+        
+        .features {
+            padding: 3rem 0;
+            width: 100%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #162e4a;
+            font-size: 2.2rem;
+            width: 100%;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0;
+            width: 100%;
+        }
+        
+        .feature-card {
+            background: white;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .feature-card:nth-child(odd) {
+            background-color: #e6f0ff;
+        }
+        
+        .feature-card:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .image-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #f0f7ee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border: 3px solid #162e4a;
+        }
+        
+        .image-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .placeholder-icon {
+            font-size: 3rem;
+            color: #162e4a;
+        }
+        
+        .feature-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #162e4a;
+        }
+        
+        .feature-desc {
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #1e3a5f;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #152942;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background-color: #162e4a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            width: 100%;
+        }
 
-        /* Modal específico para SOCNAS */
-        .socnas-modal-overlay {
+        .modal-overlay {
             display: none;
             position: fixed;
             top: 0;
@@ -113,12 +241,12 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
+            z-index: 1000;
             justify-content: center;
             align-items: center;
         }
         
-        .socnas-modal-content {
+        .modal-content {
             background: white;
             padding: 25px;
             border-radius: 12px;
@@ -126,16 +254,59 @@
             max-width: 500px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            position: relative;
         }
         
-        .socnas-modal-content h2 {
+        .modal-content h2 {
             color: #162e4a;
             margin-bottom: 15px;
             font-size: 1.5rem;
         }
         
-        .socnas-close-modal {
+        .modal-content p {
+            color: #555;
+            margin-bottom: 18px;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        .modal-list {
+            text-align: left;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        
+        .modal-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .modal-list i {
+            color: #25D366;
+            font-size: 1.1rem;
+            min-width: 20px;
+        }
+        
+        .modal-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: opacity 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .modal-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .close-modal {
             position: absolute;
             top: 15px;
             right: 15px;
@@ -145,69 +316,105 @@
             transition: color 0.3s ease;
         }
         
-        .socnas-close-modal:hover {
+        .close-modal:hover {
             color: #000;
         }
 
-        /* Ajuste de tamaño de iconos en móviles */
         @media (max-width: 768px) {
-            .socnas-header-content {
+            .header-content {
                 flex-direction: column;
                 gap: 15px;
             }
             
-            .socnas-logo img {
+            .logo img {
                 height: 70px;
             }
             
-            .socnas-nav ul {
+            nav ul {
                 gap: 20px;
             }
             
-            .socnas-nav a {
+            nav a {
                 font-size: 1.3rem;
             }
             
-            .socnas-nav a i {
+            nav a i {
                 font-size: 1.6rem;
             }
             
-            .socnas-hero {
+            .hero {
                 height: 60vh;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features {
+                padding: 2rem 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
             }
         }
 
         @media (max-width: 480px) {
-            .socnas-logo img {
+            .logo img {
                 height: 60px;
             }
             
-            .socnas-nav ul {
+            nav ul {
                 gap: 15px;
             }
             
-            .socnas-nav a {
+            nav a {
                 font-size: 1.1rem;
             }
             
-            .socnas-nav a i {
+            nav a i {
                 font-size: 1.5rem;
             }
             
-            .socnas-nav a span {
+            nav a span {
                 font-size: 0.7rem;
             }
             
-            .socnas-hero-text {
+            .hero-text {
                 font-size: 1rem;
                 padding: 10px;
             }
             
-            .socnas-hero {
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .feature-card {
+                padding: 2rem 1rem;
+            }
+            
+            .image-circle {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .hero {
                 height: 50vh;
+            }
+            
+            .feature-title {
+                font-size: 1.5rem;
+            }
+            
+            .feature-desc {
+                font-size: 1rem;
             }
         }
     </style>
+
+
+
 
 
 
@@ -216,7 +423,7 @@
 </head>
 <body>
     <!-- ENCABEZADO CON LOGO A LA IZQUIERDA Y MENÚ AL LADO -->
-    
+    <header></header>
          <!-- ENCABEZADO CON LOGO A LA IZQUIERDA Y MENÚ AL LADO -->
     <header class="socnas-header">
         <div class="socnas-header-content">
