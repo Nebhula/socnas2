@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOCNAS - Asociación de Pájaros</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-
-<style>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -15,7 +13,11 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
         
         header {
             background-color: #162e4a;
@@ -133,29 +135,27 @@
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 0;
-            width: 100%;
+            gap: 25px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .feature-card {
             background: white;
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 2rem 1.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
-            border-bottom: 1px solid #eee;
         }
         
-        .feature-card:nth-child(odd) {
+        .feature-card:first-child {
             background-color: #e6f0ff;
-        }
-        
-        .feature-card:last-child {
-            border-bottom: none;
         }
         
         .feature-card:hover {
@@ -188,7 +188,7 @@
         }
         
         .feature-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #162e4a;
         }
@@ -198,22 +198,21 @@
             margin-bottom: 1.5rem;
             line-height: 1.6;
             flex-grow: 1;
-            font-size: 1.1rem;
-            max-width: 600px;
+            font-size: 1rem;
         }
         
         .btn {
             display: inline-block;
             background-color: #1e3a5f;
             color: white;
-            padding: 12px 30px;
+            padding: 10px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         
         .btn:hover {
@@ -387,7 +386,7 @@
             }
             
             .feature-card {
-                padding: 2rem 1rem;
+                padding: 1.5rem 1rem;
             }
             
             .image-circle {
@@ -400,61 +399,23 @@
             }
             
             .feature-title {
-                font-size: 1.5rem;
-            }
-            
-            .feature-desc {
-                font-size: 1rem;
+                font-size: 1.3rem;
             }
         }
-
-
-.icon-img {
-  width: 30px;   /* Ajusta al mismo tamaño que los <i> */
-  height: 30px;
-  object-fit: contain;
-  display: block;
-}
-
-/* Botones del header */
-.header-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 25px;
-  flex-wrap: wrap;
-}
-    
     </style>
-
-
-
-
-
-
-
-    
 </head>
 <body>
     <!-- ENCABEZADO CON LOGO A LA IZQUIERDA Y MENÚ AL LADO -->
-    <header></header>
-         <!-- ENCABEZADO CON LOGO A LA IZQUIERDA Y MENÚ AL LADO -->
-    <header class="socnas-header">
-        <div class="socnas-header-content">
-            <div class="socnas-logo">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGhg3sQFzOCfg0rpOCYv7ImFkv2kd9oETyPi__5WSolmp5d2T0tGn03Gf0GxP57ZcvwSqJfLQJuYJYy9T9xuxZKx-nT5jPQZX-ubYjnX0gFSueyGSYesI2AX62jLGpOiBsmPRM7Py7sqfddQ3qRkKWSjjHC3cLZ3VIyrj-1KwzQEiAbNI0On4QDZq6tJk/s1600/nebhula%20%2836%29.png" alt="SOCNAS - Asociación de Pájaros">
-                
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEienInQd_dFdfLwGw__ncypnuGGEqa5yD3JoKAsQF-Lsoh7R_gMF8X0pxUBQFT5F1j2DvGZsdrGrZnZTNvrwTLPw_J-F9l6TJhzVtGFDdm9D1atTm2HmmT8iDFqiYzO43uWJ6n8BhEgCcFTvTnjP2tji_vqCYYpAQnfsxncR4x6SPuWYtL_xpdNhvlDs6E/s1600/nebhula%20%2835%29.png" alt="SOCNAS - Asociación de Pájaros">
             </div>
-            <nav class="socnas-nav">
+            <nav>
                 <ul>
-                    <li><a href="index.html" target="_blank"><img alt="" border="0" data-original-height="540" data-original-width="342" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgf4N3az2CvthML-DNvIfDuy6CGjf5X7M6kIHRC522g7a3M-A76lLmZW4JSkBiDGAA0xCLqjp-kNcwaOISSRMAlAaWVDRNOikqqVMdgzPvhi8_DWY5K_w4asvAbveCPVyzt9hijyQKxljkpNwGzdC_1QGOg3m7lek0UvLJNHfViVzGKVO2q8hXEHkAJH7k/s1600/nebhula%20%2845%29.png" alt="HOME" class="icon-img"><span>HOME</span></a></li>
-<li><a href="coe-foa.html" target="_blank"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6YXY4QrM5zE97hNYYsd4ZkHyLUv_IH8q0_SZ39Qh1PCod5GvAxN-nMSuoAoByC2zZr2SWqiakAa6KM6j6gh_dTEeqoIPgyHUKJRd_QRwqHiwL7GWTMqt-zUDu19dQgn6OtY-IyVs4vOj4_5fO1_FqajKm9yQD0Q4oLdXmZQFBLqD-twmxTHtAlJss3vA/s1600/image%20%2819%29.png" alt="COE FOA" class="icon-img"><span>FOA</span></a></li>
-
-<li><a href="fesacocur.html" target="_blank"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiy453Wvwh7y2fNlPyQy0yr4ZBALbWG3buZHJokRvZ4GnSuV2mDR-RRQlQACe_nexQGTj2F-k8fjXGXkKXNXgiC6MfzzNADhD_or1Lw2y34iD-23E7e-w5kRt71HG8Ngcsnu0zXOIw7fjpz1-yZJjWgP518p6jXBlscX3aOtE9Sxe5Ynsb9U6Hq9HuhvkM/s1600/nebhula%20%2837%29.png" alt="fesacocur" class="icon-img"><span>FESACOCUR</span></a></li>
-                    
-                    <li><a href="#" onclick="socnasAbrirModal('whatsapp')"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDQpT6GDyPFT9AkO0rbri28a8D4l-6g68lmtkDt2q7uXx0itkrMge2HvdMW3Qu-OPadqpeiQzTV6j8u_uKOHIV7OYvDb9c3LJjoxIpEPG_wjoMVlnYjLLgqcpy6MpKC3VpFYzyO29pWnyjA82l9uh2SSOxIegVKgTExv_QyUunt2mLW1_ALh4KyKSo37g/s1600/nebhula%20%2838%29.png" alt="canal whatsapp socnas" class="icon-img"><span>CANAL</span></a></li>
-                    <li><a href="https://wa.me/34677163664" target="_blank"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigP9Z81ouKsS7DfitcNqAj_c-lg8uVtK5OA5qjp8nzB_ZfCwLs8Ye9bIsWuQFvNag4xG6UIWphI81YYN29F49nzWj4zllN4fA8mdHPj2p2Pq3HXg6r2oU_HUp0p3jgiNMiSAxIuZbKiG7n6MXayXc03uHnfo8t0lKb4Bpaj5jVGKQQbD3loGlKWpPshmE/s1600/nebhula%20%2847%29.png" alt="contacto whatsapp socnas" class="icon-img"><span>CONTACTO</span></a></li>
-                    <li><a href="https://www.google.com/maps/place/tu-empresa" target="_blank"><img alt="" border="0" data-original-height="155" data-original-width="163" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiY8oKu-UfOGBeyQL0OcOvvNg7mNYNUgKiAZIR0qnCJQ9UkcnRux23C1YqSxQn9tV3LiW6nnTKyx_NPiWfrKkT3YDA59QHvWGZoakA4HWYNR9So1eyKyBPlMkbuwzkdltTR53vO6wiJBWSFMGyOt3NJYLl_fc_76awDMgB2SNifvyURF1_ajX2Ey6iG3Ts/s1600/nebhula%20%2848%29.png" alt="reseñas socnas" class="icon-img"><span>RESEÑA</span></a></li>
+                    <li><a href="#" onclick="abrirModal('whatsapp')"><i class="fas fa-bell"></i><span>Canal</span></a></li>
+                    <li><a href="https://wa.me/34677163664" target="_blank"><i class="fab fa-whatsapp"></i><span>Contacto</span></a></li>
+                    <li><a href="https://www.google.com/maps/place/tu-empresa" target="_blank"><i class="fas fa-star"></i><span>Reseña</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -471,36 +432,33 @@
         <div class="features-grid">
             <div class="feature-card">
                 <div class="image-circle">
-                   
                     <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgeShj4sIpZjT2jxiJfx9_mx_xd2fAKAho2tetavf_WiX0peB8FivKjizZLGbFvFfmsmOVO9uEZD29YOlenwLSwbrXwKvBOJOrQ2zQEvctUOyQXNVu7D8x5_hafnzrePZFiGLdRRjkxxFLHDOfJXEM4DRzlPEkfZfSAjVdmBkpRe6FvDoCu-ro15WcUZ5A=s1600" alt="Observación de Aves">
                 </div>
-                <h5 class="feature-title">Federarse COE</h5>
+                <h3 class="feature-title">Observación de Aves</h3>
                 <p class="feature-desc">Organizamos excursiones guiadas para observar aves en sus hábitats naturales. Aprende a identificar distintas especies con expertos.</p>
-                <a href="coe-foa.html" class="btn">Más información</a>
+                <a href="#" class="btn">Más información</a>
             </div>
             
             <div class="feature-card">
                 <div class="image-circle">
                     <img src="https://fesacocur.es/wp-content/uploads/2015/09/logo-fesacocur-redondo.png" alt="Conservación de Hábitats">
                 </div>
-                <h5 class="feature-title">Federarse Fesacocur</h5>
-                
+                <h3 class="feature-title">Conservación de Hábitats</h3>
                 <p class="feature-desc">Participa en nuestros programas de reforestación y conservación de los ecosistemas esenciales para las aves.</p>
-                <a href="fesacocur.html" class="btn">Más información</a>
+                <a href="#" class="btn">Más información</a>
             </div>
             
             <div class="feature-card">
                 <div class="image-circle">
                     <i class="fas fa-graduation-cap placeholder-icon"></i>
                 </div>
-                <h5 class="feature-title">Educación Ambiental</h5>
+                <h3 class="feature-title">Educación Ambiental</h3>
                 <p class="feature-desc">Ofrecemos talleres y materiales educativos para escuelas y comunidades sobre la importancia de las aves en nuestros ecosistemas.</p>
                 <a href="#" class="btn">Más información</a>
             </div>
             
             <div class="feature-card">
                 <div class="image-circle">
-                    
                     <i class="fas fa-hands-helping placeholder-icon"></i>
                 </div>
                 <h3 class="feature-title">Voluntariado</h3>
@@ -515,7 +473,6 @@
     </footer>
 
     <!-- MODAL: Únete a WhatsApp -->
-    <div id="whatsappModal" class极
     <div id="whatsappModal" class="modal-overlay">
         <div class="modal-content">
             <span class="close-modal" onclick="cerrarModal('whatsappModal')">&times;</span>
@@ -547,8 +504,6 @@
         // Precargar la imagen para mejor rendimiento
         document.addEventListener('DOMContentLoaded', function() {
             const img = new Image();
-            img.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuHyyGYm极
-            img.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuHyyGYm4rUg-e32VP0k4yIiyYRLxWdnemXnql_OcGS7ja3YHHn9OpVY4J1mCZWEnn-tp14HLi65TSeIvrqSlYx-MfDQByfommwVR-giw5zuukkNfi7UTz7tmk0LrEX7BtARW7pfGADnFNmuH83SbcunM1VAlY极
             img.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuHyyGYm4rUg-e32VP0k4yIiyYRLxWdnemXnql_OcGS7ja3YHHn9OpVY4J1mCZWEnn-tp14HLi65TSeIvrqSlYx-MfDQByfommwVR-giw5zuukkNfi7UTz7tmk0LrEX7BtARW7pfGADnFNmuH83SbcunM1VAlYItoytby7VY1P90mJWKJdw8Zmr1utFWE/s1600/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%281%29.gif";
         });
     </script>
