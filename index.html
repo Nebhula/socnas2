@@ -132,13 +132,15 @@
             width: 100%;
         }
         
+        /* ✅ MODIFICADO: ANCHO COMPLETO SIN MARGENES NI PADDING */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%; /* 👈 ANCHO COMPLETO */
+            max-width: none; /* 👈 SIN LÍMITE */
+            margin: 0; /* 👈 SIN MARGEN */
+            padding: 0; /* 👈 SIN PADDING */
         }
         
         .feature-card {
