@@ -1,1 +1,4614 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOCNAS - Asociación de Pájaros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <div id="coe-foa-container">
+  <style>
+    /* Reset y estilos base */
+    #coe-foa-container {
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      margin: 0 auto;
+      background: #f5f5f5;
+      color: #333;
+      width: 100%;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
 
+    /* Encabezado mejorado - Colores FESACOCUR */
+    #coe-foa-container header {
+      background: linear-gradient(135deg, #fff 0%, #fff 100%);
+      color: black;
+      padding: 30px 15px;
+      text-align: center;
+      border-radius: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    #coe-foa-container .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    #coe-foa-container header img {
+      max-width: 120px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    #coe-foa-container header img:hover {
+      transform: scale(1.05);
+    }
+
+    #coe-foa-container header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    #coe-foa-container header p {
+      margin: 10px 0 0;
+      font-weight: 300;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* Botones del header - Estilo COE adaptado a FESACOCUR */
+    .header-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+    
+    .btn-hazte-socio {
+      background: linear-gradient(135deg, #8B1A1A 0%, #6D1212 100%);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: ;
+      border: 2px solid #9B2A2A;
+    }
+    
+    .btn-convocatorias {
+      background: linear-gradient(135deg, #9B2A2A 0%, #8B1A1A 100%);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: );
+      border: 2px solid #AB3A3A;
+    }
+    
+    .btn-hazte-socio:hover {
+      transform: translateY(-2px);
+      ;
+      background: linear-gradient(135deg, #6D1212 0%, #8B1A1A 100%);
+    }
+    
+    .btn-convocatorias:hover {
+      transform: translateY(-2px);
+      ;
+      background: linear-gradient(135deg, #8B1A1A 0%, #9B2A2A 100%);
+    }
+    
+    @media (max-width: 480px) {
+      .header-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .btn-hazte-socio,
+      .btn-convocatorias {
+        width: 80%;
+        text-align: center;
+      }
+    }
+
+    /* Tarjetas modernas - Ajuste colores */
+    #coe-foa-container .card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px auto;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      width: 90%;
+      max-width: 800px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 4px solid #8B1A1A;
+    }
+
+    #coe-foa-container .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    #coe-foa-container .card h2 {
+      color: #8B1A1A;
+      margin-top: 0;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    #coe-foa-container .card h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #8B1A1A;
+      border-radius: 3px;
+    }
+
+    #coe-foa-container ul {
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+
+    #coe-foa-container li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    /* Sección de calibres mejorada - Ajuste colores */
+    #coe-foa-container .calibres-section {
+      background-color: #f9f9f9;
+      padding: 30px 15px;
+      margin-top: 20px;
+    }
+
+    #coe-foa-container .calibres-section h2 {
+      color: #8B1A1A;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1.6rem;
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    #coe-foa-container .calibres-section p {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1rem;
+      margin: 0 auto 25px;
+      max-width: 800px;
+      text-align: center;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* Tablas completamente responsivas - Ajuste colores */
+    .tabla-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 25px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .tabla-anillas {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+      background-color: white;
+    }
+
+    .tabla-anillas thead {
+      background-color: #8B1A1A;
+      color: white;
+      position: sticky;
+      top: 0;
+    }
+
+    .tabla-anillas th {
+      padding: 12px 15px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .tabla-anillas td {
+      padding: 10px 15px;
+      border-bottom: 1px solid #eee;
+      font-size: 0.9rem;
+    }
+
+    .tabla-anillas tbody tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .tabla-anillas tbody tr:hover {
+      background-color: #fdf0f0;
+    }
+
+    .tabla-anillas caption {
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: left;
+      color: #8B1A1A;
+      font-size: 1.2rem;
+    }
+
+    /* Subtítulos de sección mejorados - Ajuste colores */
+    .section-subtitle {
+      color: #8B1A1A;
+      font-size: 1.3rem;
+      margin: 30px 15px 15px;
+      font-weight: 600;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-subtitle:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #8B1A1A;
+      margin: 10px auto 0;
+      border-radius: 3px;
+    }
+
+    /* Sección FAQ - Ajuste colores */
+    .faq-section {
+      background: white;
+      padding: 40px 20px;
+      margin: 30px auto;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border-top: 4px solid #8B1A1A;
+    }
+
+    .faq-section h2 {
+      color: #8B1A1A;
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .faq-section h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: #8B1A1A;
+      border-radius: 3px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #eee;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 12px 0;
+      transition: color 0.3s ease;
+    }
+
+    .faq-question:hover {
+      color: #8B1A1A;
+    }
+
+    .faq-question h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 500;
+      flex: 1;
+    }
+
+    .faq-toggle {
+      font-size: 1.5rem;
+      color: #8B1A1A;
+      transition: transform 0.3s ease;
+      margin-left: 15px;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 10px 0;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    /* Botón de WhatsApp mejorado - Ajuste colores */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background-color: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-button img {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Footer mejorado - Ajuste colores */
+    #coe-foa-container footer {
+      background: linear-gradient(135deg, #8B1A1A 0%, #6D1212 100%);
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    #coe-foa-container footer p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Mejoras específicas para móviles */
+    @media (max-width: 768px) {
+      #coe-foa-container header {
+        padding: 25px 15px;
+      }
+      
+      #coe-foa-container header h1 {
+        font-size: 1.5rem;
+      }
+      
+      #coe-foa-container header p {
+        font-size: 0.9rem;
+      }
+      
+      #coe-foa-container .card {
+        padding: 20px;
+        width: calc(100% - 30px);
+        margin: 15px auto;
+      }
+      
+      #coe-foa-container .card h2 {
+        font-size: 1.3rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1.2rem;
+        margin: 25px 15px 15px;
+      }
+
+      .faq-section {
+        padding: 30px 15px;
+      }
+
+      .faq-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .faq-question h3 {
+        font-size: 1rem;
+      }
+      
+      .whatsapp-button {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        left: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #coe-foa-container header img {
+        max-width: 100px;
+      }
+      
+      #coe-foa-container header h1 {
+        font-size: 1.4rem;
+      }
+      
+      #coe-foa-container .card {
+        padding: 18px 15px;
+      }
+      
+      #coe-foa-container .card h2 {
+        font-size: 1.2rem;
+      }
+      
+      #coe-foa-container li {
+        font-size: 0.95rem;
+      }
+      
+      .tabla-anillas th,
+      .tabla-anillas td {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+      }
+
+      .faq-section h2 {
+        font-size: 1.3rem;
+      }
+
+      .faq-question h3 {
+        font-size: 0.95rem;
+      }
+
+      .faq-answer {
+        font-size: 0.9rem;
+      }
+      
+      .whatsapp-button {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .whatsapp-button img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  </style>
+  
+  
+
+  <header>
+    <div class="logo-container">
+      <img alt="Logo FESACOCUR" src="https://fesacocur.es/wp-content/uploads/2015/09/logo-fesacocur-redondo.png" />
+      <br/>
+      Avicultura, Colombicultura y Cunicultura de raza
+      
+    </div>
+    
+    
+    xxxxxxxxxxxxxxxx
+    
+    
+    
+    
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 20px 0;">
+  
+      
+      
+      <!-- Botón HAZTE SOCIO con ícono (azul pastel) -->
+  <button id="openSocioModal" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #a8d0f0; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <i class="fas fa-user-plus"></i> HAZTE SOCIO
+  </button>
+      
+      
+
+  
+      <!-- Botón CONVOCATORIAS con ícono (rojo pastel) -->
+  <button id="openConvocatoriasModal" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #f2de79; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <i class="fas fa-bullhorn"></i> CONVOCATORIAS
+  </button>
+      
+      <!-- Botón TABLA DE CALIBRES con ícono (gris suave) -->
+  <button id="calibreroAbrirBtn" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #CBA4E3; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <i class="fas fa-dot-circle"></i> TABLA DE CALIBRES
+  </button>
+      
+      
+      
+      <!-- Botón SOLICITUD DE ANILLAS con ícono (verde pastel) -->
+  <button id="btn-abrir" onclick="abrirModal()" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #73ded0; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <i class="fas fa-ring"></i> SOLICITUD DE ANILLAS
+  </button>
+      
+      <!-- Botón SOLICITUD DE ANILLAS con ícono (verde pastel) -->
+  <button id="btn-abrir" onclick="abrirModal()" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #FFB07C; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <i class="fa-solid fa-carrot"></i> CETIFICADOS CONEJOS
+  </button>
+      
+   <!-- Botón CONCURSOS Y EVENTOS con ícono (morado pastel) -->
+  <button id="btn-abrir-calendario"  style="flex: 1; min-width: 220px; padding: 14px 20px; background: #b0e6aa; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <i class="fas fa-trophy"></i> CONCURSOS
+  </button>
+      
+      
+      
+      <!-- Botón ENLACE CARNET DIGITAL -->
+<a href="https://socnasdigi.netlify.app/" target="_blank" 
+   style="flex: 1; min-width: 220px; padding: 14px 20px; background: #ed7e87; color: #111; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+  
+  <!-- Icono tarjeta -->
+  <i class="fas fa-id-card"></i>
+  
+  <!-- Texto -->
+  TU CARNET DIGITAL
+  
+  <!-- Icono móvil -->
+  <i class="fas fa-mobile-alt"></i>
+</a>
+      
+
+      
+</div>
+   
+    
+  </header>
+
+  
+
+  
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- MODAL FULL SCREEN (100% DE ALTO Y ANCHO) -->
+<div id="socioModal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; justify-content: center; align-items: center;">
+  
+  <!-- Contenido del modal: ocupa casi toda la pantalla -->
+  <div class="modal-content" style="position: relative; width: 100%; height: 100vh; max-height: 100vh; background: white; border-radius: 0; overflow: hidden; display: flex; flex-direction: column; box-shadow: none;">
+
+   
+
+ <!-- Botón de cierre (X) - grande y visible -->
+<div id="closeSocioModal" style="position: fixed; top: 15px; right: 20px; z-index: 1001; cursor: pointer; font-size: 39px; color: #000; font-weight: bold; transition: transform 0.2s; background: #ed7e87; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(0,0,0,0.2);"> 
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+</div>
+    
+    
+    <!-- Contenedor scrollable del formulario -->
+    <div style="flex: 1; overflow-y: auto; padding: 20px 20px 40px 20px; background: white;">
+     <br/> <h6 style="text-align: center; font-size: 1.8rem; margin-bottom: 20px; font-weight: bold; color: #1a1a1a;">Nuevo Socio<br/><span style='color: #eb4b58;'>Federación FESACOCUR</span></h6>
+
+      <form id="registration-form-fesacocur">
+        <input type="hidden" name="form_origin" value="SOCNAS FESACOCUR" />
+
+        <label for="name">Nombre y apellidos del futuro Socio:</label>
+        <input id="name" name="name" required type="text" placeholder="Juan Pérez">
+
+        <label for="dni">D.N.I o N.I.E:</label>
+        <input id="dni" name="dni" required type="text" placeholder="12345678A">
+
+        <label for="domicilio">Domicilio:</label>
+        <input id="domicilio" name="domicilio" required type="text" placeholder="Calle Falsa 123">
+
+        <label for="localidad">Localidad:</label>
+        <input id="localidad" name="localidad" required type="text" placeholder="Madrid">
+
+        <label for="provincia">Provincia:</label>
+        <input id="provincia" name="provincia" required type="text" placeholder="Madrid">
+
+        <label for="codigo_postal">Código Postal:</label>
+        <input id="codigo_postal" name="codigo_postal" required type="text" placeholder="28001">
+
+        <label for="pais">País:</label>
+        <input id="pais" name="pais" required type="text" placeholder="España">
+
+        <label for="email">Dirección Correo Electrónico:</label>
+        <input id="email" name="email" required type="email" placeholder="ejemplo@dominio.com">
+
+        <label for="telefono_movil">Teléfono Móvil:</label>
+        <input id="telefono_movil" name="telefono_movil" required type="tel" placeholder="600000000">
+
+        <label for="telefono">Teléfono:</label>
+        <input id="telefono" name="telefono" type="tel" placeholder="910000000">
+
+       <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<label for="numero_criador">Número de Criador Nacional:</label>
+<div style="position: relative; display: inline-block; width: 100%; max-width: 500px;">
+  <!-- Icono dentro del input -->
+  <i class="fas fa-mobile-alt" 
+     style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: green;"></i>
+  
+  <input id="numero_criador" 
+         name="numero_criador" 
+         value="Asignado en tu carnet digital" 
+         readonly 
+         placeholder="Asignación de número de criador" 
+         required 
+         type="text"
+         style="
+            padding-left: 5px; 
+            background-color: #d0f0c0; /* Verde pastel */
+            border: 1px solid #ccc; 
+            border-radius: 8px; 
+            height: 40px;
+            width: 100%;
+            box-sizing: border-box;
+            color: #333;
+            font-size: 13px;
+         ">
+</div>
+
+        
+        
+
+        <label>¿Qué pájaros y/o aves crías? (Selecciona todas las que correspondan):</label>
+        <div class="checkbox-grid">
+          <label><input type="checkbox" name="tipos_aves[]" value="Canarios">CANARICULTURA</label>
+          <label><input type="checkbox" name="tipos_aves[]" value="Silvestres">SILVESTRES</label>
+          <label><input type="checkbox" name="tipos_aves[]" value="Psitácidas">PSITÁCIDAS</label>
+          <label><input type="checkbox" name="tipos_aves[]" value="Exóticos">EXÓTICOS</label>
+          <label><input type="checkbox" name="tipos_aves[]" value="Palomas">COLOMBICULTURA</label>
+          <label><input type="checkbox" name="tipos_aves[]" value="Avicultura">AVICULTURA</label>
+          <label><input type="checkbox" name="tipos_aves[]" value="Conejos">CUNICULTURA CONEJOS</label>
+          <label><input type="checkbox" name="tipos_aves[]" value="Otras">Otras</label>
+        </div>
+
+        <label for="otras_aves">Si marcaste "Otras", especifica:</label>
+        <input id="otras_aves" name="otras_aves" type="text" placeholder="Ej: Gallinas, Periquitos..." />
+
+        <!-- Consentimiento Mailchimp - Versión mejorada para Blogger -->
+        <div class="consentimiento" style="margin: 25px 0; padding: 15px; background: #ffbac0; border-radius: 6px; border: 1px solid #d0d7ff;">
+          <label style="display: flex; align-items: flex-start; cursor: pointer; margin: 0; position: relative; padding-left: 30px;">
+            <input type="checkbox" name="mailchimp_consent" id="mailchimp_consent" required 
+                   style="position: absolute; left: 0; width: 20px; height: 20px; margin-top: 2px; appearance: checkbox; -webkit-appearance: checkbox; -moz-appearance: checkbox; border: 2px solid #2c7be5 !important;">
+           <span>
+    Doy mi consentimiento para que mis datos personales sean tratados con el fin de recibir comunicaciones y boletines informativos por correo electrónico a través de Mailchimp, de acuerdo con la <a href="https://socnasornitologica.blogspot.com/p/privacidad.html" target="_blank" style="color: #0077cc; text-decoration: underline;">POLÍTICA DE PRIVACIDAD</a>. Puedo retirar mi consentimiento en cualquier momento.
+  </span>
+          </label>
+        </div>
+
+       <!-- Font Awesome -->
+
+
+<div class="info-text" style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; width: 100%;">
+
+  <!-- ANILLAS FEDERADAS -->
+  <div style="border-left: 4px solid #a8dadc; padding: 12px; margin-bottom: 16px; background-color: #e0f7f9; border-radius: 6px;">
+    <p style="margin: 0;">
+      <i class="fas fa-ring" style="color: #2a9d8f; margin-right: 8px;"></i>
+      <strong>ANILLAS FEDERADAS:</strong><br>
+     Una vez hayas realizado el pago de <strong>Cuota de socio anual (25€)</strong> serás socio federado de <strong>SOCNAS</strong> en cuestión de minutos, es cuando le facilitaremos una <strong>CLAVE</strong> de acceso a la zona de <strong>SOLICITUD DE ANILLAS FEDERATIVAS</strong>.
+    </p>
+  </div>
+
+  <!-- CUOTA DE SOCIO -->
+  <div style="border-left: 4px solid #f9c74f; padding: 12px; margin-bottom: 16px; background-color: #fff7d6; border-radius: 6px;">
+    <p style="margin: 0;">
+      <i class="fas fa-euro-sign" style="color: #f4a261; margin-right: 8px;"></i>
+      <strong>CUOTA DE SOCIO:</strong><br>
+      25€ anuales cada vez que desees renovar. Dándote opción a poder solicitar tus anillas federadas y más beneficios que encontrarás en esta <strong>web oficial de SOCNAS</strong>.
+    </p>
+  </div>
+
+  <!-- ENVÍOS Y ANILLAS ADICIONALES -->
+  <div style="border-left: 4px solid #90be6d; padding: 12px; margin-bottom: 16px; background-color: #e4f3e1; border-radius: 6px;">
+    <p style="margin: 0;">
+      <i class="fas fa-box" style="color: #6aa84f; margin-right: 8px;"></i>
+      Aparte de las anillas que desees solicitar, podrás recibir asesoramiento sobre envíos y disponibilidad.
+    </p>
+  </div>
+
+  <!-- CARNET FÍSICO/DIGITAL -->
+<div style="border-left: 4px solid #f8961e; padding: 12px; margin-bottom: 16px; background-color: #fff3e0; border-radius: 6px;">
+  <p style="margin: 0;">
+    
+    <i class="fas fa-mobile-alt" style="color: #f8961e; margin-right: 8px;"></i>
+    <strong>CARNET DIGITAL:</strong><br>
+    Recibirás tu <strong>carnet digital de criador nacional</strong> con la asignación de tu número de criador, que podrás llevar en tu movil y mostrar cuando desees incluso sin conexión a internet.
+  </p>
+</div>
+
+  <!-- AVISO ANTES DE ENVIAR -->
+  <div style="border-left: 4px solid #f28482; padding: 12px; margin-bottom: 16px; background-color: #ffe5e0; border-radius: 6px;">
+    <p style="margin: 0;">
+      <i class="fas fa-exclamation-triangle" style="color: #f28482; margin-right: 8px;"></i>
+      <strong>ANTES DE ENVIAR:</strong><br>
+      Al hacer clic en el botón de envío, nos llegará directamente vía WhatsApp, aceptando por completo los <strong>TÉRMINOS Y CONDICIONES</strong>.
+    </p>
+  </div>
+
+</div>
+
+
+        <button type="submit" style="margin-top: 20px;">ENVIAR FORMULARIO</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ESTILOS DEL FORMULARIO -->
+<style>
+  /* Reset básico */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Estilos del formulario */
+  label {
+    display: block;
+    margin: 16px 0 6px;
+    font-weight: 600;
+    color: #222;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: white;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #2c7be5;
+    box-shadow: 0 0 0 2px rgba(44, 123, 229, 0.2);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #888;
+  }
+
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .checkbox-grid label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    background: #f8f9ff;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    min-height: 44px;
+    line-height: 1.3;
+  }
+
+  .checkbox-grid input[type="checkbox"] {
+    margin-right: 6px;
+    width: 18px;
+    height: 18px;
+    appearance: checkbox;
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    border: 2px solid #2c7be5 !important;
+  }
+
+  button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    background: #eb4b58;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+
+  button:hover {
+    background: #1a68d1;
+  }
+
+  .info-text {
+    font-size: 0.95rem;
+    margin-top: 25px;
+    line-height: 1.6;
+    color: #333;
+    background: #ffbac0;
+    padding: 15px;
+    border-radius: 6px;
+  }
+
+  /* Estilos específicos para el checkbox de consentimiento */
+  .consentimiento input[type="checkbox"] {
+    width: 20px !important;
+    height: 20px !important;
+    margin-right: 10px;
+    border: 2px solid #2c7be5 !important;
+    border-radius: 4px;
+    appearance: checkbox !important;
+    -webkit-appearance: checkbox !important;
+    -moz-appearance: checkbox !important;
+  }
+
+  /* Responsive */
+  @media (min-width: 768px) {
+    .checkbox-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .checkbox-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .checkbox-grid label {
+      min-height: 48px;
+      font-size: 0.95rem;
+      padding: 11px 10px;
+    }
+
+    h6 {
+      font-size: 1.5rem !important;
+    }
+  }
+</style>
+
+<!-- SCRIPT DE FUNCIONALIDAD ACTUALIZADO (WhatsApp + Mailchimp) -->
+<!-- SCRIPT DE FUNCIONALIDAD ACTUALIZADO (WhatsApp + Mailchimp + Google Sheets) -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('socioModal');
+    const openBtn = document.getElementById('openSocioModal');
+    const closeBtn = document.getElementById('closeSocioModal');
+    const form = document.getElementById('registration-form-fesacocur');
+
+    // Funciones de modal
+    openBtn.onclick = () => { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; };
+    closeBtn.onclick = () => { modal.style.display = 'none'; document.body.style.overflow = ''; };
+    window.onclick = (event) => { if (event.target === modal) { modal.style.display = 'none'; document.body.style.overflow = ''; } };
+
+    // SOLUCIÓN DEFINITIVA PARA GOOGLE APPS SCRIPT
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Validaciones
+            if (!document.getElementById('mailchimp_consent').checked) {
+                alert("Debes aceptar el consentimiento.");
+                return;
+            }
+
+            const get = id => document.getElementById(id)?.value.trim() || '';
+            const formData = {
+                name: get('name'), dni: get('dni'), domicilio: get('domicilio'),
+                localidad: get('localidad'), provincia: get('provincia'), 
+                codigo_postal: get('codigo_postal'), pais: get('pais'),
+                email: get('email'), telefono_movil: get('telefono_movil'),
+                telefono: get('telefono'), numero_criador: get('numero_criador'),
+                otras_aves: get('otras_aves')
+            };
+
+            const aves = Array.from(form.querySelectorAll('input[name="tipos_aves[]"]:checked'))
+                .map(el => el.value === "Otras" && formData.otras_aves ? formData.otras_aves : el.value)
+                .filter(Boolean);
+            
+            if (aves.length === 0) {
+                alert("⚠️ Por favor, selecciona al menos un tipo de ave que crías.");
+                return;
+            }
+
+            // 1. MAILCHIMP
+            const mailchimpUrl = "https://socnas.us11.list-manage.com/subscribe/post?u=6c2816fd685a6fafab2bdb386&id=4c84f6a13f&c=" + Math.random().toString(36).substring(2);
+            const mailchimpData = new FormData();
+            mailchimpData.append('EMAIL', formData.email);
+            mailchimpData.append('FNAME', formData.name.split(' ')[0]);
+            mailchimpData.append('LNAME', formData.name.split(' ').slice(1).join(' '));
+            mailchimpData.append('MERGE3', formData.telefono_movil);
+            
+            fetch(mailchimpUrl, { method: 'POST', body: mailchimpData, mode: 'no-cors' });
+
+            // 2. WHATSAPP
+            const message = `*FORMULARIO DE NUEVO SOCIO FESACOCUR*\n\n*Nombre:* ${formData.name}\n*DNI/NIE:* ${formData.dni}\n*Email:* ${formData.email}\n*Domicilio:* ${formData.domicilio}\n*Localidad:* ${formData.localidad}\n*Provincia:* ${formData.provincia}\n*Cod.Postal:* ${formData.codigo_postal}\n*Pais:* ${formData.pais}\n*Tel. Móvil:* ${formData.telefono_movil}\n*Aves que cría:* ${aves.join(', ')}\n\n*Consentimiento Mailchimp:* Aceptado`;
+            window.open(`https://wa.me/677163664?text=${encodeURIComponent(message)}`, '_blank');
+            
+            // 3. GOOGLE SHEETS - SOLUCIÓN DEFINITIVA
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = "ENVIANDO...";
+            submitBtn.disabled = true;
+            
+            try {
+                // TRUCO DEFINITIVO: Usar /dev en lugar de /exec
+                const appsScriptUrl = "https://script.google.com/macros/s/AKfycbych99o-r1KAQLpBYSL8IC3N90rMtLXS2UZL6V7qLt6rzjuZ-8k9BhrpxLHmEFe4rQKQQ/exec";
+                
+                // Crear formulario dinámico para evitar CORS
+                const formDataForSheets = new FormData();
+                formDataForSheets.append('name', formData.name);
+                formDataForSheets.append('dni', formData.dni);
+                formDataForSheets.append('domicilio', formData.domicilio);
+                formDataForSheets.append('localidad', formData.localidad);
+                formDataForSheets.append('provincia', formData.provincia);
+                formDataForSheets.append('codigo_postal', formData.codigo_postal);
+                formDataForSheets.append('pais', formData.pais);
+                formDataForSheets.append('email', formData.email);
+                formDataForSheets.append('telefono_movil', formData.telefono_movil);
+                formDataForSheets.append('telefono', formData.telefono);
+                formDataForSheets.append('numero_criador', formData.numero_criador);
+                formDataForSheets.append('aves', aves.join(', '));
+                formDataForSheets.append('otras_aves', formData.otras_aves);
+                
+                // Enviar con método tradicional
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', appsScriptUrl, true);
+                
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        console.log("Datos enviados a Google Sheets");
+                        alert("Formulario enviado correctamente. Te contactaremos pronto.");
+                        form.reset();
+                    } else {
+                        console.error("❌ Error:", xhr.status);
+                        alert("⚠️ Formulario enviado por WhatsApp. Error técnico, contacta para confirmar.");
+                    }
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                };
+                
+                xhr.onerror = function() {
+                    console.error("❌ Error de red");
+                    alert("⚠️ Formulario enviado por WhatsApp. Error de conexión, contacta para confirmar.");
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                };
+                
+                xhr.send(formDataForSheets);
+                
+            } catch (error) {
+                console.error("❌ Error inesperado:", error);
+                alert("⚠️ Formulario enviado por WhatsApp. Error inesperado, contacta para confirmar.");
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+});
+</script>
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- MODAL FULL SCREEN - CONVOCATORIAS -->
+<div id="convocatoriasModal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; justify-content: center; align-items: center;">
+  
+  <!-- Contenido del modal -->
+  <div class="modal-content" style="position: relative; width: 100%; height: 100vh; max-height: 100vh; background: white; border-radius: 0; overflow: hidden; display: flex; flex-direction: column; box-shadow: none;">
+
+    
+    <!-- Botón de cierre (X) - grande y visible -->
+<div id="closeConvocatoriasModal" style="position: fixed; top: 15px; right: 20px; z-index: 1001; cursor: pointer; font-size: 39px; color: #000; font-weight: bold; transition: transform 0.2s; background: #f2de79; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(0,0,0,0.2);"> 
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+</div>
+    
+    
+    
+    <!-- Contenido scrollable -->
+    <div style="flex: 1; overflow-y: auto; padding: 20px 15px; background: white;">
+
+      <!-- Incluimos exactamente tu contenido -->
+      <div style="max-width: 800px; margin: 0 auto; font-family: Arial, sans-serif; padding: 0 10px; box-sizing: border-box;">
+        <center><h2 style="text-align: center;">Convocatorias C.O.E - FOA</h2></center>
+
+        <!-- Primera Convocatoria -->
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; border-radius: 12px; padding: 20px; background-color: #fff7f7; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px; margin-bottom: 30px; width: 100%; box-sizing: border-box;">
+          <div style="font-size: 60px; color: #d32f2f; margin: 20px 0;"><i class="fas fa-lock" style="color: #d32f2f;"></i></div>
+          <h2 style="font-size: 24px; font-weight: bold; color: #b32d2d; margin-bottom: 10px; text-align: center;">1ª Convocatoria Cerrada</h2>
+          <div style="width: 100%; max-width: 600px; margin: 20px auto; padding: 15px 20px; border-radius: 10px; background-color: #ffe6e6; color: #993300; font-size: 16px; line-height: 1.5; box-shadow: 0 0 5px rgba(255, 100, 100, 0.2); text-align: center; box-sizing: border-box;">
+            <p style="margin: 0 0 15px 0; text-align: center; width: 100%;">La convocatoria para esta edición ha finalizado. Muchas gracias por tu interés.</p>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 10px; width: 100%;">
+              <div style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; text-align: center;">
+                <i class="fas fa-calendar-day" style="color: #cc0000;"></i> <span style="text-align: center;"><strong>Inicio:</strong> 1-JUNIO-2025</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; text-align: center;">
+                <i class="fas fa-calendar-alt" style="color: #cc0000;"></i> <span style="text-align: center;"><strong>Cierre:</strong> 30-JUNIO-2025</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; text-align: center;">
+                <i class="fas fa-calendar-check" style="color: #cc0000;"></i> <span style="text-align: center;"><strong>Entrega:</strong> Final-SEPTIEMBRE-25</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%;">
+            <a href="#" style="padding: 8px 10px; background-color: transparent; color: #b32d2d; text-decoration: none; font-weight: bold; font-size: 14px; border: 2px solid #b32d2d; border-radius: 6px; transition: background-color 0.3s; white-space: nowrap; pointer-events: none; cursor: default;">NUEVO</a>
+            <a href="#" style="padding: 8px 10px; background-color: transparent; color: #b32d2d; text-decoration: none; font-weight: bold; font-size: 14px; border: 2px solid #b32d2d; border-radius: 6px; transition: background-color 0.3s; white-space: nowrap; pointer-events: none; cursor: default;">ANILLAS</a>
+            <a href="#" style="padding: 8px 10px; background-color: transparent; color: #b32d2d; text-decoration: none; font-weight: bold; font-size: 14px; border: 2px solid #b32d2d; border-radius: 6px; transition: background-color 0.3s; white-space: nowrap; pointer-events: none; cursor: default;">RENOVAR</a>
+          </div>
+        </div>
+
+        <!-- Segunda Convocatoria -->
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; border-radius: 12px; padding: 20px; background-color: #f7fff9; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px; margin-bottom: 30px; width: 100%; box-sizing: border-box;">
+          <div style="font-size: 60px; color: #2e7d32; margin: 20px 0;"><i class="fas fa-lock-open" style="color: #2e7d32;"></i></div>
+          <h2 style="font-size: 24px; font-weight: bold; color: #2e7d32; margin-bottom: 10px; text-align: center;">2ª Convocatoria Abierta</h2>
+          <div style="width: 100%; max-width: 600px; margin: 20px auto; padding: 15px 20px; border-radius: 10px; background-color: #e8fce9; color: #2e7d32; font-size: 16px; line-height: 1.5; box-shadow: 0 0 5px rgba(100, 180, 100, 0.2); text-align: center; box-sizing: border-box;">
+            <p style="margin: 0 0 15px 0; text-align: center; width: 100%;">¡Es el momento perfecto para hacerte socio federado si eres nuevo!</p>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 10px; width: 100%;">
+              <div style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; text-align: center;">
+                <i class="fas fa-calendar-day" style="color: #2e7d32;"></i> <span style="text-align: center;"><strong>Inicio:</strong> 1-JULIO-2025</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; text-align: center;">
+                <i class="fas fa-calendar-alt" style="color: #2e7d32;"></i> <span style="text-align: center;"><strong>Cierre:</strong> 4-AGOSTO-2025</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; text-align: center;">
+                <i class="fas fa-calendar-check" style="color: #2e7d32;"></i> <span style="text-align: center;"><strong>Entrega:</strong> Final-NOVIEMBRE-2025</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%;">
+            <a href="#" onclick="mostrarMensajeModal2('nuevo'); return false;" style="padding: 8px 10px; background-color: transparent; color: #2e7d32; text-decoration: none; font-weight: bold; font-size: 14px; border: 2px solid #2e7d32; border-radius: 6px; transition: background-color 0.3s; white-space: nowrap;">NUEVO</a>
+            <a href="#" onclick="mostrarMensajeModal2('anillas'); return false;" style="padding: 8px 10px; background-color: transparent; color: #2e7d32; text-decoration: none; font-weight: bold; font-size: 14px; border: 2px solid #2e7d32; border-radius: 6px; transition: background-color 0.3s; white-space: nowrap;">ANILLAS</a>
+            <a href="#" onclick="mostrarMensajeModal2('renovacion'); return false;" style="padding: 8px 10px; background-color: transparent; color: #2e7d32; text-decoration: none; font-weight: bold; font-size: 14px; border: 2px solid #2e7d32; border-radius: 6px; transition: background-color 0.3s; white-space: nowrap;">RENOVAR</a>
+          </div>
+        </div>
+
+        <!-- Tercera Convocatoria -->
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; border-radius: 12px; padding: 20px; background-color: #fff9f0; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px; margin-bottom: 30px; width: 100%; box-sizing: border-box;">
+          <div style="font-size: 60px; color: #ef6c00; margin: 20px 0;"><i class="fas fa-question-circle" style="color: #ef6c00;"></i></div>
+          <h2 style="font-size: 24px; font-weight: bold; color: #d84315; margin-bottom: 10px; text-align: center;">3ª Convocatoria (por abrir)</h2>
+          <div style="width: 100%; max-width: 600px; margin: 20px auto; padding: 15px 20px; border-radius: 10px; background-color: #fff3e0; color: #6e3b00; font-size: 16px; line-height: 1.5; box-shadow: 0 0 5px rgba(255, 160, 0, 0.2); text-align: center; box-sizing: border-box;">
+            <p style="margin: 0 0 15px 0; text-align: center; width: 100%;">La próxima convocatoria aún no ha comenzado. Estamos trabajando en los detalles...</p>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 10px; width: 100%;">
+              <div style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; text-align: center;">
+                <i class="fas fa-calendar-day" style="color: #ef6c00;"></i> <span style="text-align: center;"><strong>Inicio previsto:</strong> 5-AGOSTO-25</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; text-align: center;">
+                <i class="fas fa-calendar-alt" style="color: #ef6c00;"></i> <span style="text-align: center;"><strong>Cierre previsto:</strong> 6-OCTUBRE-25</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; text-align: center;">
+                <i class="fas fa-calendar-check" style="color: #ef6c00;"></i> <span style="text-align: center;"><strong>Entrega:</strong> Final DICIEMBRE-2025</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%;">
+            <a href="#" style="padding: 8px 10px; background-color: transparent; color: #d84315; text-decoration: none; font-weight: bold; font-size: 14px; border: 2px solid #d84315; border-radius: 6px; transition: background-color 0.3s; white-space: nowrap; pointer-events: none; cursor: default;">NUEVO</a>
+            <a href="#" style="padding: 8px 10px; background-color: transparent; color: #d84315; text-decoration: none; font-weight: bold; font-size: 14px; border: 2px solid #d84315; border-radius: 6px; transition: background-color 0.3s; white-space: nowrap; pointer-events: none; cursor: default;">ANILLAS</a>
+            <a href="#" style="padding: 8px 10px; background-color: transparent; color: #d84315; text-decoration: none; font-weight: bold; font-size: 14px; border: 2px solid #d84315; border-radius: 6px; transition: background-color 0.3s; white-space: nowrap; pointer-events: none; cursor: default;">RENOVAR</a>
+          </div>
+        </div>
+
+        
+
+        
+
+        <!-- Modal personalizado (dentro del modal principal) -->
+        <div id="modalPopupModal2" style="visibility: hidden; opacity: 0; position: fixed; top: 20vh; left: 50%; transform: translateX(-50%); background-color: white; border: 2px solid #2e7d32; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 99999; width: 90%; max-width: 400px; padding: 20px; box-sizing: border-box; text-align: center; transition: all 0.3s ease;">
+          <p id="modalTextoModal2" style="margin: 0 0 15px; font-size: 16px; color: #333; text-align: center;"></p>
+          <div style="display: flex; justify-content: center; gap: 15px;">
+            <button id="btnAceptarModal2" style="background-color: #2e7d32; color: white; border: none; padding: 10px 20px; font-size: 14px; border-radius: 6px; cursor: pointer;">Aceptar</button>
+            <button id="btnCancelarModal2" style="background-color: #ccc; color: #333; border: none; padding: 10px 20px; font-size: 14px; border-radius: 6px; cursor: pointer;">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Font Awesome (cargado una vez, si no lo tienes ya) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- SCRIPT del modal y del popup interno -->
+<script>
+  // === MODAL PRINCIPAL ===
+  const modal2 = document.getElementById('convocatoriasModal');
+  const openBtn2 = document.getElementById('openConvocatoriasModal');
+  const closeBtn2 = document.getElementById('closeConvocatoriasModal');
+
+  openBtn2.onclick = () => {
+    modal2.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  };
+
+  closeBtn2.onclick = () => {
+    modal2.style.display = 'none';
+    document.body.style.overflow = '';
+    cerrarMensajeModal2(); // Asegura que el popup interno se cierre
+  };
+
+  window.onclick = (event) => {
+    if (event.target === modal2) {
+      modal2.style.display = 'none';
+      document.body.style.overflow = '';
+      cerrarMensajeModal2();
+    }
+  };
+
+  // === POPUP INTERNO (modal personalizado) ===
+  const popup = document.getElementById("modalPopupModal2");
+  const popupTexto = document.getElementById("modalTextoModal2");
+  const btnAceptarPopup = document.getElementById("btnAceptarModal2");
+  const btnCancelarPopup = document.getElementById("btnCancelarModal2");
+  let urlRedireccionModal2 = "";
+
+  function mostrarMensajeModal2(tipo) {
+    if (tipo === 'nuevo') {
+      popupTexto.textContent = "Hola, no has estado nunca federado en SOCNAS, es tu primera vez y quieres aprovechar esta convocatoria, rellenar formulario para Federarte? Despues de ACEPTAR haz clic en el botón azul HAZTE SOCIO";
+      urlRedireccionModal2 = "https://www.socnas.org/p/provando-coe-foa.html";
+    } else if (tipo === 'anillas') {
+      popupTexto.textContent = "Hola socio veterano de SOCNAS, además de las anillas ya solicitadas antes. Quieres volver a pedir más en esta convocatoria? Después de ACEPTAR haz clic en el botón verde SOLICITAR ANILAS";
+      urlRedireccionModal2 = "https://www.socnas.org/p/provando-coe-foa.html";
+    } else if (tipo === 'renovacion') {
+      popupTexto.textContent = "De nuevo por aquí compañero. Quieres tomar una buena decisión y renovar carnet y anillas para esta nueva temporada?";
+      urlRedireccionModal2 = "https://www.socnas.org/p/provando-coe-foa.html";
+    }
+    popup.style.visibility = 'visible';
+    popup.style.opacity = 1;
+  }
+
+  function cerrarMensajeModal2() {
+    popup.style.visibility = 'hidden';
+    popup.style.opacity = 0;
+    urlRedireccionModal2 = "";
+  }
+
+  function aceptarMensajeModal2() {
+    popup.style.visibility = 'hidden';
+    popup.style.opacity = 0;
+    if (urlRedireccionModal2) {
+      window.open(urlRedireccionModal2, '_blank');
+    }
+  }
+
+  btnAceptarPopup.addEventListener("click", aceptarMensajeModal2);
+  btnCancelarPopup.addEventListener("click", cerrarMensajeModal2);
+</script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <title>Calibrero FESACOCUR</title>
+    <style>
+        /* Estilos específicos para el modal - Prefijos únicos para evitar conflictos */
+        .calibrero-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #fefefe;
+            z-index: 10000;
+            overflow: auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+        
+        .calibrero-modal-contenido {
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        
+        .calibrero-cerrar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #ed7e87;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 10001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            padding: 0;
+        }
+        
+        .calibrero-cerrar:hover {
+            background: #e35560;
+            transform: scale(1.05);
+        }
+        
+        .calibrero-titulo {
+            color: #ed7e87;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 28px;
+            font-weight: 600;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #b0e6aa;
+        }
+        
+        .calibrero-subtitulo {
+            color: #ed7e87;
+            font-weight: 500;
+            margin: 25px 0 15px;
+            text-align: center;
+            font-size: 22px;
+            background: #f2de79;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .calibrero-tabla-titulo {
+            color: #ed7e87;
+            font-weight: 500;
+            margin: 30px 0 15px;
+            text-align: center;
+            font-size: 20px;
+            background: #b0e6aa;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .calibrero-descripcion {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 25px;
+        }
+        
+        .calibrero-buscador-contenedor {
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .calibrero-buscador {
+            padding: 14px 20px;
+            width: 100%;
+            max-width: 450px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+        
+        .calibrero-buscador:focus {
+            border-color: #b0e6aa;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(176, 230, 170, 0.2);
+        }
+        
+        .calibrero-botones-busqueda {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .calibrero-btn-buscar {
+            background: #ed7e87;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .calibrero-btn-buscar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background: #7c5295;
+        }
+        
+        .calibrero-tabla-contenedor {
+            overflow-x: auto;
+            margin: 20px 0;
+            padding: 0 5px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .calibrero-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            min-width: 300px;
+        }
+        
+        .calibrero-tabla thead tr {
+            background: #ed7e87;
+        }
+        
+        .calibrero-tabla th {
+            border: none;
+            padding: 16px 12px;
+            text-align: left;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .calibrero-tabla-verde tbody tr:nth-child(odd) {
+            background-color: rgba(176, 230, 170, 0.3);
+        }
+        
+        .calibrero-tabla-verde tbody tr:nth-child(even) {
+            background-color: rgba(176, 230, 170, 0.15);
+        }
+        
+        .calibrero-tabla-rosa tbody tr:nth-child(odd) {
+            background-color: rgba(237, 126, 135, 0.3);
+        }
+        
+        .calibrero-tabla-rosa tbody tr:nth-child(even) {
+            background-color: rgba(237, 126, 135, 0.15);
+        }
+        
+        .calibrero-tabla-amarilla tbody tr:nth-child(odd) {
+            background-color: rgba(242, 222, 121, 0.3);
+        }
+        
+        .calibrero-tabla-amarilla tbody tr:nth-child(even) {
+            background-color: rgba(242, 222, 121, 0.15);
+        }
+        
+        .calibrero-tabla tr:hover {
+            background-color: rgba(237, 126, 135, 0.2) !important;
+        }
+        
+        .calibrero-tabla td {
+            border: none;
+            padding: 14px 12px;
+            color: #444;
+        }
+        
+        .calibrero-mark {
+            background-color: rgba(242, 222, 121, 0.8);
+            padding: 0 2px;
+            border-radius: 3px;
+        }
+        
+        .calibrero-mark-actual {
+            background-color: rgba(237, 126, 135, 0.5);
+            font-weight: bold;
+            box-shadow: 0 0 8px rgba(237, 126, 135, 0.4);
+        }
+        
+        /* Botón para abrir el modal */
+        .calibrero-abrir-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 14px 28px;
+            background: #ed7e87;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(237, 126, 135, 0.4);
+            transition: all 0.3s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .calibrero-abrir-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(237, 126, 135, 0.5);
+            background: #e35560;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .calibrero-modal-contenido {
+                padding: 15px;
+            }
+            
+            .calibrero-titulo {
+                font-size: 24px;
+            }
+            
+            .calibrero-subtitulo, .calibrero-tabla-titulo {
+                font-size: 18px;
+            }
+            
+            .calibrero-tabla th, 
+            .calibrero-tabla td {
+                padding: 10px 8px;
+                font-size: 14px;
+            }
+            
+            .calibrero-cerrar {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+            
+            .calibrero-btn-buscar {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .calibrero-modal-contenido {
+                padding: 10px;
+            }
+            
+            .calibrero-titulo {
+                font-size: 22px;
+            }
+            
+            .calibrero-subtitulo, .calibrero-tabla-titulo {
+                font-size: 16px;
+            }
+            
+            .calibrero-tabla th, 
+            .calibrero-tabla td {
+                padding: 8px 6px;
+                font-size: 13px;
+            }
+            
+            .calibrero-buscador {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+            
+            .calibrero-botones-busqueda {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .calibrero-btn-buscar {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+    </style>
+
+    
+
+    <!-- Modal a pantalla completa -->
+    <div class="calibrero-modal" id="calibreroModal">
+        <div class="calibrero-modal-contenido">
+            
+            
+          <!-- Botón de cierre (X) - grande y visible -->
+<div id="calibreroCerrarBtn" style="position: fixed; top: 15px; right: 20px; z-index: 1001; cursor: pointer; font-size: 39px; color: #000000; font-weight: bold; transition: transform 0.2s; background: #b0e6aa; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(0,0,0,0.2);"> 
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+</div>
+          
+          
+          
+            <!-- Contenido -->
+            <div>
+                <h2 class="calibrero-titulo">CALIBRERO FESACOCUR</h2>
+                <p class="calibrero-descripcion">
+                    Una referencia de tablas para guiarte y mostrarte los calibres y especies, evidentemente no están todos, por ello si no ves tu elección aquí no dudes en preguntarnos por otros calibres...
+                </p>
+
+                <h3 class="calibrero-subtitulo">ANILLAS FEDERADAS SOCNAS</h3>
+
+                <!-- Buscador -->
+                <div class="calibrero-buscador-contenedor">
+                    <input type="text" class="calibrero-buscador" id="calibreroBuscador" placeholder="Buscar especie...">
+                    <div class="calibrero-botones-busqueda">
+                        <button class="calibrero-btn-buscar" onclick="calibreroBuscarYResaltar(true)">Siguiente</button>
+                        <button class="calibrero-btn-buscar" onclick="calibreroBuscarYResaltar(false)">Anterior</button>
+                    </div>
+                </div>
+
+                <!-- Tabla 1: Exóticos pequeños -->
+                <h4 class="calibrero-tabla-titulo">EXÓTICOS - CALIBRES PEQUEÑOS</h4>
+                <div class="calibrero-tabla-contenedor">
+                    <table class="calibrero-tabla calibrero-tabla-verde">
+                        <thead>
+                            <tr>
+                                <th>Raza</th>
+                                <th>Calibre mm</th>
+                                <th>Especie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Carita naranja</td><td>1,8</td><td>Exóticos</td></tr>
+                            <tr><td>Amaranta del Senegal</td><td>1,8</td><td>Exóticos</td></tr>
+                            <tr><td>Bengalí pechigualdo</td><td>1,8</td><td>Exóticos</td></tr>
+                            <tr><td>Estrilda perdiz</td><td>1,8</td><td>Exóticos</td></tr>
+                            <tr><td>Estrilda cola de vinagre</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Estrilda pico de coral</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Pico de plata</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Amaranta moteada</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Noneta bicolor</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Noneta</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Noneta de dorso bruno</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Azulito de Angola</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Azulito del Senegal</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Azulito de cabeza azul</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante de Bichenov</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Yerbero de Cuba</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Bengalí de la India</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Bengalí verde</td><td>2</td><td>Exóticos</td></tr>
+                            <tr><td>Estrilda ondulada</td><td>2</td><td>Exóticos</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tabla 2: Exóticos medianos -->
+                <h4 class="calibrero-tabla-titulo">EXÓTICOS - CALIBRES MEDIANOS</h4>
+                <div class="calibrero-tabla-contenedor">
+                    <table class="calibrero-tabla calibrero-tabla-rosa">
+                        <thead>
+                            <tr>
+                                <th>Raza</th>
+                                <th>Calibre mm</th>
+                                <th>Especie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Estrilda de Santa Elena</td><td>2,3</td><td>Exóticos</td></tr>
+                            <tr><td>Amaranta flameada</td><td>2,3</td><td>Exóticos</td></tr>
+                            <tr><td>Amadina de cabeza perlada</td><td>2,3</td><td>Exóticos</td></tr>
+                            <tr><td>Serín rabadilla amarilla</td><td>2,3</td><td>Exóticos</td></tr>
+                            <tr><td>Verderón serrano africano</td><td>2,3</td><td>Exóticos</td></tr>
+                            <tr><td>Cantor de África</td><td>2,3</td><td>Exóticos</td></tr>
+                            <tr><td>Canario de Mozambique</td><td>2,3</td><td>Exóticos</td></tr>
+                            <tr><td>Granatina</td><td>2,3</td><td>Exóticos</td></tr>
+                            <tr><td>Granadina violeta</td><td>2,3</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante Phaetón</td><td>2,3</td><td>Exóticos</td></tr>
+                            <tr><td>Pytiliamelba</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Pytilia afra</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Estrilda aurora</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Alario</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante ruficauda</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Pico de plomo</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Isabelita del Japón</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante de Gould</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Gorrión dorado del Sudán</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Degollado</td><td>2,5</td><td>Exóticos</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tabla 3: Diamantes y otros -->
+                <h4 class="calibrero-tabla-titulo">DIAMANTES Y OTROS EXÓTICOS</h4>
+                <div class="calibrero-tabla-contenedor">
+                    <table class="calibrero-tabla calibrero-tabla-amarilla">
+                        <thead>
+                            <tr>
+                                <th>Raza</th>
+                                <th>Calibre mm</th>
+                                <th>Especie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Diamante papagayo</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante goteado</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante kittlitz</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante de babero</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante de babero C/L</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante mandarín</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante modesto</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante enmascarado</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante cuatricolor</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante de peale</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante de forbes</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Diamante de Manila</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Dámero</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Donacola</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Capuchino de cabeza blanca</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Emblema picta</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Cabecita negra</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Tarín de pecho negro</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Tarín Xantogastra</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Negrito de Bolivia</td><td>2,5</td><td>Exóticos</td></tr>
+                            <tr><td>Cardenalito de Venezuela</td><td>2,5</td><td>Exóticos</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tabla 4: Fauna europea e híbridos -->
+                <h4 class="calibrero-tabla-titulo">FAUNA EUROPEA, HÍBRIDOS Y CANARIOS</h4>
+                <div class="calibrero-tabla-contenedor">
+                    <table class="calibrero-tabla calibrero-tabla-verde">
+                        <thead>
+                            <tr>
+                                <th>Raza</th>
+                                <th>Calibre mm</th>
+                                <th>Especie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Verdecillo</td><td>2</td><td>Fauna</td></tr>
+                            <tr><td>Raza española</td><td>2,5</td><td>Canarios de postura</td></tr>
+                            <tr><td>Fife fancy</td><td>2,5</td><td>Canarios de postura</td></tr>
+                            <tr><td>Hosso japonés</td><td>2,5</td><td>Canarios de postura</td></tr>
+                            <tr><td>Jilguero español</td><td>2,5</td><td>Fauna Europea</td></tr>
+                            <tr><td>Jilguero europeo</td><td>2,5</td><td>Fauna Europea</td></tr>
+                            <tr><td>Lúgano</td><td>2,5</td><td>Fauna Europea</td></tr>
+                            <tr><td>Pardillo sicerín</td><td>2,5</td><td>Fauna Europea</td></tr>
+                            <tr><td>Verdecillo x Canaria</td><td>2,5</td><td>Híbridos</td></tr>
+                            <tr><td>Cardenalito de Venezuela x Canaria</td><td>2,5</td><td>Híbridos</td></tr>
+                            <tr><td>Canario de Mozambique x Canaria</td><td>2,5</td><td>Híbridos</td></tr>
+                            <tr><td>Cantor de África x Canaria</td><td>2,5</td><td>Híbridos</td></tr>
+                            <tr><td>Rabadilla amarilla x Canaria</td><td>2,5</td><td>Híbridos</td></tr>
+                            <tr><td>Cabecita negra x Canaria</td><td>2,5</td><td>Híbridos</td></tr>
+                            <tr><td>Cardenalito de Venezuela x Jilguera</td><td>2,5</td><td>Híbridos</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS con prefijos únicos -->
+    <script>
+        // Variables con prefijos únicos
+        var calibreroModal = document.getElementById("calibreroModal");
+        var calibreroAbrirBtn = document.getElementById("calibreroAbrirBtn");
+        var calibreroCerrarBtn = document.getElementById("calibreroCerrarBtn");
+        
+        // Inicialización cuando el DOM está listo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Asignar event listeners
+            calibreroAbrirBtn.addEventListener('click', calibreroAbrirModal);
+            calibreroCerrarBtn.addEventListener('click', calibreroCerrarModal);
+            
+            // Búsqueda con Enter
+            document.getElementById("calibreroBuscador").addEventListener("keyup", function(event) {
+                if (event.key === "Enter") {
+                    calibreroBuscarYResaltar(true);
+                }
+            });
+        });
+        
+        // Funciones con prefijos únicos
+        function calibreroAbrirModal() {
+            calibreroModal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+        
+        function calibreroCerrarModal() {
+            calibreroModal.style.display = "none";
+            document.body.style.overflow = "";
+        }
+        
+        // --- Búsqueda ---
+        var calibreroMatches = [];
+        var calibreroIndex = -1;
+
+        function calibreroClearHighlight() {
+            var marks = document.querySelectorAll(".calibrero-mark");
+            for (var i = 0; i < marks.length; i++) {
+                var text = document.createTextNode(marks[i].textContent);
+                marks[i].parentNode.replaceChild(text, marks[i]);
+            }
+            calibreroMatches = [];
+            calibreroIndex = -1;
+        }
+
+        function calibreroHighlight(text) {
+            calibreroClearHighlight();
+            if (!text.trim()) return;
+            var regex = new RegExp(text, "gi");
+
+            function walk(node) {
+                if (node.nodeType === 3) {
+                    var content = node.nodeValue;
+                    if (regex.test(content)) {
+                        var span = document.createElement("span");
+                        span.innerHTML = content.replace(regex, function(match) {
+                            return '<span class="calibrero-mark">' + match + '</span>';
+                        });
+                        node.parentNode.replaceChild(span, node);
+                    }
+                } else if (node.nodeType === 1 && node.childNodes && !/(script|style)/i.test(node.tagName)) {
+                    for (var i = 0; i < node.childNodes.length; i++) {
+                        walk(node.childNodes[i]);
+                    }
+                }
+            }
+
+            walk(document.body);
+            calibreroMatches = Array.from(document.querySelectorAll(".calibrero-mark"));
+        }
+
+        function calibreroFindNext(next) {
+            var input = document.getElementById("calibreroBuscador").value.trim();
+            if (!input) return;
+
+            if (calibreroMatches.length === 0 || calibreroMatches[0].textContent.toLowerCase() !== input.toLowerCase()) {
+                calibreroHighlight(input);
+                calibreroIndex = -1;
+            }
+
+            if (calibreroMatches.length > 0) {
+                for (var i = 0; i < calibreroMatches.length; i++) {
+                    calibreroMatches[i].classList.remove("calibrero-mark-actual");
+                }
+                
+                calibreroIndex = next ? calibreroIndex + 1 : calibreroIndex - 1;
+                if (calibreroIndex >= calibreroMatches.length) calibreroIndex = 0;
+                if (calibreroIndex < 0) calibreroIndex = calibreroMatches.length - 1;
+
+                var current = calibreroMatches[calibreroIndex];
+                current.classList.add("calibrero-mark-actual");
+                current.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        }
+
+        function calibreroBuscarYResaltar(siguiente) {
+            calibreroFindNext(siguiente);
+        }
+    </script>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+ <style>
+    /* === MODAL A PANTALLA COMPLETA === */
+    .modal-full {
+      display: none;
+      position: fixed;
+      z-index: 99999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f9f9f9;
+      overflow: auto;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .modal-full-content {
+      width: 100%;
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .cerrar-modal-full {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      font-size: 39px;
+      font-weight: bold;
+      color: #aaa;
+      cursor: pointer;
+      z-index: 100000;
+      background: white;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      transition: all 0.2s;
+    }
+    .cerrar-modal-full:hover {
+      background: #f0f0f0;
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    /* === COPIA EXACTA DE LOS ESTILOS ORIGINALES (sin cambios) === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .form-container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      background: #f9f9f9;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-family: Arial, sans-serif;
+    }
+    .form-container h2 { 
+      text-align:center; 
+      margin: 0 0 15px; 
+      color:#222; 
+      font-size:28px;
+    }
+    label { 
+      display:block; 
+      margin-top:px; 
+      font-weight:700; 
+      font-size:14px;
+    }
+    input, select, button {
+      width:100%; 
+      padding:12px; 
+      margin-top:6px; 
+      border:2px solid #444; 
+      border-radius:12px; 
+      font-size:22px;
+      font-weight:bold;
+      text-align:center;
+      box-sizing: border-box;
+    }
+    input::placeholder {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    button { 
+      color:#000; 
+      border:none; 
+      cursor:pointer; 
+      font-weight:900; 
+      font-size:20px;
+      transition: background 0.3s;
+      position: relative;
+    }
+    button:hover { 
+      background:#45a049; 
+    }
+    .hidden { display:none; }
+    .calibres-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin-top: 12px;
+    }
+    .calibre-item { text-align:center; }
+    input[type=number] {
+      font-size: 34px;
+      font-weight: bold;
+      text-align: center;
+      padding: 34px;
+      border: 3px solid #333;
+      border-radius: 16px;
+      position: relative;
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+    /* Modal para el resumen */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .modal.mostrar {
+      opacity: 1;
+    }
+    .modal-contenido {
+      background-color: #fefefe;
+      padding: 25px;
+      border: 1px solid #888;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 700px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.3s ease;
+    }
+    .modal.mostrar .modal-contenido {
+      transform: translate(-50%, -50%);
+    }
+    .cerrar-modal {
+      color: #aaa;
+      float: right;
+      font-size: 36px;
+      font-weight: bold;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .cerrar-modal:hover {
+      color: #000;
+    }
+    #resumenPedido {
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px solid #333;
+      border-radius: 12px;
+      background-color: #f0f0f0;
+    }
+    #resumenPedido h3 {
+      text-align: center;
+      margin-top: 0;
+      color: #222;
+      font-size: 24px;
+    }
+    #resumenPedido table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 15px;
+    }
+    #resumenPedido th, #resumenPedido td {
+      padding: 8px 6px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    #resumenPedido th {
+      background-color: #005f00;
+      color: white;
+      font-size: 16px;
+      padding: 10px 6px;
+    }
+    #resumenPedido tr:hover {
+      background-color: #f5f5f5;
+    }
+    #resumenPedido .total {
+      font-weight: bold;
+      text-align: right;
+      font-size: 17px;
+    }
+    #resumenPedido .calibre-col {
+      font-size: 15px;
+      text-align: left;
+      padding-left: 10px;
+    }
+    #resumenPedido .cantidad-col {
+      font-size: 15px;
+    }
+    #resumenPedido .precio-col {
+      font-size: 15px;
+    }
+    #resumenPedido .subtotal-col {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .botones-resumen {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .botones-resumen button {
+      flex: 1;
+      font-size: 18px;
+      padding: 10px;
+    }
+    #btnConfirmar {
+      background: #1b5e20;
+    }
+    #btnConfirmar:hover {
+      background: #0d3e11;
+    }
+    #btnModificar {
+      background: #ff9800;
+    }
+    #btnModificar:hover {
+      background: #e68a00;
+    }
+    /* Spinner */
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .btn-loading .spinner {
+      display: inline-block;
+    }
+    .btn-text {
+      vertical-align: middle;
+    }
+    .placeholder-value {
+      color: #888;
+      font-weight: normal;
+    }
+    /* === 1. COLORES PARA INPUTS POR CALIBRE === */
+    .calibre-menor {
+      background-color: #FFFFCB;
+    }
+    .calibre-mayor {
+      background-color: #FFFFCB;
+    }
+    .calibre-item input {
+      border: 2px solid #FF6467;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .calibre-item input:focus {
+      background-color: #ffffff !important;
+      outline: none;
+      transform: scale(1.02);
+      box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+    }
+    /* === 2. ESTILO PARA MENSAJES DE ÉXITO Y ERROR === */
+    #msgPedido {
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      border-left: 4px solid;
+      word-wrap: break-word;
+      transition: opacity 0.3s ease;
+    }
+    #msgPedido.ok {
+      background-color: #e8f5e9;
+      color: #1b5e20;
+      border-color: #005f00;
+    }
+    #msgPedido.error {
+      background-color: #ffebee;
+      color: #b00020;
+      border-color: #f44336;
+    }
+    /* === 3. ESTILO PARA MENSAJE DE ESTADO (info) === */
+    #estadoSocio {
+      margin-top: 12px;
+      padding: 14px 16px;
+      background-color: #e3f2fd;
+      border-left: 4px solid #2196f3;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #0d47a1;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: opacity 0.3s ease;
+    }
+    #estadoSocio span {
+      font-size: 16px;
+    }
+    /* === BOTONES PERSONALIZADOS PARA INPUT NUMÉRICO === */
+    .number-input-container {
+      position: relative;
+    }
+    .number-buttons {
+      position: absolute;
+      right: 8px;
+      top: 52%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      height: auto;
+      justify-content: center;
+    }
+    .number-btn {
+      width: 33px;
+      height: 27px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #A2F4FD;
+      border: 1px solid #1d962f;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      user-select: none;
+      line-height: 1;
+      border-radius: 12px;
+      transition: all 0.2s;
+    }
+    .number-btn:active {
+      background: #ddd;
+    }
+    .number-btn.up {
+      border-bottom-left-radius: 0;
+      border-bottom: none;
+    }
+    .number-btn.down {
+      border-top-left-radius: 0;
+    }
+    .number-btn.clear {
+      background: #f8d7da;
+      border-color: #f5c6cb;
+      color: #721c24;
+    }
+    .number-btn.clear i {
+      font-size: 14px;
+      color: #c00;
+    }
+    /* Ocultar flechas por defecto en navegadores */
+    input[type=number] {
+      -moz-appearance: textfield;
+      padding-right: 50px;
+    }
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    @media (max-width: 600px) {
+      input, select, button { 
+        font-size:24px; 
+        padding:16px; 
+      }
+      input::placeholder {
+        font-size: 14px;
+      }
+      .botones-resumen {
+        flex-direction: column;
+      }
+      #resumenPedido table {
+        font-size: 14px;
+      }
+      #resumenPedido th, #resumenPedido td {
+        padding: 6px 4px;
+      }
+      #resumenPedido th {
+        font-size: 14px;
+        padding: 8px 4px;
+      }
+      #resumenPedido .calibre-col,
+      #resumenPedido .cantidad-col,
+      #resumenPedido .precio-col,
+      #resumenPedido .subtotal-col {
+        font-size: 13px;
+      }
+      .modal-contenido {
+        width: 95%;
+        padding: 15px;
+      }
+      .number-buttons {
+        right: 5px;
+      }
+      .number-btn {
+        width: 35px;
+        height: 28px;
+        font-size: 18px;
+      }
+      .number-btn.clear i {
+        font-size: 16px;
+      }
+      input[type=number] {
+        padding-right: 55px;
+      }
+    }
+    body.overflow-hidden {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+    .titulo-principal {
+      color: #2c3e50;
+      font-size: 32px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .subtitulo {
+      color: #5a6268;
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .fechas-linea {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 29px;
+    }
+    .fecha-item {
+      display: flex;
+      align-items: center;
+      background: #66CC66;
+      color: black;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      white-space: nowrap;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    }
+    .fecha-item.cierre {
+      background: #FF9E9E;
+    }
+    .fecha-item.entrega {
+      background: #A9CFF5;
+    }
+    .fecha-icono {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+    @media (max-width: 768px) {
+      .titulo-principal {
+        font-size: 26px;
+      }
+      .subtitulo {
+        font-size: 16px;
+      }
+      .fechas-linea {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .fecha-item {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 15px;
+        justify-content: center;
+      }
+    }
+    @media (max-width: 480px) {
+      .titulo-principal {
+        font-size: 22px;
+      }
+      .subtitulo {
+        font-size: 15px;
+      }
+      .fecha-item {
+        max-width: 100%;
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+      .fecha-icono {
+        font-size: 16px;
+        margin-right: 8px;
+      }
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      border: none;
+      margin: 0 6px;
+      cursor: pointer;
+      color: white;
+      white-space: nowrap;
+    }
+    .btn svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+    }
+    .btn-convocatorias {
+      background-color: #d32f2f;
+    }
+    .btn-socio {
+      background-color: #2c7be5;
+    }
+    .btn-calibres {
+      background-color: #FFA500;
+    }
+    .faq-container {
+      max-width: 1200px;
+      width: 100%;
+      background: white;
+      border-radius: px;
+      box-shadow: ;
+      margin: 40px auto;
+      overflow: hidden;
+    }
+    .faq-header {
+      background: #f5f5f5;
+      color: white;
+      padding: 30px 25px;
+      text-align: center;
+    }
+    .faq-title {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+    .faq-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .faq-search {
+      margin: 25px auto;
+      max-width: 500px;
+      padding: 0 20px;
+    }
+    .search-box {
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 14px 20px 14px 50px;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    .search-box input:focus {
+      outline: none;
+      box-shadow: 0 5px 15px rgba(44, 62, 80, 0.2);
+    }
+    .search-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6c757d;
+    }
+    .faq-item {
+      border-bottom: 1px solid #eaeaea;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 25px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+    .faq-question:hover {
+      background-color: #f8f9fa;
+      color: #000;
+    }
+    .faq-question i {
+      transition: transform 0.3s ease;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 25px;
+      background-color: #f8f9fa;
+      transition: all 0.4s ease;
+    }
+    .faq-answer-content {
+      padding: 20px 0;
+    }
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+    .faq-item.active .faq-answer {
+      max-height: none;
+    }
+    .step {
+      display: flex;
+      margin-bottom: 15px;
+      align-items: flex-start;
+    }
+    .step-number {
+      background: #4CAF50;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    .step-content {
+      flex: 1;
+    }
+    .contact-button {
+      display: inline-block;
+      background: #4CAF50;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+    }
+    .contact-button:hover {
+      background: #3e8e41;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+    }
+    .highlight {
+      background: #e8f5e9;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #4CAF50;
+      margin: 15px 0;
+    }
+    .warning {
+      background: #ffecb3;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #ffc107;
+      margin: 15px 0;
+    }
+    .info {
+      background: #e3f2fd;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #2196f3;
+      margin: 15px 0;
+    }
+    .payment-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 15px 0;
+    }
+    .payment-method {
+      display: flex;
+      align-items: center;
+      background: #f8f9fa;
+      padding: 10px 15px;
+      border-radius: 8px;
+      width: calc(50% - 10px);
+    }
+    .payment-method i {
+      margin-right: 10px;
+      color: #4CAF50;
+      font-size: 1.2rem;
+    }
+    .faq-footer {
+      text-align: center;
+      padding: 25px;
+      background: #f8f9fa;
+      color: #6c757d;
+    }
+    @media (max-width: 768px) {
+      .faq-title {
+        font-size: 1.8rem;
+      }
+      .faq-subtitle {
+        font-size: 1rem;
+      }
+      .faq-question {
+        padding: 15px 20px;
+        font-size: 1rem;
+      }
+      .payment-method {
+        width: 100%;
+      }
+      .step {
+        flex-direction: column;
+      }
+      .step-number {
+        margin-bottom: 10px;
+      }
+    }
+    @media (max-width: 480px) {
+      .faq-container {
+        margin: 20px auto;
+      }
+      .faq-header {
+        padding: 20px 15px;
+      }
+      .faq-title {
+        font-size: 1.5rem;
+      }
+      .faq-search {
+        padding: 0 15px;
+      }
+      .search-box input {
+        padding: 12px 15px 12px 45px;
+      }
+      .faq-question {
+        padding: 15px;
+      }
+      .faq-answer {
+        padding: 0 15px;
+      }
+    }
+    /* Estilo especial para cartulina conejos */
+    .conejo-item label {
+      color: #4a148c; /* Morado profundo */
+      font-weight: bold;
+    }
+    .conejo-input {
+      border: 2px solid #7b1fa2 !important; /* Borde morado */
+      background-color: #f3e5f5; /* Lila muy claro */
+      color: #311b92;
+      border-radius: 8px;
+      padding: 6px;
+      transition: 0.3s;
+    }
+    .conejo-input:focus {
+      border-color: #d81b60; /* Rosa fuerte al focus */
+      background-color: #fce4ec;
+      outline: none;
+    }
+    /* Botones de número personalizados */
+    .conejo-item .number-btn {
+      background-color: #ba68c8; /* Morado medio */
+      color: white;
+      border-radius: 4px;
+    }
+    .conejo-item .number-btn:hover {
+      background-color: #ab47bc;
+    }
+  </style>
+
+<body style="display: block; margin: 0; padding: 0; font-family: Arial, sans-serif; background: #f0f0f0;">
+  <!-- Modal a pantalla completa -->
+  <div id="modalFull" class="modal-full">
+    <div class="modal-full-content">
+      <!-- Botón de cierre (X) -->
+      <div id="cerrar-modal-full" onclick="cerrarModal()" style="position: fixed; top: 15px; right: 20px; z-index: 1001; cursor: pointer; font-size: 39px; color: #fff; font-weight: bold; transition: transform 0.2s; background: linear-gradient(to right, #73ded0, #f3e5f5); width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(0,0,0,0.2);"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </div>
+      <div class="form-container">
+        <h5 class="titulo-principal"><i class="fas fa-ring"></i> SOLICITAR ANILLAS FEDERADAS (Aves)<br/><i class="fa-solid fa-carrot"></i> SOLICITAR CERTIFICADOS DE IDENT. (Cartulinas Conejos)<br/><br/>2ª CONVOCATORIA ABIERTA 2025</h5>
+        <div class="fechas-linea">
+          <div class="fecha-item">
+            <i class="fas fa-calendar-alt fecha-icono"></i>
+            <span>Inicio: 1-JULIO-25</span>
+          </div>
+          <div class="fecha-item cierre">
+            <i class="fas fa-calendar-times fecha-icono"></i>
+            <span>Cierre: 4-AGOSTO-25</span>
+          </div>
+          <div class="fecha-item entrega">
+            <i class="fas fa-truck fecha-icono"></i>
+            <span>Entrega: NOVIEMBRE-25</span>
+          </div>
+        </div>
+        <br/>
+        <div id="bloquePrincipal">
+          <center>
+            <label for="numSocio">Número de socio</label>
+            <input type="text" id="numSocio" placeholder="su clave">
+            <div id="estadoSocio" style="display:none;">
+              <span id="textoEstado"></span>
+            </div>
+          </center>
+          <!-- Sección de calibres -->
+          <div class="calibres-grid" id="seccionCalibres" style="display:none;">
+            <!-- Primeros 5 campos visibles -->
+            <div class="calibre-item" id="item_conejo">
+              <label>Cartulinas Conejos</label>
+              <div class="number-input-container">
+                <input type="number" id="cantidad_conejo" step="10" min="10" placeholder="Mín. 10" class="conejo-input">
+                <div class="number-buttons">
+                  <div class="number-btn up" data-target="cantidad_conejo"><i class="fas fa-plus"></i></div>
+                  <div class="number-btn down" data-target="cantidad_conejo"><i class="fas fa-minus"></i></div>
+                  <div class="number-btn clear" data-target="cantidad_conejo" title="Restaurar valor por defecto"><i class="fas fa-trash"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="calibre-item" id="item_2">
+              <label>⌀2mm Anillas</label>
+              <div class="number-input-container">
+                <input type="number" id="cantidad_2" step="10" min="10" placeholder="Mín. 10" class="calibre-menor">
+                <div class="number-buttons">
+                  <div class="number-btn up" data-target="cantidad_2"><i class="fas fa-plus"></i></div>
+                  <div class="number-btn down" data-target="cantidad_2"><i class="fas fa-minus"></i></div>
+                  <div class="number-btn clear" data-target="cantidad_2"><i class="fas fa-trash"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="calibre-item" id="item_2_5">
+              <label>⌀2.5mm Anillas</label>
+              <div class="number-input-container">
+                <input type="number" id="cantidad_2_5" step="10" min="10" placeholder="Mín. 10" class="calibre-menor">
+                <div class="number-buttons">
+                  <div class="number-btn up" data-target="cantidad_2_5"><i class="fas fa-plus"></i></div>
+                  <div class="number-btn down" data-target="cantidad_2_5"><i class="fas fa-minus"></i></div>
+                  <div class="number-btn clear" data-target="cantidad_2_5"><i class="fas fa-trash"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="calibre-item" id="item_3">
+              <label>⌀3mm Anillas</label>
+              <div class="number-input-container">
+                <input type="number" id="cantidad_3" step="10" min="10" placeholder="Mín. 10" class="calibre-menor">
+                <div class="number-buttons">
+                  <div class="number-btn up" data-target="cantidad_3"><i class="fas fa-plus"></i></div>
+                  <div class="number-btn down" data-target="cantidad_3"><i class="fas fa-minus"></i></div>
+                  <div class="number-btn clear" data-target="cantidad_3"><i class="fas fa-trash"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="calibre-item" id="item_3_5">
+              <label>⌀3.5mm Anillas</label>
+              <div class="number-input-container">
+                <input type="number" id="cantidad_3_5" step="10" min="10" placeholder="Mín. 10" class="calibre-menor">
+                <div class="number-buttons">
+                  <div class="number-btn up" data-target="cantidad_3_5"><i class="fas fa-plus"></i></div>
+                  <div class="number-btn down" data-target="cantidad_3_5"><i class="fas fa-minus"></i></div>
+                  <div class="number-btn clear" data-target="cantidad_3_5"><i class="fas fa-trash"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="calibre-item" id="item_4">
+              <label>⌀4mm Anillas</label>
+              <div class="number-input-container">
+                <input type="number" id="cantidad_4" step="10" min="10" placeholder="Mín. 10" class="calibre-menor">
+                <div class="number-buttons">
+                  <div class="number-btn up" data-target="cantidad_4"><i class="fas fa-plus"></i></div>
+                  <div class="number-btn down" data-target="cantidad_4"><i class="fas fa-minus"></i></div>
+                  <div class="number-btn clear" data-target="cantidad_4"><i class="fas fa-trash"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="calibre-item" id="item_4_5">
+              <label>⌀4.5mm Anillas</label>
+              <div class="number-input-container">
+                <input type="number" id="cantidad_4_5" step="10" min="10" placeholder="Mín. 10" class="calibre-menor">
+                <div class="number-buttons">
+                  <div class="number-btn up" data-target="cantidad_4_5"><i class="fas fa-plus"></i></div>
+                  <div class="number-btn down" data-target="cantidad_4_5"><i class="fas fa-minus"></i></div>
+                  <div class="number-btn clear" data-target="cantidad_4_5"><i class="fas fa-trash"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="calibre-item" id="item_5">
+              <label>⌀5mm Anillas</label>
+              <div class="number-input-container">
+                <input type="number" id="cantidad_5" step="10" min="10" placeholder="Mín. 10" class="calibre-menor">
+                <div class="number-buttons">
+                  <div class="number-btn up" data-target="cantidad_5"><i class="fas fa-plus"></i></div>
+                  <div class="number-btn down" data-target="cantidad_5"><i class="fas fa-minus"></i></div>
+                  <div class="number-btn clear" data-target="cantidad_5"><i class="fas fa-trash"></i></div>
+                </div>
+              </div>
+            </div>
+            <!-- Botón Cargar más -->
+            <div class="calibre-item" id="btnCargarMasContainer" style="grid-column: 1 / -1; text-align: center; padding: 10px 0;">
+              <button id="btnCargarMas" style="width:100%; padding:18px; background:#FFFFCB; color:black; border: 2px solid #000; border-radius:12px; font-size:18px; cursor:pointer; font-weight:bold;">
+                <i class="fas fa-plus-circle"></i> VER TODOS LOS CALIBRES
+              </button>
+            </div>
+            <!-- Resto de campos (ocultos inicialmente) -->
+            <div class="calibre-item" id="item_5_2" style="display:none;">
+              <label>⌀5.2mm Anillas</label>
+              <div class="number-input-container">
+                <input type="number" id="cantidad_5_2" step="10" min="10" placeholder="Mín. 10" class="calibre-mayor">
+                <div class="number-buttons">
+                  <div class="number-btn up" data-target="cantidad_5_2"><i class="fas fa-plus"></i></div>
+                  <div class="number-btn down" data-target="cantidad_5_2"><i class="fas fa-minus"></i></div>
+                  <div class="number-btn clear" data-target="cantidad_5_2"><i class="fas fa-trash"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="calibre-item" id="item_6" style="display:none;">
+              <label>⌀6mm Anillas</label>
+              <div class="number-input-container">
+                <input type="number" id="cantidad_6" step="10" min="10" placeholder="Mín. 10" class="calibre-mayor">
+                <div class="number-buttons">
+                  <div class="number-btn up" data-target="cantidad_6"><i class="fas fa-plus"></i></div>
+                  <div class="number-btn down" data-target="cantidad_6"><i class="fas fa-minus"></i></div>
+                  <div class="number-btn clear" data-target="cantidad_6"><i class="fas fa-trash"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <label for="observaciones" style="display:none;" id="labelObservaciones"></label>
+          <input type="hidden" id="observaciones" placeholder="Ej: Enviar urgente, dirección…" style="display:none;">
+          <button onclick="verificarSocio()" id="btnAcceder" style="background:#73ded0;">
+            <span class="spinner" style="display:none;"></span>
+            <span class="btn-text"><b>ACCEDER</b></span>
+          </button>
+          <button onclick="validarYGenerarResumen()" id="btnEnviar" style="display:none;background:#e63946;">
+            <span class="spinner" style="display:none;"></span>
+            <span class="btn-text">Revisar y enviar pedido</span>
+          </button>
+          <div id="msgPedido" style="display:none;"></div>
+        </div>
+      </div>
+      <!-- Modal para el resumen del pedido -->
+      <div id="modalResumen" class="modal">
+        <div class="modal-contenido">
+          <span class="cerrar-modal">&times;</span>
+          <div id="resumenPedido">
+            <h3>Resumen de tu pedido</h3>
+            <table id="tablaResumen">
+              <thead>
+                <tr>
+                  <th class="calibre-col">Anillas / Cartulinas</th>
+                  <th class="cantidad-col">Cantidad</th>
+                  <th class="precio-col">Precio</th>
+                  <th class="subtotal-col">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody id="cuerpoResumen">
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3" class="total">Total:</td>
+                  <td id="totalPedido" class="total">0,00 €</td>
+                </tr>
+              </tfoot>
+            </table>
+            <div class="botones-resumen">
+              <button id="btnConfirmar" onclick="confirmarPedido()">
+                <span class="spinner" style="display:none;"></span>
+                <span class="btn-text">Confirmar y enviar</span>
+              </button>
+              <button id="btnModificar" onclick="modificarPedido()">Modificar pedido</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FAQ -->
+      <div class="faq-container">
+        <div class="faq-header">
+          <h1 class="faq-title"><b><span style="color: black;">Centro de Ayuda</span></b></h1>
+          <p class="faq-subtitle"><b><span style="color: black;">Encuentra respuestas a las preguntas más frecuentes sobre nuestro proceso de socios federados SOCNAS</span></b></p>
+        </div>
+        <div class="faq-search">
+          <div class="search-box">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" placeholder="Buscar en preguntas frecuentes...">
+          </div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Como solicitar anillas federadas SOCNAS?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Para federarte online con SOCNAS, sigue estos pasos:</p>
+                <div class="step">
+                  <div class="step-number">1</div>
+                  <div class="step-content">
+                    <strong>RELLENAR FORMULARIO</strong> clic al botón de arriba azul que dice HAZTE SOCIO.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number">2</div>
+                  <div class="step-content">
+                    INFORMACIÓN DE ATENCIÓN AL NUEVO SOCIO<strong>"Serás antendido vía whatsapp"</strong>sobre anillas y pago de cuota de socio.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number">3</div>
+                  <div class="step-content">
+                    Una vez asesorado vía whatsapp (que no se tardará ni 3 minutos), ya serás socio federado en COE-FOA con todos tus beneficios entre ellos CARNET FÍSICO Y DIGITAL DE CRIADOR NACIONAL FEDERADO Y ANILLAS FEDERATIVAS. 
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number">4</div>
+                  <div class="step-content">
+                     Te facilitaremos una CLAVE DE ACCESO FACIL DE RECORDAR para que puedas solicitar en la convocatoria abierta que desees tus anillas federativas.
+                  </div>
+                </div>
+                <div class="highlight">
+                  <i class="fas fa-lightbulb"></i> <strong>CONSEJO:</strong> No te preocupes por nada ya que SOCNAS su verdadera fuerza recae en su atención personalizada al SOCIO. Y estarás siempre asesorado en la mayor brevedad. Es muy facil y rápido nuestro servicio.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Y que es SOCNAS?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>SOCIEDAD ORNITOLÓGICA DE CRIADORES NACIONALES (España):</p>
+                <div class="info">
+                  <strong>En SOCNAS:</strong> Transformamos la forma de gestionar tu afición. Nos especializamos en la gestión y administración de carnet y anillas federadas, trabajando de la mano con la FOA Y FESACOCUR y ofreciendo anillas oficiales homologadas por la COE (Confederación Ornitológica Española) y la Entente Europea. Gestión de tu carnet físico y digital para socios.
+                </div>
+                <div class="info">
+                  <strong>Somos Pioneros:</strong> En la gestión y administración online con envío a domicilio de carnet de criador nacional и anillas federativas. Un servicio rápido, seguro y sin complicaciones, para que dediques tu tiempo a lo que realmente importa: tus aves y animales.
+                </div>
+                <div class="info">
+                  <strong>NIVEL DE COBERTURA:</strong> Ofrecemos cobertura a nivel nacional (España) y trabajamos para todo tipo de pájaros de jaula: canaricultura, psitácidas, exóticos, silvestres, avicultura, colombicultura… Además, estrenamos nuestro nuevo servicio para conejos de raza, apoyando también a la cunicultura.
+                </div>
+                <div class="warning">
+                  <i class="fas fa-exclamation-triangle"></i> <strong>Importante:</strong> SOCNAS cuenta con registro oficial a nivel NACIONAL y estatutarios con objetivos para ayudar y gestionar servicios para criadores de ornitología, Avicultura, Columbicultura y nuevo servicio de gestión en CERTIFICADOS OFICIALES para TATUAJES en CUNICULTURA DE RAZA.
+                </div>
+                <a href="#" class="contact-button"><i class="fas fa-envelope"></i> Contactar con soporte</a>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Cómo hago el pago de las anillas?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Puedes realizar el pago de las anillas mediante varios métodos:</p>
+                <div class="payment-methods">
+                  <div class="payment-method">
+                    <i class="fas fa-money-bill-wave"></i>
+                    Transferencia bancaria
+                  </div>
+                  <div class="payment-method">
+                    <i class="fas fa-credit-card"></i>
+                    Tarjeta de crédito/débito
+                  </div>
+                  <div class="payment-method">
+                    <i class="fab fa-paypal"></i>
+                    PayPal
+                  </div>
+                  <div class="payment-method">
+                    <i class="fas fa-university"></i>
+                    Domiciliación bancaria
+                  </div>
+                </div>
+                <div class="highlight">
+                  <i class="fas fa-info-circle"></i> <strong>Nota:</strong> Una vez realizado el pago, envía el comprobante a <strong>pagos@asociacion.com</strong> para agilizar el proceso.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Cuánto tarda en llegar el pedido de anillas?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>El tiempo de entrega depende de varios factores:</p>
+                <ul style="margin-left: 20px; margin-bottom: 15px;">
+                  <li><strong>Stock disponible:</strong> 3-5 días hábiles</li>
+                  <li><strong>Personalizadas:</strong> 2-3 semanas</li>
+                  <li><strong>Pedidos internacionales:</strong> 1-2 semanas adicionales</li>
+                </ul>
+                <div class="warning">
+                  <i class="fas fa-shipping-fast"></i> <strong>Envío express:</strong> Disponible por un suplemento de 15€ (entrega in 24-48h para España peninsular).
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Puedo modificar o cancelar mi pedido?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Las posibilidades de modificación o cancelación dependen del estado de tu pedido:</p>
+                <div class="step">
+                  <div class="step-number"><i class="fas fa-check"></i></div>
+                  <div class="step-content">
+                    <strong>Pedido en preparación:</strong> Modificaciones posibles sin coste adicional.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number"><i class="fas fa-cog"></i></div>
+                  <div class="step-content">
+                    <strong>Pedido en producción:</strong> Modificaciones con coste adicional del 25%.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number"><i class="fas fa-times"></i></div>
+                  <div class="step-content">
+                    <strong>Pedido enviado:</strong> No se permiten modificaciones o cancelaciones.
+                  </div>
+                </div>
+                <div class="info">
+                  <i class="fas fa-phone"></i> Para cualquier modificación, contacta inmediatamente con nuestro departamento de pedidos.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="faq-footer">
+          <p>¿No encuentras la respuesta que buscas? <a href="#" style="color: #4CAF50; text-decoration: none; font-weight: 600;">Contáctanos</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Funciones para abrir/cerrar modal
+    function abrirModal() {
+      document.getElementById("modalFull").style.display = "block";
+    }
+    function cerrarModal() {
+      document.getElementById("modalFull").style.display = "none";
+    }
+
+    // Configuración inicial
+    const TELEFONO_WHATSAPP = "34677163664";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEA7taT3olYtaeGX6QHp-kicKyNCsdbxPMnjdZKb3K3z4lIEykm3zBYD1IO3k_z1mP/exec";
+    const PRECIOS = {
+      '2': 0.30,
+      '2_5': 0.30,
+      '3': 0.30,
+      '3_5': 0.30,
+      '4': 0.30,
+      '4_5': 0.30,
+      '5': 0.30,
+      '5_2': 0.30,
+      '6': 0.30,
+      'conejo': 0.30
+    };
+    let calibrePrincipal = null;
+    let datosSocioCache = null;
+    let esPrimerPedido = false;
+
+    function inicializarPlaceholders() {
+      const inputsTexto = document.querySelectorAll('input[type="text"]');
+      inputsTexto.forEach(input => {
+        if (!input.value) {
+          input.value = input.placeholder;
+          input.classList.add('placeholder-value');
+        }
+        input.addEventListener('focus', function() {
+          if (this.value === this.placeholder) {
+            this.value = '';
+            this.classList.remove('placeholder-value');
+          }
+        });
+        input.addEventListener('blur', function() {
+          if (!this.value.trim()) {
+            this.value = this.placeholder;
+            this.classList.add('placeholder-value');
+          }
+        });
+      });
+      const inputsNumero = document.querySelectorAll('input[type="number"]');
+      inputsNumero.forEach(input => {
+        if (!input.value) {
+          input.value = input.placeholder;
+          input.classList.add('placeholder-value');
+        }
+        input.addEventListener('focus', function() {
+          if (this.value === this.placeholder) {
+            this.value = '';
+            this.classList.remove('placeholder-value');
+          }
+        });
+        input.addEventListener('blur', function() {
+          if (!this.value.trim()) {
+            this.value = input.placeholder;
+            this.classList.add('placeholder-value');
+          }
+        });
+        input.addEventListener('keydown', function(e) {
+          e.preventDefault();
+        });
+      });
+    }
+
+    function obtenerValorReal(input) {
+      return (input.value === input.placeholder) ? '' : input.value;
+    }
+
+    function mostrarSpinner(buttonId, texto = null) {
+      const btn = document.getElementById(buttonId);
+      btn.disabled = true;
+      btn.classList.add('btn-loading');
+      btn.querySelector('.spinner').style.display = 'inline-block';
+      if(texto) btn.querySelector('.btn-text').textContent = texto;
+    }
+
+    function ocultarSpinner(buttonId, texto = null) {
+      const btn = document.getElementById(buttonId);
+      btn.disabled = false;
+      btn.classList.remove('btn-loading');
+      btn.querySelector('.spinner').style.display = 'none';
+      if(texto) btn.querySelector('.btn-text').textContent = texto;
+    }
+
+    function mostrarModal() {
+      const modal = document.getElementById("modalResumen");
+      modal.style.display = "block";
+      setTimeout(() => {
+        modal.classList.add("mostrar");
+      }, 10);
+    }
+
+    function ocultarModal() {
+      const modal = document.getElementById("modalResumen");
+      modal.classList.remove("mostrar");
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 300);
+    }
+
+    document.querySelector('.cerrar-modal').addEventListener('click', ocultarModal);
+    window.addEventListener('click', function(event) {
+      const modal = document.getElementById("modalResumen");
+      if (event.target === modal) {
+        ocultarModal();
+      }
+    });
+
+    function ocultarMensaje() {
+      const msgDiv = document.getElementById("msgPedido");
+      msgDiv.style.display = "none";
+      msgDiv.textContent = '';
+    }
+
+    function mostrarMensaje(msg, esError) {
+      const msgDiv = document.getElementById("msgPedido");
+      msgDiv.style.display = "block";
+      msgDiv.textContent = msg;
+      msgDiv.className = esError ? "error" : "ok";
+    }
+
+    function setupNumberButtons() {
+      document.querySelectorAll('.number-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const targetId = this.getAttribute('data-target');
+          const input = document.getElementById(targetId);
+          const step = parseInt(input.getAttribute('step')) || 10;
+          const min = parseInt(input.getAttribute('min')) || 10;
+          let value = parseInt(input.value) || min;
+          if (this.classList.contains('up')) {
+            value += step;
+          } else if (this.classList.contains('down')) {
+            value = Math.max(min, value - step);
+          } else if (this.classList.contains('clear')) {
+            input.value = input.placeholder;
+            input.classList.add('placeholder-value');
+            const event = new Event('input', { bubbles: true });
+            input.dispatchEvent(event);
+            return;
+          }
+          input.value = value;
+          input.classList.remove('placeholder-value');
+          const event = new Event('input', { bubbles: true });
+          input.dispatchEvent(event);
+        });
+      });
+    }
+
+    async function verificarSocio() {
+      const numSocio = obtenerValorReal(document.getElementById("numSocio")).trim();
+      if (!numSocio) {
+        mostrarMensaje("Por favor, ingresa tu número de socio", true);
+        return;
+      }
+      ocultarMensaje();
+      mostrarSpinner('btnAcceder', 'Verificando socio...');
+      mostrarMensaje("Esto puede tardar unos segundos...", false);
+      try {
+        const response = await fetch(`${SCRIPT_URL}?numSocio=${numSocio}`);
+        const data = await response.json();
+        if (!data.valido) {
+          mostrarMensaje("Número de socio no válido", true);
+          ocultarSpinner('btnAcceder', 'Acceder');
+          return;
+        }
+        datosSocioCache = data;
+        esPrimerPedido = data.esPrimerPedido;
+        document.getElementById("seccionCalibres").style.display = "grid";
+        document.getElementById("labelObservaciones").style.display = "block";
+        document.getElementById("observaciones").style.display = "block";
+        document.getElementById("btnEnviar").style.display = "block";
+        document.getElementById("btnAcceder").style.display = "none";
+        document.getElementById("estadoSocio").style.display = "block";
+        document.getElementById("textoEstado").innerHTML = "PEDIDO VÁLIDO: Todos los calibres (Anillas aves) y Cartulinas de Certificado de Identidad (Cart. C.I) para Conejos (10+, múltiplos de 10)<br/> *Todo lo que solicites tanto anillas como C.I conejos están homologados por la Entente Europea.";
+
+        document.querySelectorAll('.calibre-item input').forEach(input => {
+          input.min = 10;
+          input.step = 10;
+          input.placeholder = "Mín. 10";
+          input.disabled = false;
+          input.value = input.placeholder;
+          input.classList.add('placeholder-value');
+          input.addEventListener('input', function() {
+            const valor = parseInt(this.value) || 0;
+            if (valor > 0 && valor % 10 !== 0) {
+              this.value = Math.round(valor / 10) * 10;
+              mostrarMensaje("Deben ser múltiplos de 10", true);
+              return;
+            }
+          });
+        });
+
+        setTimeout(setupNumberButtons, 100);
+
+        // Configurar el botón "Cargar más"
+        const btnCargarMas = document.getElementById('btnCargarMas');
+        btnCargarMas.addEventListener('click', function() {
+          document.getElementById('item_4').style.display = 'block';
+          document.getElementById('item_4_5').style.display = 'block';
+          document.getElementById('item_5').style.display = 'block';
+          document.getElementById('item_5_2').style.display = 'block';
+          document.getElementById('item_6').style.display = 'block';
+          this.parentElement.style.display = 'none'; // Ocultar botón
+        });
+
+        // === BLOQUEAR EL CAMPO DE NÚMERO DE SOCIO ===
+        const inputSocio = document.getElementById("numSocio");
+        inputSocio.disabled = true;
+        inputSocio.style.backgroundColor = "#f0f0f0";
+        inputSocio.style.cursor = "not-allowed";
+        inputSocio.title = "Número validado - no se puede modificar";
+
+        ocultarSpinner('btnAcceder');
+      } catch (error) {
+        mostrarMensaje("Error de conexión. Intenta de nuevo.", true);
+        ocultarSpinner('btnAcceder', 'Acceder');
+      }
+    }
+
+    function validarYGenerarResumen() {
+      if (!validarPedidoMinimo()) {
+        return;
+      }
+      generarResumen();
+    }
+
+    function validarPedidoMinimo() {
+      let totalCalibres = 0;
+      let errorMultiplos = false;
+      document.querySelectorAll('.calibre-item input').forEach(input => {
+        const valor = (input.value === input.placeholder) ? 0 : parseInt(input.value) || 0;
+        totalCalibres += valor;
+        if (valor > 0 && valor % 10 !== 0) {
+          errorMultiplos = true;
+        }
+      });
+      if (totalCalibres < 10) {
+        mostrarMensaje("Debes solicitar al menos 10 anillas en total", true);
+        return false;
+      }
+      if (errorMultiplos) {
+        mostrarMensaje("Todos los calibres deben ser múltiplos de 10", true);
+        return false;
+      }
+      return true;
+    }
+
+    function generarResumen() {
+      const numSocio = obtenerValorReal(document.getElementById("numSocio")).trim();
+      let totalPedido = 0;
+      const cuerpoResumen = document.getElementById("cuerpoResumen");
+      cuerpoResumen.innerHTML = '';
+      const inputsCalibre = document.querySelectorAll('.calibre-item input');
+      let tieneAlMenosUnItem = false;
+      inputsCalibre.forEach(input => {
+        const cantidad = (input.value === input.placeholder) ? 0 : parseInt(input.value) || 0;
+        const calibreId = input.id.replace('cantidad_', '');
+        const calibreNombre = input.parentElement.previousElementSibling.textContent.trim();
+        if (cantidad > 0) {
+          tieneAlMenosUnItem = true;
+          const precioUnitario = PRECIOS[calibreId];
+          const subtotal = precioUnitario * cantidad;
+          totalPedido += subtotal;
+          const fila = document.createElement('tr');
+          fila.innerHTML = `
+            <td class="calibre-col">${calibreNombre}</td>
+            <td class="cantidad-col">${cantidad}</td>
+            <td class="precio-col">${precioUnitario.toFixed(2)} €</td>
+            <td class="subtotal-col">${subtotal.toFixed(2)} €</td>
+          `;
+          cuerpoResumen.appendChild(fila);
+        }
+      });
+      if (!tieneAlMenosUnItem) {
+        mostrarMensaje("Debes seleccionar al menos un calibre", true);
+        return;
+      }
+      const filaEnvio = document.createElement('tr');
+      filaEnvio.innerHTML = `
+        <td class="calibre-col">Gastos de envío</td>
+        <td class="cantidad-col">1</td>
+        <td class="precio-col">7,00 €</td>
+        <td class="subtotal-col">7,00 €</td>
+      `;
+      cuerpoResumen.appendChild(filaEnvio);
+      const totalConEnvio = totalPedido + 7.00;
+      document.getElementById("totalPedido").textContent = totalConEnvio.toFixed(2) + '\u20AC';
+      mostrarModal();
+    }
+
+    function modificarPedido() {
+      ocultarModal();
+    }
+
+    async function confirmarPedido() {
+      const numSocio = obtenerValorReal(document.getElementById("numSocio")).trim();
+      const observaciones = "2 CONVOCATORIA FESACOCUR";
+      if (!validarPedidoMinimo()) {
+        modificarPedido();
+        return;
+      }
+      mostrarSpinner('btnConfirmar', 'Enviando...');
+      mostrarMensaje("Guardando pedido...", false);
+      try {
+        const pedidoData = {
+          numSocio,
+          cantidad_2: (document.getElementById("cantidad_2").value === "Mín. 10") ? 0 : parseInt(document.getElementById("cantidad_2").value) || 0,
+          cantidad_2_5: (document.getElementById("cantidad_2_5").value === "Mín. 10") ? 0 : parseInt(document.getElementById("cantidad_2_5").value) || 0,
+          cantidad_3: (document.getElementById("cantidad_3").value === "Mín. 10") ? 0 : parseInt(document.getElementById("cantidad_3").value) || 0,
+          cantidad_3_5: (document.getElementById("cantidad_3_5").value === "Mín. 10") ? 0 : parseInt(document.getElementById("cantidad_3_5").value) || 0,
+          cantidad_4: (document.getElementById("cantidad_4").value === "Mín. 10") ? 0 : parseInt(document.getElementById("cantidad_4").value) || 0,
+          cantidad_4_5: (document.getElementById("cantidad_4_5").value === "Mín. 10") ? 0 : parseInt(document.getElementById("cantidad_4_5").value) || 0,
+          cantidad_5: (document.getElementById("cantidad_5").value === "Mín. 10") ? 0 : parseInt(document.getElementById("cantidad_5").value) || 0,
+          cantidad_5_2: (document.getElementById("cantidad_5_2").value === "Mín. 10") ? 0 : parseInt(document.getElementById("cantidad_5_2").value) || 0,
+          cantidad_6: (document.getElementById("cantidad_6").value === "Mín. 10") ? 0 : parseInt(document.getElementById("cantidad_6").value) || 0,
+          cantidad_conejo: (document.getElementById("cantidad_conejo").value === "Mín. 10") ? 0 : parseInt(document.getElementById("cantidad_conejo").value) || 0,
+          observaciones
+        };
+        const response = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: JSON.stringify(pedidoData)
+        });
+        const result = await response.json();
+        if (!result.success) throw new Error(result.error);
+        let textoPedido = `Pedido socio ${numSocio}:\n`;
+        let total = 0;
+        document.querySelectorAll('.calibre-item input').forEach(input => {
+          const cantidad = (input.value === input.placeholder) ? 0 : parseInt(input.value) || 0;
+          if (cantidad > 0) {
+            const calibreId = input.id.replace('cantidad_', '');
+            const calibreNombre = input.parentElement.previousElementSibling.textContent.trim();
+            const precioUnitario = PRECIOS[calibreId];
+            const subtotal = precioUnitario * cantidad;
+            total += subtotal;
+            textoPedido += `${calibreNombre}: ${cantidad} x ${precioUnitario.toFixed(2)}€ = ${subtotal.toFixed(2)}€\n`;
+          }
+        });
+        textoPedido += `\nTOTAL: ${total.toFixed(2)}€\nGastos de envío: 7,00€\nTOTAL CON ENVÍO: ${(total + 7).toFixed(2)}€\n`;
+        if (observaciones) textoPedido += `Observaciones: ${observaciones}\n`;
+        textoPedido += `\n---\n✓ *PEDIDO RECIBIDO*\nEn las próximas 24-48 horas hábiles revisaremos su pedido, no se preocupes si su pedido no está bien o has tenido dudas ya que tenemos que mirarlo y discutirlo contigo, tras la confirmación, le enviaremos por este mismo canal vía whatsapp los datos bancarios para realizar el pago. Gracias por su colaboración.`;
+
+        const url = `https://wa.me/${TELEFONO_WHATSAPP}?text=${encodeURIComponent(textoPedido)}`;
+        window.location.href = url;
+      } catch (error) {
+        mostrarMensaje("Error al guardar: " + error.message, true);
+        ocultarSpinner('btnConfirmar', 'Confirmar y enviar');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      inicializarPlaceholders();
+      const campos = [
+        document.getElementById("numSocio"),
+        document.getElementById("observaciones"),
+        ...document.querySelectorAll('.calibre-item input')
+      ];
+      campos.forEach(campo => {
+        if (campo) {
+          campo.addEventListener('input', ocultarMensaje);
+        }
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+            }
+          });
+          item.classList.toggle('active');
+        });
+      });
+      const searchInput = document.querySelector('.search-box input');
+      searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        faqItems.forEach(item => {
+          const question = item.querySelector('.faq-question').textContent.toLowerCase();
+          const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+          if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #f5f9f7;
+            padding: 20px;
+        }
+        
+        /* Modal a pantalla completa */
+        .modal-full-calendario {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #f9f9f9;
+            overflow: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-full-content {
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .cerrar-modal-full {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            background: #e63946;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: all 0.2s;
+        }
+        
+        .cerrar-modal-full:hover {
+            background: #c1121f;
+            transform: scale(1.1);
+        }
+        
+        .calendar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        
+        /* Encabezado con verde pastel */
+        .calendar-header {
+            background: #a8d5ba;
+            color: #2d4a3a;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 3px solid #88c9a1;
+        }
+        
+        .calendar-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .calendar-header p {
+            font-size: 17px;
+            opacity: 0.9;
+        }
+        
+        /* Filtros con estilo pastel */
+        .calendar-filters {
+            padding: 20px;
+            background-color: #e8f4ec;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 2px solid #d8eedf;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #97c9a9;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            color: #4a7b5f;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #88c9a1;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(136, 201, 161, 0.3);
+        }
+        
+        /* Grid de eventos con estilo zebra */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 25px;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border-left: 5px solid #a8d5ba;
+        }
+        
+        .event-card:nth-child(even) {
+            border-left: 5px solid #97c9a9;
+            background: #f9fbf9;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .event-header {
+            padding: 20px;
+            background: #d8eedf;
+            color: #2d4a3a;
+            text-align: center;
+        }
+        
+        .event-date {
+            font-size: 14px;
+            color: #4a7b5f;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .event-title {
+            font-size: 20px;
+            margin: 8px 0;
+            color: #2d4a3a;
+            font-weight: 600;
+        }
+        
+        .event-category {
+            display: inline-block;
+            background: #c6e6d2;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: #3a6b4c;
+            font-weight: 500;
+        }
+        
+        /* Contenedor de imagen vertical */
+        .event-image-container {
+            width: 100%;
+            height: 480px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f1f8f3;
+        }
+        
+        .event-image {
+            height: 100%;
+            width: auto;
+            max-width: none;
+            object-fit: contain;
+        }
+        
+        .event-summary {
+            padding: 20px;
+            background: white;
+        }
+        
+        .event-summary p {
+            margin-bottom: 15px;
+            color: #4d604d;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Botón de información mejorado */
+        .info-button {
+            background: #88c9a1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            transition: all 0.3s;
+            font-size: 15px;
+        }
+        
+        .info-button:hover {
+            background: #6bb58a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(136, 201, 161, 0.3);
+        }
+        
+        .info-button i {
+            transition: transform 0.3s;
+        }
+        
+        .info-button.active i {
+            transform: rotate(180deg);
+        }
+        
+        /* Detalles del evento con estilo zebra */
+        .event-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: #f5f9f7;
+        }
+        
+        .event-details-content {
+            padding: 25px;
+        }
+        
+        .event-details.open {
+            max-height: 1000px;
+        }
+        
+        .detail-item {
+            margin-bottom: 15px;
+            display: flex;
+            font-size: 15px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        
+        .detail-item:nth-child(odd) {
+            background: #e8f4ec;
+        }
+        
+        .detail-label {
+            font-weight: 700;
+            min-width: 120px;
+            color: #3a6b4c;
+        }
+        
+        .event-actions {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        
+        .btn {
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+            text-align: center;
+            font-size: 15px;
+        }
+        
+        .btn-primary {
+            background: #88c9a1;
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: #6bb58a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(136, 201, 161, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #88c9a1;
+            border: 2px solid #88c9a1;
+        }
+        
+        .btn-outline:hover {
+            background: #88c9a1;
+            color: white;
+        }
+        
+        .btn-website {
+            background: transparent;
+            color: #7ab893;
+            border: 2px solid #7ab893;
+        }
+        
+        .btn-website:hover {
+            background: #7ab893;
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .events-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 20px;
+            }
+            
+            .calendar-header {
+                padding: 20px;
+            }
+            
+            .calendar-header h1 {
+                font-size: 24px;
+            }
+            
+            .event-image-container {
+                height: 420px;
+            }
+            
+            .detail-item {
+                flex-direction: column;
+            }
+            
+            .detail-label {
+                min-width: auto;
+                margin-bottom: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .events-grid {
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .event-header {
+                padding: 15px;
+            }
+            
+            .event-summary {
+                padding: 15px;
+            }
+            
+            .event-title {
+                font-size: 18px;
+            }
+            
+            .event-image-container {
+                height: 480px;
+            }
+            
+            .calendar-filters {
+                padding: 15px;
+            }
+            
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+
+    
+    <!-- Modal a pantalla completa -->
+    <div id="modalCalendario" class="modal-full-calendario">
+      
+     
+        <div class="cerrar-modal-full" onclick="cerrarModalCalendario()">
+            <i class="fas fa-times"></i>
+        </div>
+      
+      
+        
+        
+        <div class="modal-full-content">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <h1>Calendario de Concursos y Eventos</h1>
+                    <p>Descubre los próximos concursos y eventos. ¡No te pierdas ninguno!</p>
+                </div>
+                
+                <div class="calendar-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="fotografia">Fotografía</button>
+                    <button class="filter-btn" data-filter="pintura">Pintura</button>
+                    <button class="filter-btn" data-filter="literatura">Literatura</button>
+                    <button class="filter-btn" data-filter="digital">Arte Digital</button>
+                </div>
+                
+                <div class="events-grid">
+                    <!-- Evento 1 -->
+                    <div class="event-card" data-category="fotografia">
+                        <div class="event-header">
+                            <div class="event-date">15 Octubre 2023</div>
+                            <h3 class="event-title">Concurso de Fotografía Natural</h3>
+                            <span class="event-category">Fotografía</span>
+                        </div>
+                        <div class="event-image-container">
+                            <img src="https://fesacocur.es/wp-content/uploads/2025/03/PHOTO-2025-02-26-14-19-41-scaled.jpg" alt="Concurso de Fotografía Natural" class="event-image">
+                        </div>
+                        <div class="event-summary">
+                            <p>Captura la esencia de la naturaleza en su máximo esplendor. Participa con tus mejores fotografías de paisajes, flora y fauna.</p>
+                            <button class="info-button">
+                                <i class="fas fa-info-circle"></i> Ver información completa
+                            </button>
+                        </div>
+                        <div class="event-details">
+                            <div class="event-details-content">
+                                <div class="detail-item">
+                                    <span class="detail-label">Fecha:</span>
+                                    <span>15 Octubre - 20 Noviembre 2023</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Lugar:</span>
+                                    <span>Galería Municipal de Arte</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Organiza:</span>
+                                    <span>Asociación Fotográfica Nacional</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Premios:</span>
+                                    <span>1º Premio: €2000, Exposición individual<br>
+                                    2º Premio: €1000<br>
+                                    3º Premio: €500</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Requisitos:</span>
+                                    <span>Máximo 3 fotografías por participante. Formato JPG, mínimo 3000px en el lado mayor.</span>
+                                </div>
+                                <div class="event-actions">
+                                    <a href="#" class="btn btn-primary"><i class="fas fa-ticket-alt"></i> Inscribirse ahora</a>
+                                    <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Descargar bases</a>
+                                    <a href="#" class="btn btn-website"><i class="fas fa-external-link-alt"></i> Ir al sitio web</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Evento 2 -->
+                    <div class="event-card" data-category="pintura">
+                        <div class="event-header">
+                            <div class="event-date">28 Octubre 2023</div>
+                            <h3 class="event-title">Exposición de Pintura Contemporánea</h3>
+                            <span class="event-category">Pintura</span>
+                        </div>
+                        <div class="event-image-container">
+                            <img src="https://fesacocur.es/wp-content/uploads/2025/03/PHOTO-2025-02-26-14-19-41-scaled.jpg" alt="Exposición de Pintura Contemporánea" class="event-image">
+                        </div>
+                        <div class="event-summary">
+                            <p>Una muestra de las tendencias más innovadoras en pintura contemporánea. Abierto a artistas emergentes y consolidados.</p>
+                            <button class="info-button">
+                                <i class="fas fa-info-circle"></i> Ver información completa
+                            </button>
+                        </div>
+                        <div class="event-details">
+                            <div class="event-details-content">
+                                <div class="detail-item">
+                                    <span class="detail-label">Fecha:</span>
+                                    <span>28 Octubre - 15 Diciembre 2023</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Lugar:</span>
+                                    <span>Centro Cultural Provincial</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Organiza:</span>
+                                    <span>Colectivo Arte Contemporáneo</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Premios:</span>
+                                    <span>Exposición colectiva, difusión en medios especializados, posibilidad de residencia artística.</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Requisitos:</span>
+                                    <span>Obras originales, técnica libre. Inscripción hasta el 10 de octubre.</span>
+                                </div>
+                                <div class="event-actions">
+                                    <a href="#" class="btn btn-primary"><i class="fas fa-ticket-alt"></i> Inscribirse ahora</a>
+                                    <a href="#" class="btn btn-outline"><i class="fas fa-images"></i> Ver galería</a>
+                                    <a href="#" class="btn btn-website"><i class="fas fa-external-link-alt"></i> Sitio web oficial</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Evento 3 -->
+                    <div class="event-card" data-category="literatura">
+                        <div class="event-header">
+                            <div class="event-date">5 Noviembre 2023</div>
+                            <h3 class="event-title">Certamen de Relato Corto</h3>
+                            <span class="event-category">Literatura</span>
+                        </div>
+                        <div class="event-image-container">
+                            <img src="https://fesacocur.es/wp-content/uploads/2025/03/PHOTO-2025-02-26-14-19-41-scaled.jpg" alt="Certamen de Relato Corto" class="event-image">
+                        </div>
+                        <div class="event-summary">
+                            <p>Demuestra tu talento literario en nuestro certamen de relato corto. Tema libre, ¡deja volar tu imaginación!</p>
+                            <button class="info-button">
+                                <i class="fas fa-info-circle"></i> Ver información completa
+                            </button>
+                        </div>
+                        <div class="event-details">
+                            <div class="event-details-content">
+                                <div class="detail-item">
+                                    <span class="detail-label">Fecha:</span>
+                                    <span>5 Noviembre - 10 Diciembre 2023</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Lugar:</span>
+                                    <span>Biblioteca Central</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Organiza:</span>
+                                    <span>Círculo de Escritores</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Premios:</span>
+                                    <span>1º Premio: €1500 y publicación<br>
+                                    2º Premio: €800<br>
+                                    3º Premio: €400<br>
+                                    5 Menciones de honor</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Requisitos:</span>
+                                    <span>Extensión máxima: 10 páginas. Tema libre. Formato PDF or Word.</span>
+                                </div>
+                                <div class="event-actions">
+                                    <a href="#" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar relato</a>
+                                    <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Bases completas</a>
+                                    <a href="#" class="btn btn-website"><i class="fas fa-external-link-alt"></i> Web oficial</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Evento 4 -->
+                    <div class="event-card" data-category="digital">
+                        <div class="event-header">
+                            <div class="event-date">20 Noviembre 2023</div>
+                            <h3 class="event-title">Concurso de Arte Digital</h3>
+                            <span class="event-category">Arte Digital</span>
+                        </div>
+                        <div class="event-image-container">
+                            <img src="https://fesacocur.es/wp-content/uploads/2025/03/PHOTO-2025-02-26-14-19-41-scaled.jpg" alt="Concurso de Arte Digital" class="event-image">
+                        </div>
+                        <div class="event-summary">
+                            <p>Explora los límites del arte digital en este concurso que premia la creatividad y la innovación técnica.</p>
+                            <button class="info-button">
+                                <i class="fas fa-info-circle"></i> Ver información completa
+                            </button>
+                        </div>
+                        <div class="event-details">
+                            <div class="event-details-content">
+                                <div class="detail-item">
+                                    <span class="detail-label">Fecha:</span>
+                                    <span>20 Noviembre 2023 - 15 Enero 2024</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Lugar:</span>
+                                    <span>Plataforma Online / Galería Digital</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Organiza:</span>
+                                    <span>Asociación de Artistas Digitales</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Premios:</span>
+                                    <span>1º Premio: €3000 и tableta gráfica<br>
+                                    2º Premio: €1500<br>
+                                    3º Precio: €700<br>
+                                    Exposición virtual</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Requisitos:</span>
+                                    <span>Arte generado digitalmente. Formatos: JPEG, PNG, GIF, MP4. Resolución mínima: 1920x1080px.</span>
+                                </div>
+                                <div class="event-actions">
+                                    <a href="#" class="btn btn-primary"><i class="fas fa-paint-brush"></i> Participar</a>
+                                    <a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> Ver ejemplos</a>
+                                    <a href="#" class="btn btn-website"><i class="fas fa-external-link-alt"></i> Ir al sitio web</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funciones específicas para el calendario para evitar conflictos
+        function abrirModalCalendario() {
+            document.getElementById("modalCalendario").style.display = "block";
+            document.body.style.overflow = "hidden"; // Evita el scroll en el fondo
+        }
+        
+        function cerrarModalCalendario() {
+            document.getElementById("modalCalendario").style.display = "none";
+            document.body.style.overflow = "auto"; // Restaura el scroll
+        }
+        
+        // Asignar evento al botón
+        document.getElementById("btn-abrir-calendario").addEventListener("click", abrirModalCalendario);
+        
+        // Cerrar modal al presionar ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                cerrarModalCalendario();
+            }
+        });
+
+        // Solución MEJORADA para el problema de despliegue múltiple en Blogger
+        document.addEventListener('DOMContentLoaded', function() {
+            // Funcionalidad de los botones de información
+            const infoButtons = document.querySelectorAll('.info-button');
+            
+            // Cerrar todos los acordeones al inicio
+            document.querySelectorAll('.event-details').forEach(item => {
+                item.classList.remove('open');
+            });
+            
+            infoButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('.event-card');
+                    const details = card.querySelector('.event-details');
+                    const isOpen = details.classList.contains('open');
+                    
+                    // Cerrar TODOS los acordeones primero
+                    document.querySelectorAll('.event-details').forEach(item => {
+                        item.classList.remove('open');
+                    });
+                    
+                    // Remover la clase active de todos los botones
+                    document.querySelectorAll('.info-button').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+                    // Abrir solo el acordeón clickeado
+                    if (!isOpen) {
+                        details.classList.add('open');
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Funcionalidad de filtrado
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Actualizar botones activos
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    const eventCards = document.querySelectorAll('.event-card');
+                    
+                    eventCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Preguntas Frecuentes1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <div class="faq-container">
+        <div class="faq-header">
+            <h1 class="faq-title"><b><span style="color: black;">Centro de Ayuda1</span></b></h1>
+            <p class="faq-subtitle"><b><span style="color: black;">Encuentra respuestas a las preguntas más frecuentes sobre nuestro proceso de socios federados SOCNAS</span></b></p>
+        </div>
+        <div class="faq-search">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Buscar en preguntas frecuentes...">
+            </div>
+        </div>
+      
+      
+      
+      <div class="faq-item">
+                <div class="faq-question">
+                        <span>¿Que es SOCNAS Y FESACOCUR?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para federarte online con SOCNAS, sigue estos pasos:</p>
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <strong>RELLENAR FORMULARIO</strong> clic al botón de arriba azul que dice HAZTE SOCIO.<!-- Botón CONTRATO DE CESIÓN con ícono (naranja pastel) -->
+<a href="https://www.socnas.org/p/generar-pdf-contrato-de-cesion-de-aves.html" target="_blank" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #FFB74D; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;">
+  <i class="fas fa-file-contract"></i> CONTRATO CESIÓN
+</a>
+
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    INFORMACIÓN DE ATENCIÓN AL NUEVO SOCIO<strong>"Serás antendido vía whatsapp"</strong>sobre anillas y pago de cuota de socio.
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    Una vez asesorado vía whatsapp (que no se tardará ni 3 minutos), ya serás socio federado en COE-FOA con todos tus beneficios entre ellos CARNET FÍSICO Y DIGITAL DE CRIADOR NACIONAL FEDERADO Y ANILLAS FEDERATIVAS. 
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                   Te facilitaremos una CLAVE DE ACCESO FACIL DE RECORDAR para que puedas solicitar en la convocatoria abierta que desees tus anillas federativas.
+                                </div>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-lightbulb"></i> <strong>CONSEJO:</strong> No te preocupes por nada ya que SOCNAS su verdadera fuerza recae en su atención personalizada al SOCIO. Y estarás siempre asesorado en la mayor brevedad. Es muy facil y rápido nuestro servicio.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      
+      
+      
+      
+      
+      
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Cómo me federo Online?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                      <p>Para federarte online con <strong>SOCNAS</strong>, sigue estos pasos:</p><br/>
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                              <strong>RELLENAR FORMULARIO</strong> clic al botón de arriba azul que dice <strong>HAZTE SOCIO</strong>.
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <strong>INFORMACIÓN DE ATENCIÓN AL NUEVO SOCIO "Serás antendido vía whatsapp"</strong> sobre <strong>anillas federativas y pago de cuota de socio (25€)</strong>.
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                               Una vez asesorado vía whatsapp (que no se tardará ni 3 minutos), ya serás socio federado en <strong>COE-FOA</strong> con todos tus beneficios entre ellos <strong>CARNET FÍSICO Y DIGITAL DE CRIADOR NACIONAL FEDERADO Y ANILLAS FEDERATIVAS</strong>.
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                Te facilitaremos una <strong>CLAVE DE ACCESO FACIL DE RECORDAR</strong> para que puedas solicitar en la convocatoria abierta que desees tus <strong>anillas federativas</strong>.
+                            </div>
+                        </div>
+                        <div class="highlight">
+                              <i class="fas fa-lightbulb"></i> <strong>CONSEJO:</strong> No te preocupes por nada ya que <strong>SOCNAS</strong> su verdadera fuerza recae en su atención personalizada al <strong>SOCIO</strong>. Y estarás siempre asesorado en la mayor brevedad. Es muy fácil y rápido nuestro servicio.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Por qué no me verifica como socio?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Existen varias razones por las que tu verificación como socio podría estar pendiente:</p>
+                        <div class="info">
+                            <strong>Documentación incompleta:</strong> Asegúrate de haber enviado todos los documentos requeridos (DNI, justificante de pago, etc.).
+                        </div>
+                        <div class="info">
+                            <strong>Pago pendiente:</strong> Verifica que tu cuota de socio haya sido abonada correctamente.
+                        </div>
+                        <div class="info">
+                            <strong>Datos incorrectos:</strong> Comprueba que los datos proporcionados coincidan con tu documentación.
+                        </div>
+                        <div class="warning">
+                            <i class="fas fa-exclamation-triangle"></i> <strong>Importante:</strong> El proceso de verificación puede tardar hasta 72 horas hábiles. Si después de este tiempo sigues sin verificar, contacta con nosotros.
+                        </div>
+                        <a href="#" class="contact-button"><i class="fas fa-envelope"></i> Contactar con soporte</a>
+                    </div>
+                </div>
+            </div>
+          
+          <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Cómo funciona eso de las CONVOCATORIAS?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Existen varias razones por las que tu verificación como socio podría estar pendiente:</p>
+                        <div class="info">
+                            <strong>Documentación incompleta:</strong> Asegúrate de haber enviado todos los documentos requeridos (DNI, justificante de pago, etc.).
+                        </div>
+                        <div class="info">
+                            <strong>Pago pendiente:</strong> Verifica que tu cuota de socio haya sido abonada correctamente.
+                        </div>
+                        <div class="info">
+                            <strong>Datos incorrectos:</strong> Comprueba que los datos proporcionados coincidan con tu documentación.
+                        </div>
+                        <div class="warning">
+                            <i class="fas fa-exclamation-triangle"></i> <strong>Importante:</strong> El proceso de verificación puede tardar hasta 72 horas hábiles. Si después de este tiempo sigues sin verificar, contacta con nosotros.
+                        </div>
+                        <a href="#" class="contact-button"><i class="fas fa-envelope"></i> Contactar con soporte</a>
+                    </div>
+                </div>
+            </div>
+          
+          
+          
+            <div class="faq-item">
+                <div class="faq-question">
+                        <span>¿Contrato de cesión?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Para federarte online con SOCNAS, sigue estos pasos:</p>
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <strong>RELLENAR FORMULARIO</strong> clic al botón de arriba azul que dice HAZTE SOCIO.<!-- Botón CONTRATO DE CESIÓN con ícono (naranja pastel) -->
+<a href="https://www.socnas.org/p/generar-pdf-contrato-de-cesion-de-aves.html" target="_blank" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #FFB74D; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;">
+  <i class="fas fa-file-contract"></i> CONTRATO CESIÓN
+</a>
+
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    INFORMACIÓN DE ATENCIÓN AL NUEVO SOCIO<strong>"Serás antendido vía whatsapp"</strong>sobre anillas y pago de cuota de socio.
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    Una vez asesorado vía whatsapp (que no se tardará ni 3 minutos), ya serás socio federado en COE-FOA con todos tus beneficios entre ellos CARNET FÍSICO Y DIGITAL DE CRIADOR NACIONAL FEDERADO Y ANILLAS FEDERATIVAS. 
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                   Te facilitaremos una CLAVE DE ACCESO FACIL DE RECORDAR para que puedas solicitar en la convocatoria abierta que desees tus anillas federativas.
+                                </div>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-lightbulb"></i> <strong>CONSEJO:</strong> No te preocupes por nada ya que SOCNAS su verdadera fuerza recae en su atención personalizada al SOCIO. Y estarás siempre asesorado en la mayor brevedad. Es muy facil y rápido nuestro servicio.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Concursos y Eventos?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>SOCIEDAD ORNITOLÓGICA DE CRIADORES NACIONALES (España):</p>
+                            <div class="info">
+                                <strong>En SOCNAS:</strong> Transformamos la forma de gestionar tu afición. Nos especializamos en la gestión y administración de carnet y anillas federadas, trabajando de la mano con la FOA Y FESACOCUR y ofreciendo anillas oficiales homologadas por la COE (Confederación Ornitológica Española) y la Entente Europea. Gestión de tu carnet físico y digital para socios.
+                            </div>
+                            <div class="info">
+                                <strong>Somos Pioneros:</strong> En la gestión y administración online con envío a domicilio de carnet de criador nacional y anillas federativas. Un servicio rápido, seguro y sin complicaciones, para que dediques tu tiempo a lo que realmente importa: tus aves y animales.
+                            </div>
+                            <div class="info">
+                                <strong>NIVEL DE COBERTURA:</strong> Ofrecemos cobertura a nivel nacional (España) y trabajamos para todo tipo de pájaros de jaula: canaricultura, psitácidas, exóticos, silvestres, avicultura, colombicultura… Además, estrenamos nuestro nuevo servicio para conejos de raza, apoyando también a la cunicultura.<!-- Botón CONCURSOS Y EVENTOS con ícono (morado pastel) -->
+  <button id="abrirModalForm" style="flex: 1; min-width: 220px; padding: 14px 20px; background: #CBA4E3; color: #111; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <i class="fas fa-trophy"></i> CONCURSOS
+  </button>
+                            </div>
+                            <div class="warning">
+                                <i class="fas fa-exclamation-triangle"></i> <strong>Importante:</strong> SOCNAS cuenta con registro oficial a nivel NACIONAL y estatutarios con objetivos para ayudar y gestionar servicios para criadores de ornitología, Avicultura, Columbicultura y nuevo servicio de gestión en CERTIFICADOS OFICIALES para TATUAJES en CUNICULTURA DE RAZA.
+                            </div>
+                            <a href="#" class="contact-button"><i class="fas fa-envelope"></i> Contactar con soporte</a>
+                        </div>
+                    </div>
+                </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Puedo modificar o cancelar mi pedido?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Las posibilidades de modificación o cancelación dependen del estado de tu pedido:</p>
+                        <div class="step">
+                            <div class="step-number"><i class="fas fa-check"></i></div>
+                            <div class="step-content">
+                                <strong>Pedido en preparación:</strong> Modificaciones posibles sin coste adicional.
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number"><i class="fas fa-cog"></i></div>
+                            <div class="step-content">
+                                <strong>Pedido en producción:</strong> Modificaciones con coste adicional del 25%.
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number"><i class="fas fa-times"></i></div>
+                            <div class="step-content">
+                                <strong>Pedido enviado:</strong> No se permiten modificaciones o cancelaciones.
+                            </div>
+                        </div>
+                        <div class="info">
+                            <i class="fas fa-phone"></i> Para cualquier modificación, contacta inmediatamente con nuestro departamento de pedidos.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq-footer">
+            <p>¿No encuentras la respuesta que buscas? <a href="#" style="color: #4CAF50; text-decoration: none; font-weight: 600;">Contáctanos</a></p>
+        </div>
+    </div>
+  
+  
+  
+</body>
+
+  
+  </div>
+</head>
+</html>
