@@ -329,7 +329,24 @@
             <a href="https://wa.me/34677163664?text=Hola,%20quiero%20unirme%20al%20canal%20de%20SOCNAS" target="_blank" style="display: inline-block; padding: 10px 20px; background: #25D366; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 0 10px; transition: opacity 0.3s ease;">Unirse ahora</a>
         </div>
     </div>
+<script>
+        // Funciones específicas para SOCNAS con prefijo para evitar conflictos
+        function socnasAbrirModal(id) {
+            document.getElementById('socnas-' + id + 'Modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function socnasCerrarModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
+        // Precargar la imagen para mejor rendimiento
+        document.addEventListener('DOMContentLoaded', function() {
+            const img = new Image();
+            img.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUKaTSpmZZxCUgUXeSUVUVsg4fGqL6H1qNODLrgKQVS-WVXGeaQDK1x2zvIQTao4KI-60i8VzIIyLx39uUHI3GXFfAocQaFMxY_LNjgiYwjQ2A4wrDFKumJ742h8F_ZjIXTL4FYy3x8c7-KlfoyFmowmKjOqp3G8Tt8y88oBkyVw5gl1lLR2UhegIH2uY/s1600/Copia%20de%20.%20%281080%20x%201080%20px%29%20%281%29.gif";
+        });
+    </script>
 
 
     
