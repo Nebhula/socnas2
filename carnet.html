@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FESACOCUR - Carnet Digital para Socios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #8B1A1A;
+            --accent: #659965;
+            --light: #f9f9f9;
+            --dark: #333;
+            --success: #25D366;
+            --white: #ffffff;
+            --gray: #555;
+            --light-gray: #eee;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        #coe-foa-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        /* Header Styles */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #333 100%);
+            color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .logo-container {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .logo-container img {
+            max-width: 150px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h3 {
+            font-weight: 300;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .video-container {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 340px;
+            border: none;
+            display: block;
+        }
+        
+        .header-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn {
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-hazte-socio {
+            background: linear-gradient(135deg, var(--accent) 0%, #4a7c4a 100%);
+            color: var(--white);
+        }
+        
+        .btn-convocatorias {
+            background: linear-gradient(135deg, var(--secondary) 0%, #6d1212 100%);
+            color: var(--white);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Card Styles */
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 900px;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .card p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        .card ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .card li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+        
+        .card strong {
+            color: var(--primary);
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 1rem;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Pricing Table */
+        .pricing-section {
+            background: var(--light);
+            padding: 3rem 1rem;
+            margin-top: 2rem;
+        }
+        
+        .pricing-section h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 0 auto;
+            max-width: 900px;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .pricing-table th {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .pricing-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .pricing-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .pricing-table tr:hover {
+            background-color: #f1f5f9;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: var(--white);
+            padding: 3rem 2rem;
+            margin: 3rem auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 900px;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .faq-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid var(--light-gray);
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 1rem 0;
+        }
+        
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0.5rem 0 1rem;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background-color: var(--success);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-button i {
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #333 100%);
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .footer-links a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .header-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .card {
+                padding: 1.5rem;
+                margin: 1.5rem;
+            }
+            
+            .faq-section {
+                padding: 2rem 1rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .video-container iframe {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h3 {
+                font-size: 1rem;
+            }
+            
+            .card {
+                padding: 1.2rem;
+                margin: 1rem;
+            }
+            
+            .card h2 {
+                font-size: 1.5rem;
+            }
+            
+            .whatsapp-button {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                left: 20px;
+            }
+            
+            .video-container iframe {
+                height: 200px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div id="coe-foa-container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="logo-container animate-fadeIn">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9LsM0Po7Y5AavwnhXLLzI8l9y2StievlpudRDZ6761X1H4eGBXPRvDWa2eCT1qmPZunRkfXE2t39xcbRgsJypm1dcc0cB9xa4-WheH3Kx-Y_2ReD8Lb8toJCLIfocQ-649KBev0qQIdmIISRnq4oDSDc6VNJH_CIBPUMkiGJK-7esNxfcdDBLfyJnWKc/s1600/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%2872%29.png" alt="Logo FESACOCUR">
+            </div>
+            
+            <h1 class="animate-fadeIn delay-1">SOCNAS DIGI</h1>
+            <h3 class="animate-fadeIn delay-1">Carnet Digital para socios</h3>
+            
+            <div class="video-container animate-fadeIn delay-2">
+                <!-- VIDEO DE YOUTUBE INCORPORADO -->
+                <iframe src="https://www.youtube.com/embed/G31o2312WXE" title="Video de presentación FESACOCUR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div class="header-buttons animate-fadeIn delay-3">
+                <a href="https://wa.link/248kcj" class="btn btn-hazte-socio">
+                    <i class="fas fa-user-plus"></i> SOLICITE EL SUYO
+                </a>
+                <a href="https://socnasdigi.netlify.app/" class="btn btn-convocatorias">
+                    <i class="fas fa-id-card"></i> VER CARNET DIGITAL
+                </a>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section class="card animate-fadeIn">
+            <div class="image-container">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh91HvfDdV-psLtGZItXzzeVaSp5_CK8-A6uBrJfLnnxCGVS_dEEum7NDEYQHIg5I4GLCQZOHS0jo-CYrvPpKKw5MilK0tJ25uJ9aryayRopmV0H4qgzEwR_U-pMfUHoq6fbRvQMEuOQTttRzDNnhBmExEAFybzudpo9ti1NjoUAgORsEV6bHMu424L8c0/s1600/A%C3%B1adir%20un%20poco%20de%20texto%20-%202025-07-20T002351.951%20%281%29.png" alt="Imagen descriptiva">
+            </div>
+            
+            <h2>¿Quiénes somos?</h2>
+            <p>FESACOCUR es una federación dedicada a la gestión y administración de carnet y anillas federadas. Ofrecemos anillas oficiales homologadas para avicultura y otras especies.</p>
+        </section>
+        
+        <!-- Normativa Section -->
+        <section class="card animate-fadeIn">
+            <h2>Normativa de Anillas</h2>
+            <ul>
+                <li><strong>Aluminio y duroaluminio:</strong> coloreadas, grabado láser.</li>
+                <li><strong>Acero inoxidable:</strong> grabado láser.</li>
+            </ul>
+            <p><strong>Color 2025/2026:</strong> Verde</p>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature-card animate-fadeIn">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Seguridad Avanzada</h3>
+                <p>Protección total con encriptación avanzada y autenticación segura para tus datos.</p>
+            </div>
+            
+            <div class="feature-card animate-fadeIn delay-1">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Acceso Multiplataforma</h3>
+                <p>Disponible en cualquier dispositivo móvil o computadora, siempre a tu alcance.</p>
+            </div>
+            
+            <div class="feature-card animate-fadeIn delay-2">
+                <div class="feature-icon">
+                    <i class="fas fa-sync"></i>
+                </div>
+                <h3>Actualizaciones en Tiempo Real</h3>
+                <p>Tu información se actualiza automáticamente con los últimos datos federativos.</p>
+            </div>
+        </section>
+        
+        <!-- Carnet Digital Section -->
+        <section class="card animate-fadeIn">
+            <h2>Carnet Digital para Socios</h2>
+            
+            <div class="image-container">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3Op9oayeMKMqoHisPKT3PrwBeX_BiymiT9NZ-2LYXNSBx5HEjeSWMRGViVjl2zo7lTefQjsTtLY_Ss_yPA8UxWPKL3H7bQAh2YQhAY0y5RyOJWdDhC9n86yNLnTwEYCXtpBAWfZOMnBoLBAM0wotMmaDQB8732JZngUSMjfQq9jo1ZhuGO-EaWhmCRGg/s1600/A%C3%B1adir%20un%20poco%20de%20texto%20-%202025-07-20T003318.357%20%281%29.png" alt="Carnet Digital">
+            </div>
+            
+            <p>Nuestro Carnet Digital permite a los socios acceder de forma segura a sus datos personales, información sobre anillas y registros federativos desde cualquier dispositivo móvil o computadora.</p>
+        </section>
+        
+        <!-- Additional Image -->
+        <div class="image-container animate-fadeIn">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhktiaQEoB2xo33y8tCGJ4ZsQphBQ5z_BQVAr4XTvhe5Xw7tJYcxOsi_ix4gNGnpP1k-lcUr_BDuBi_n3bL84ewySgw9L04HLoK5LxfYO3aiP28k1ueMHQNR-mF8nyURygQCzrHJPPJgbqlErvJkj6dsVSuMCalUoSQOcZ8SSztVUSCxVOUPRXNbZeyeW8/s1600/A%C3%B1adir%20un%20poco%20de%20texto%20-%202025-07-20T013126.393%20%281%29.png" alt="Imagen adicional">
+        </div>
+        
+        <!-- Pricing Section -->
+        <section class="pricing-section animate-fadeIn">
+            <h2>Precios de Anillas</h2>
+            
+            <div class="table-container">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Medidas</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Aluminio</td>
+                            <td>2 a 5 mm</td>
+                            <td>0,42€</td>
+                        </tr>
+                        <tr>
+                            <td>Aluminio</td>
+                            <td>5,2 a 16 mm</td>
+                            <td>0,55€</td>
+                        </tr>
+                        <tr>
+                            <td>Aluminio</td>
+                            <td>19 a 29 mm</td>
+                            <td>0,93€</td>
+                        </tr>
+                        <tr>
+                            <td>Acero inoxidable</td>
+                            <td>Mínimo 10 unidades</td>
+                            <td>0,58€</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section animate-fadeIn">
+            <h2>Preguntas Frecuentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Cómo puedo solicitar anillas federadas?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Para solicitar anillas federadas, debes contactarnos a través de nuestro número de WhatsApp o correo electrónico proporcionando tus datos personales, número de socio (si ya eres miembro) y los detalles del pedido (calibre, cantidad y tipo de anillas).</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Cuál es el plazo de entrega de las anillas?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>El plazo de entrega habitual es de 7 a 15 días laborables desde la confirmación del pedido y pago. En temporadas de alta demanda (inicio de temporada) los plazos pueden extenderse hasta 20 días.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Puedo personalizar mis anillas?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Las anillas federadas deben seguir el formato estándar de FESACOCUR que incluye el código del país, año, número de socio y número secuencial. No se permiten personalizaciones fuera de este formato oficial.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Qué métodos de pago aceptan?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Aceptamos transferencia bancaria y bizum. Los pedidos se procesan una vez confirmado el pago. No trabajamos con contrareembolso.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Cómo me hago socio de la federación?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Para hacerte socio, debes completar el formulario de inscripción disponible en nuestra web oficial, adjuntar documentación requerida (DNI y justificante de pago de cuota) y enviarlo a nuestra oficina. El carnet tarda aproximadamente 2 semanas en procesarse.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/123456789" class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-title">FESACOCUR</div>
+                
+                <div class="footer-links">
+                    <a href="#">Inicio</a>
+                    <a href="#">Servicios</a>
+                    <a href="#">Precios</a>
+                    <a href="#">Contacto</a>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <a href="https://socnasdigi.netlify.app/" class="btn btn-convocatorias">
+                    <i class="fas fa-external-link-alt"></i> MÁS EN SOCNAS DIGI
+                </a>
+                
+                <p class="copyright">© 2023 FESACOCUR. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Script para el funcionamiento de los FAQs
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Cerrar todos los FAQs
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                    });
+                    
+                    // Abrir este FAQ si no estaba activo
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Animación de elementos al hacer scroll
+            const animatedElements = document.querySelectorAll('.animate-fadeIn');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                element.style.animationPlayState = 'paused';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
