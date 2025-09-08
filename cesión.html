@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar PDF - Contrato de Cesión de Aves</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+        form {
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        label {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="contractForm">
+        <h2>Datos del Cedente</h2>
+        <label for="cedenteNombre">Nombre:</label>
+        <input type="text" id="cedenteNombre" name="cedenteNombre" required>
+        
+        <label for="cedenteDNI">DNI/NIE:</label>
+        <input type="text" id="cedenteDNI" name="cedenteDNI" required>
+        
+        <label for="cedenteDireccion">Dirección:</label>
+        <input type="text" id="cedenteDireccion" name="cedenteDireccion" required>
+        
+        <label for="cedenteAsociacion">Asociación:</label>
+        <input type="text" id="cedenteAsociacion" name="cedenteAsociacion" required>
+        
+        <label for="cedenteFederacion">Federación:</label>
+        <input type="text" id="cedenteFederacion" name="cedenteFederacion" required>
+
+        <h2>Datos del Receptor</h2>
+        <label for="receptorNombre">Nombre:</label>
+        <input type="text" id="receptorNombre" name="receptorNombre" required>
+
+        <label for="receptorDNI">DNI/NIE:</label>
+        <input type="text" id="receptorDNI" name="receptorDNI" required>
+
+        <label for="receptorDireccion">Dirección:</label>
+        <input type="text" id="receptorDireccion" name="receptorDireccion" required>
+
+        <label for="receptorAsociacion">Asociación:</label>
+        <input type="text" id="receptorAsociacion" name="receptorAsociacion" required>
+
+        <label for="receptorFederacion">Federación:</label>
+        <input type="text" id="receptorFederacion" name="receptorFederacion" required>
+
+        <h2>Datos del Ave</h2>
+        <label for="aveEspecie">Especie:</label>
+        <input type="text" id="aveEspecie" name="aveEspecie" required>
+
+        <label for="aveGenero">Género:</label>
+        <select id="aveGenero" name="aveGenero" required>
+            <option value="Macho">Macho</option>
+            <option value="Hembra">Hembra</option>
+        </select>
+
+        <label for="aveAnilla">Número de Anilla:</label>
+        <input type="text" id="aveAnilla" name="aveAnilla" required>
+
+        <h2>Condiciones de la Cesión</h2>
+        <label for="motivoCesion">Motivo de la Cesión:</label>
+        <select id="motivoCesion" name="motivoCesion" required>
+            <option value="Reproducción">Concursos</option>
+            <option value="Investigación">Investigación</option>
+            <option value="Exposición">Exposición</option>
+            <option value="Otra">Reproducción</option>
+        </select>
+
+        <h2>Detalles Adicionales</h2>
+        <textarea id="detallesAdicionales" name="detallesAdicionales" rows="4" required></textarea>
+
+        <button type="button" onclick="generatePDF()">Generar PDF</button>
+    </form>
+
+    <script>
+        async function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Establecer fondo de la página
+            doc.setFillColor(255, 255, 255); // Fondo blanco
+            doc.rect(0, 0, 210, 297, 'F'); // Relleno de toda la página
+              
+            // Título del documento
+            doc.setFontSize(16); // Fuente más pequeña
+            doc.setFont('helvetica', 'bold');
+            doc.text("Contrato de Cesión de Aves", 105, 15, { align: "center" });
+
+            // Sección de Datos del Cedente con cuadro de color
+            doc.setFillColor(255, 239, 219); // Color pastel
+            doc.rect(10, 30, 190, 10, 'F'); // Fondo pastel para la sección
+            doc.setFont('helvetica', 'bold');
+            doc.text("Datos del Cedente", 105, 35, { align: "center" });
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(12); // Tamaño de fuente más pequeño
+
+            // Añadir las respuestas en cuadros con ajuste de texto
+            doc.setFillColor(255, 255, 255);
+            doc.rect(10, 40, 190, 10); // Caja para respuesta
+            doc.text(`Nombre: ${document.getElementById("cedenteNombre").value}`, 12, 45);
+
+            doc.rect(10, 50, 190, 10); // Caja para respuesta
+            doc.text(`DNI/NIE: ${document.getElementById("cedenteDNI").value}`, 12, 55);
+
+            doc.rect(10, 60, 190, 10); // Caja para respuesta
+            doc.text(`Dirección: ${document.getElementById("cedenteDireccion").value}`, 12, 65);
+
+            doc.rect(10, 70, 190, 10); // Caja para respuesta
+            doc.text(`Asociación: ${document.getElementById("cedenteAsociacion").value}`, 12, 75);
+
+            doc.rect(10, 80, 190, 10); // Caja para respuesta
+            doc.text(`Federación: ${document.getElementById("cedenteFederacion").value}`, 12, 85);
+
+            // Sección de Datos del Receptor con cuadro de color
+            doc.setFillColor(227, 249, 232); // Color pastel (verde)
+            doc.rect(10, 95, 190, 10, 'F'); // Fondo pastel para la sección
+            doc.setFont('helvetica', 'bold');
+            doc.text("Datos del Receptor", 105, 100, { align: "center" });
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(12); // Tamaño de fuente más pequeño
+
+            // Añadir las respuestas en cuadros con ajuste de texto
+            doc.setFillColor(255, 255, 255);
+            doc.rect(10, 105, 190, 10); // Caja para respuesta
+            doc.text(`Nombre: ${document.getElementById("receptorNombre").value}`, 12, 110);
+
+            doc.rect(10, 115, 190, 10); // Caja para respuesta
+            doc.text(`DNI/NIE: ${document.getElementById("receptorDNI").value}`, 12, 120);
+
+            doc.rect(10, 125, 190, 10); // Caja para respuesta
+            doc.text(`Dirección: ${document.getElementById("receptorDireccion").value}`, 12, 130);
+
+            doc.rect(10, 135, 190, 10); // Caja para respuesta
+            doc.text(`Asociación: ${document.getElementById("receptorAsociacion").value}`, 12, 140);
+
+            doc.rect(10, 145, 190, 10); // Caja para respuesta
+            doc.text(`Federación: ${document.getElementById("receptorFederacion").value}`, 12, 150);
+
+            // Sección de Datos del Ave con cuadro de color
+            doc.setFillColor(240, 240, 255); // Color pastel (lavanda)
+            doc.rect(10, 160, 190, 10, 'F'); // Fondo pastel para la sección
+            doc.setFont('helvetica', 'bold');
+            doc.text("Datos del Ave", 105, 165, { align: "center" });
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(12); // Tamaño de fuente más pequeño
+
+            // Añadir las respuestas en cuadros con ajuste de texto
+            doc.setFillColor(255, 255, 255);
+            doc.rect(10, 170, 190, 10); // Caja para respuesta
+            doc.text(`Especie: ${document.getElementById("aveEspecie").value}`, 12, 175);
+
+            doc.rect(10, 180, 190, 10); // Caja para respuesta
+            doc.text(`Género: ${document.getElementById("aveGenero").value}`, 12, 185);
+
+            doc.rect(10, 190, 190, 10); // Caja para respuesta
+            doc.text(`Número de Anilla: ${document.getElementById("aveAnilla").value}`, 12, 195);
+
+            // Sección de Condiciones de Cesión con cuadro de color
+            doc.setFillColor(255, 228, 225); // Color pastel (rosa)
+            doc.rect(10, 205, 190, 10, 'F'); // Fondo pastel para la sección
+            doc.setFont('helvetica', 'bold');
+            doc.text("Condiciones de la Cesión", 105, 210, { align: "center" });
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(12); // Tamaño de fuente más pequeño
+
+            // Añadir las respuestas en cuadros con ajuste de texto
+            doc.setFillColor(255, 255, 255);
+            doc.rect(10, 220, 190, 10); // Caja para respuesta
+            doc.text(`Motivo de la Cesión: ${document.getElementById("motivoCesion").value}`, 12, 225);
+
+            const detallesAdicionales = document.getElementById("detallesAdicionales").value;
+            
+            // Ajustar el texto de detalles adicionales para que se ajuste dentro de los márgenes
+            if (detallesAdicionales) {
+                const marginLeft = 12;
+                const marginTop = 235;
+                const maxWidth = 190; // Ancho del cuadro de texto
+
+                // Agregar el texto con ajuste automático
+                doc.text(detallesAdicionales, marginLeft, marginTop, {
+                    maxWidth: maxWidth,
+                    lineHeightFactor: 1.2
+                });
+            }
+
+            // Firmas
+            doc.setFont('helvetica', 'bold');
+            doc.text("Firmas", 105, 255, { align: "center" });
+            doc.text("Cedente: ______________________", 12, 260);
+            doc.text("Receptor: ______________________", 12, 280);
+
+            // Espacio adicional para el texto de copia
+            doc.setFontSize(10); // Texto pequeño
+            doc.text("Copia para el Cedente - Copia para Receptor", 105, 290, { align: "center" });
+           
+          doc.text("SOCIEDAD ORNITOLOGICA SOCNAS - WWW.SOCNAS.ORG", 105, 295, { align: "center" });
+       
+          doc.text("SOCNAS: SOCIEDAD ORNITOLÓGICA PARA CRIADORES NACIONALES", 105, 40, { align: "center" });
+  
+          doc.text("WWW SOCNAS.ORG", 105, 27, { align: "center" });
+
+          doc.text("SOCNAS: SOCIEDAD ORNITOLÓGICA PARA CRIADORES NACIONALES", 105, 215, { align: "center" });     
+   
+          doc.text("SOCNAS: SOCIEDAD ORNITOLÓGICA PARA CRIADORES NACIONALES", 105, 170, { align: "center" });   
+         
+          doc.text("SOCNAS: SOCIEDAD ORNITOLÓGICA PARA CRIADORES NACIONALES", 105, 105, { align: "center" });
+          
+      
+          
+         
+            // Guardar el PDF
+            doc.save('contrato_cesion_aves.pdf');
+        }
+    </script>
+</body>
+</html>
